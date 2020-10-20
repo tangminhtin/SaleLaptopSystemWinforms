@@ -4,6 +4,7 @@ using System.Linq;
 using System.Windows.Forms;
 using DevExpress.UserSkins;
 using DevExpress.Skins;
+using PRN292_SystemSaleLaptop_Group4.View;
 
 namespace PRN292_SystemSaleLaptop_Group4
 {
@@ -17,7 +18,7 @@ namespace PRN292_SystemSaleLaptop_Group4
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMain());
+            Application.Run(new frmLogin());
         }
     }
 }

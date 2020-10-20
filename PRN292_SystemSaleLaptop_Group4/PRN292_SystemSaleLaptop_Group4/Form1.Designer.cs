@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.rbbPageUserSys = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.rbbPageGrAuthen = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.barbtnLogin = new DevExpress.XtraBars.BarButtonItem();
             this.barbtnLogout = new DevExpress.XtraBars.BarButtonItem();
+            this.rbbPageUserSys = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.rbbPageGrAuthen = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,20 +53,6 @@
             this.rbbPageUserSys});
             this.ribbonControl1.Size = new System.Drawing.Size(884, 193);
             // 
-            // rbbPageUserSys
-            // 
-            this.rbbPageUserSys.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.rbbPageGrAuthen});
-            this.rbbPageUserSys.Name = "rbbPageUserSys";
-            this.rbbPageUserSys.Text = "User system";
-            // 
-            // rbbPageGrAuthen
-            // 
-            this.rbbPageGrAuthen.ItemLinks.Add(this.barbtnLogin);
-            this.rbbPageGrAuthen.ItemLinks.Add(this.barbtnLogout);
-            this.rbbPageGrAuthen.Name = "rbbPageGrAuthen";
-            this.rbbPageGrAuthen.Text = "Authentication";
-            // 
             // barbtnLogin
             // 
             this.barbtnLogin.Caption = "Login";
@@ -78,6 +64,19 @@
             this.barbtnLogout.Caption = "Logout";
             this.barbtnLogout.Id = 2;
             this.barbtnLogout.Name = "barbtnLogout";
+            // 
+            // rbbPageUserSys
+            // 
+            this.rbbPageUserSys.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.rbbPageGrAuthen});
+            this.rbbPageUserSys.Name = "rbbPageUserSys";
+            this.rbbPageUserSys.Text = "User system";
+            // 
+            // rbbPageGrAuthen
+            // 
+            this.rbbPageGrAuthen.ItemLinks.Add(this.barbtnLogout);
+            this.rbbPageGrAuthen.Name = "rbbPageGrAuthen";
+            this.rbbPageGrAuthen.Text = "Authentication";
             // 
             // frmMain
             // 
