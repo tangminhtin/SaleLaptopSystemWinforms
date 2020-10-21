@@ -5,6 +5,8 @@ using System.Windows.Forms;
 using DevExpress.UserSkins;
 using DevExpress.Skins;
 using PRN292_SystemSaleLaptop_Group4.View;
+using PRN292_SystemSaleLaptop_Group4.ContextEF;
+using System.Data.SqlClient;
 
 namespace PRN292_SystemSaleLaptop_Group4
 {

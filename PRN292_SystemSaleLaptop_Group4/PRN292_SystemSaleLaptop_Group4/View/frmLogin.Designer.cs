@@ -30,7 +30,7 @@
         {
             this.lblUsername = new DevExpress.XtraEditors.LabelControl();
             this.lblPassword = new DevExpress.XtraEditors.LabelControl();
-            this.txtUser = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtPass = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -47,9 +47,9 @@
             this.lblUsername.Appearance.Options.UseForeColor = true;
             this.lblUsername.Location = new System.Drawing.Point(396, 170);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(118, 28);
+            this.lblUsername.Size = new System.Drawing.Size(64, 28);
             this.lblUsername.TabIndex = 2;
-            this.lblUsername.Text = "Username";
+            this.lblUsername.Text = "Email";
             // 
             // lblPassword
             // 
@@ -63,12 +63,12 @@
             this.lblPassword.TabIndex = 3;
             this.lblPassword.Text = "Password";
             // 
-            // txtUser
+            // txtEmail
             // 
-            this.txtUser.Location = new System.Drawing.Point(520, 175);
-            this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(201, 23);
-            this.txtUser.TabIndex = 5;
+            this.txtEmail.Location = new System.Drawing.Point(520, 175);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(201, 23);
+            this.txtEmail.TabIndex = 5;
             // 
             // txtPass
             // 
@@ -120,7 +120,7 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtPass);
-            this.Controls.Add(this.txtUser);
+            this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.pictureBox1);
@@ -139,7 +139,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private DevExpress.XtraEditors.LabelControl lblUsername;
         private DevExpress.XtraEditors.LabelControl lblPassword;
-        private System.Windows.Forms.TextBox txtUser;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox2;
