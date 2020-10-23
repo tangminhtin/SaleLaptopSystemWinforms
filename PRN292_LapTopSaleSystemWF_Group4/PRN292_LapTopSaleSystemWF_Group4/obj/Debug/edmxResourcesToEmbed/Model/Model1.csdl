@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PRN292_LapTopSaleSystem_Group4Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="userId" />
+    </Key>
+    <Property Name="userId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fullname" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="password" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+    <Property Name="phone" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="address" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+    <Property Name="image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="role" Type="Byte" />
+    <Property Name="active" Type="Byte" />
+  </EntityType>
+  <EntityContainer Name="PRN292_LapTopSaleSystem_Group4Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Users" EntityType="Self.User" />
+  </EntityContainer>
+</Schema>

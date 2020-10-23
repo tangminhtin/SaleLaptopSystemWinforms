@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PRN292_LapTopSaleSystem_Group4Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="userId" />
+    </Key>
+    <Property Name="userId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fullname" Type="nchar" MaxLength="100" />
+    <Property Name="password" Type="nchar" MaxLength="100" />
+    <Property Name="email" Type="nchar" MaxLength="200" />
+    <Property Name="phone" Type="nchar" MaxLength="100" />
+    <Property Name="address" Type="nchar" MaxLength="200" />
+    <Property Name="image" Type="ntext" />
+    <Property Name="role" Type="tinyint" />
+    <Property Name="active" Type="tinyint" />
+  </EntityType>
+  <EntityContainer Name="PRN292_LapTopSaleSystem_Group4ModelStoreContainer">
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
