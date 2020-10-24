@@ -24,12 +24,12 @@ namespace PRN292_LapTopSaleSystemWF_Group4.Validate
 
         public String checkPassword(String password)
         {
-            int score = 0;
+            /*int score = 0;
 
-            /*if (password.Length < 1)
+            if (password.Length < 1)
                 return "Blank";
             if (password.Length < 4)
-                return "VeryWeak";*/
+                return "VeryWeak";
 
             if (password.Length >= 8)
                 score++;
@@ -43,27 +43,48 @@ namespace PRN292_LapTopSaleSystemWF_Group4.Validate
             if (Regex.Match(password, @"/.[!,@,#,$,%,^,&,*,?,_,~,-,£,(,)]/", RegexOptions.ECMAScript).Success)
                 score++;
 
-            if(score >= 1)
+            switch (score)
             {
-                return "VeryWeak";
-            }
-            if(score >= 2)
-            {
-                return "Weak";
-            }
-            if (score >= 3)
-            {
-                return "Medium";
-            }
-            if (score >= 4)
-            {
-                return "Strong";
-            }
-            if (score >= 5)
+                case 1:
+                    return "VeryWeak";
+                    break;
+                case 2:
+                    return "Weak";
+                    break;
+                case 3:
+                    return "Medium";
+                    break;
+                case 4:
+                    return "Strong";
+                    break;
+                case 5:
+                    return "VeryStrong";
+                    break;
+                default:
+                    return "";
+                    
+            }*/
+
+            
+            string patdi = @"\d+"; //match digits
+            string patupp = @"[A-Z]+"; //match upper cases
+            string patlow = @"[a-z]+"; //match lower cases
+            string patsym = @"[`~!@$%^&\\-\\+*/_=,;.':|\\(\\)\\[\\]\\{\\}]+"; //match symbols
+
+            Match id = Regex.Match(password, patdi);
+            Match upp = Regex.Match(password, patupp);
+            Match low = Regex.Match(password, patlow);
+            Match sym = Regex.Match(password, patsym);
+
+            if(id.Success && upp.Success && low.Success && sym.Success)
             {
                 return "VeryStrong";
             }
-            return "";
+            else
+            {
+                return "";
+            }
+           
         }
     }
 }

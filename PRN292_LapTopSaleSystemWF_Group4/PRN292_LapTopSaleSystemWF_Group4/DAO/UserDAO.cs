@@ -10,7 +10,6 @@ namespace PRN292_LapTopSaleSystemWF_Group4.DAO
 {
     public class UserDAO
     {
-        User user = new User();
         SaleLaptopSystemEntities db = new SaleLaptopSystemEntities();
 
         public User login(String email, String input)

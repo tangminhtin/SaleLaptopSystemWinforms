@@ -132,7 +132,7 @@
             this.labelControl6.Appearance.ForeColor = System.Drawing.Color.BlueViolet;
             this.labelControl6.Appearance.Options.UseFont = true;
             this.labelControl6.Appearance.Options.UseForeColor = true;
-            this.labelControl6.Location = new System.Drawing.Point(136, 12);
+            this.labelControl6.Location = new System.Drawing.Point(163, 12);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(185, 36);
             this.labelControl6.TabIndex = 6;

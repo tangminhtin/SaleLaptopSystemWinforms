@@ -68,6 +68,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\BrandDAO.cs" />
     <Compile Include="DAO\UserDAO.cs" />
     <Compile Include="Model\Brand.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -114,8 +115,19 @@
     <Compile Include="Model\User.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="SaleLaptopSystemDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaleLaptopSystemDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Validate\AuthenticationValidate.cs" />
     <Compile Include="Validate\UserValidate.cs" />
+    <Compile Include="View\frmBrand.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmBrand.Designer.cs">
+      <DependentUpon>frmBrand.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,12 +142,21 @@
     <Compile Include="View\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\frmProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmProduct.Designer.cs">
+      <DependentUpon>frmProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\frmRegis.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\frmRegis.Designer.cs">
       <DependentUpon>frmRegis.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\frmBrand.resx">
+      <DependentUpon>frmBrand.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -152,6 +173,9 @@
     </Compile>
     <EmbeddedResource Include="View\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmProduct.resx">
+      <DependentUpon>frmProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmRegis.resx">
       <DependentUpon>frmRegis.cs</DependentUpon>
@@ -174,6 +198,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="SaleLaptopSystemDataSet.xsc">
+      <DependentUpon>SaleLaptopSystemDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SaleLaptopSystemDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SaleLaptopSystemDataSet.xss">
+      <DependentUpon>SaleLaptopSystemDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\black-desk-laptop-computer-with-color-pink-purple-light-display_37129-941.jpg" />
