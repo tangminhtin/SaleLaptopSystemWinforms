@@ -63,6 +63,16 @@ namespace PRN292_LapTopSaleSystemWF_Group4.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1 {
+            get {
+                object obj = ResourceManager.GetObject("1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap black_desk_laptop_computer_with_color_pink_purple_light_display_37129_941 {
             get {
                 object obj = ResourceManager.GetObject("black-desk-laptop-computer-with-color-pink-purple-light-display_37129-941", resourceCulture);

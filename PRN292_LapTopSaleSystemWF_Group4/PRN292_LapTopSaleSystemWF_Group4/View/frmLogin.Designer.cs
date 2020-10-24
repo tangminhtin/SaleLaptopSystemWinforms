@@ -145,6 +145,7 @@
             this.linkRegis.TabIndex = 7;
             this.linkRegis.TabStop = true;
             this.linkRegis.Text = "Registration";
+            this.linkRegis.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkRegis_LinkClicked);
             // 
             // btnLogin
             // 

@@ -21,5 +21,10 @@ namespace PRN292_LapTopSaleSystemWF_Group4.DAO
             }
             return null;
         }
+
+        public void registration(String email, String password, String fullname, String address, String phone, String role, String image)
+        {
+
+        }
     }
 }
