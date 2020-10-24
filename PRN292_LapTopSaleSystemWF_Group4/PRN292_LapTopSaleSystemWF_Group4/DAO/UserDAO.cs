@@ -13,8 +13,8 @@ namespace PRN292_LapTopSaleSystemWF_Group4.DAO
 
         public User login(String email, String password)
         {
-            PRN292_LapTopSaleSystem_Group4Entities db = new PRN292_LapTopSaleSystem_Group4Entities();
-            var users = db.Users.Where(u => u.email == email && u.password == password);
+            SaleLaptopSystemEntities db = new SaleLaptopSystemEntities();
+            var users = db.Users.Where(u => u.Email == email && u.Password == password);
             foreach (User u in users)
             {
                 return u;

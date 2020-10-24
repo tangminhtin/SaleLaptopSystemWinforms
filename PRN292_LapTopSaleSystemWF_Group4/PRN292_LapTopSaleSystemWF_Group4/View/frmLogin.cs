@@ -24,6 +24,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             this.CenterToScreen();
             UserLookAndFeel.Default.SetDefaultStyle();
             this.user = user;
+            txtPass.UseSystemPasswordChar = true;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -64,11 +65,11 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
         {
             if (cbPass.Checked)
             {
-                txtPass.UseSystemPasswordChar = true;
+                txtPass.UseSystemPasswordChar = false;
             }
             else
             {
-                txtPass.UseSystemPasswordChar = false;
+                txtPass.UseSystemPasswordChar = true;
             }
         }
 

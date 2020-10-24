@@ -12,28 +12,35 @@ namespace PRN292_LapTopSaleSystemWF_Group4.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class User
+    public partial class Product
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public User()
+        public Product()
         {
             this.Comments = new HashSet<Comment>();
-            this.Orders = new HashSet<Order>();
+            this.Images = new HashSet<Image>();
+            this.OrderDetails = new HashSet<OrderDetail>();
         }
     
         public int ID { get; set; }
-        public string Fullname { get; set; }
-        public string Password { get; set; }
-        public string Email { get; set; }
-        public string Phone { get; set; }
-        public string Address { get; set; }
-        public string Image { get; set; }
-        public string Role { get; set; }
+        public string Name { get; set; }
+        public double Price { get; set; }
+        public double Discount { get; set; }
+        public string Description { get; set; }
+        public string Features { get; set; }
         public bool Active { get; set; }
+        public Nullable<int> BrandID { get; set; }
+        public Nullable<int> CategoryID { get; set; }
+        public Nullable<int> ProductDetailID { get; set; }
     
+        public virtual Brand Brand { get; set; }
+        public virtual Category Category { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Comment> Comments { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Order> Orders { get; set; }
+        public virtual ICollection<Image> Images { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
+        public virtual ProductDetail ProductDetail { get; set; }
     }
 }

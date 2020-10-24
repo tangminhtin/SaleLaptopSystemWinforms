@@ -4,8 +4,26 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="fa71fb361c3f4724ab2eb6d4dd8259d7" Name="Diagram1">
-        <EntityTypeShape EntityType="PRN292_LapTopSaleSystem_Group4Model.User" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="f2fdc92313184c759a46ce1e9d2d64aa" Name="Diagram1">
+        <EntityTypeShape EntityType="SaleLaptopSystemModel.C__MigrationHistory" Width="1.5" PointX="7.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleLaptopSystemModel.Brand" Width="1.5" PointX="0.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleLaptopSystemModel.Category" Width="1.5" PointX="0.75" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleLaptopSystemModel.Comment" Width="1.5" PointX="5.25" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleLaptopSystemModel.Image" Width="1.5" PointX="5.25" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleLaptopSystemModel.OrderDetail" Width="1.5" PointX="8.25" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleLaptopSystemModel.Order" Width="1.5" PointX="6" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleLaptopSystemModel.ProductDetail" Width="1.5" PointX="0.75" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleLaptopSystemModel.Product" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleLaptopSystemModel.User" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="SaleLaptopSystemModel.FK_dbo_Products_dbo_Brands_BrandID" ManuallyRouted="false" />
+        <AssociationConnector Association="SaleLaptopSystemModel.FK_dbo_Products_dbo_Categories_CategoryID" ManuallyRouted="false" />
+        <AssociationConnector Association="SaleLaptopSystemModel.FK_dbo_Comments_dbo_Products_ProductID" ManuallyRouted="false" />
+        <AssociationConnector Association="SaleLaptopSystemModel.FK_dbo_Comments_dbo_Users_UserID" ManuallyRouted="false" />
+        <AssociationConnector Association="SaleLaptopSystemModel.FK_dbo_Images_dbo_Products_ProductID" ManuallyRouted="false" />
+        <AssociationConnector Association="SaleLaptopSystemModel.FK_dbo_OrderDetails_dbo_Orders_OrderID" ManuallyRouted="false" />
+        <AssociationConnector Association="SaleLaptopSystemModel.FK_dbo_OrderDetails_dbo_Products_ProductID" ManuallyRouted="false" />
+        <AssociationConnector Association="SaleLaptopSystemModel.FK_dbo_Orders_dbo_Users_UserID" ManuallyRouted="false" />
+        <AssociationConnector Association="SaleLaptopSystemModel.FK_dbo_Products_dbo_ProductDetails_ProductDetailID" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

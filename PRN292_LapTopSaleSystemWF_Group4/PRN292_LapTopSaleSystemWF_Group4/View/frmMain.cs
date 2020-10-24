@@ -26,7 +26,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4
 
         public void setUserInfo()
         {
-            btnInfo.Caption = user.fullname.Trim();
+            btnInfo.Caption = user.Fullname.Trim();
         }
 
         private void btnLogout_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

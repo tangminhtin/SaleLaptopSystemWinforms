@@ -12,28 +12,20 @@ namespace PRN292_LapTopSaleSystemWF_Group4.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class User
+    public partial class Brand
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public User()
+        public Brand()
         {
-            this.Comments = new HashSet<Comment>();
-            this.Orders = new HashSet<Order>();
+            this.Products = new HashSet<Product>();
         }
     
         public int ID { get; set; }
-        public string Fullname { get; set; }
-        public string Password { get; set; }
-        public string Email { get; set; }
-        public string Phone { get; set; }
-        public string Address { get; set; }
+        public string Name { get; set; }
         public string Image { get; set; }
-        public string Role { get; set; }
         public bool Active { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Comment> Comments { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Order> Orders { get; set; }
+        public virtual ICollection<Product> Products { get; set; }
     }
 }
