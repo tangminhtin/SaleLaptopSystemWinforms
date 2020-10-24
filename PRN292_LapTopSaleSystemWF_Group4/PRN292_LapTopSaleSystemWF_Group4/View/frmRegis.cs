@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using PRN292_LapTopSaleSystemWF_Group4.Validate;
+using System.Security.Cryptography;
+using PRN292_LapTopSaleSystemWF_Group4.Model;
+using PRN292_LapTopSaleSystemWF_Group4.DAO;
 
 namespace PRN292_LapTopSaleSystemWF_Group4.View
 {
@@ -33,6 +36,9 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             AuthenticationValidate validate = new AuthenticationValidate();
+            SaleLaptopSystemEntities db = new SaleLaptopSystemEntities();
+            UserDAO uDAO = new UserDAO();
+
             String fullname = txtFullname.Text.Trim();
             String email = txtEmail.Text.Trim();
             String password = txtPass.Text.Trim();
@@ -41,7 +47,6 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             String address = txtAddress.Text.Trim();
             String img = txtImage.Text.Trim();
             int role = cbbRole.SelectedIndex;
-            String roleS = "";
 
             if (fullname == "" || email == "" || password == "" || confirm == "" || phone == "" || address == "" || img == "")
             {
@@ -69,6 +74,21 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
                     MessageBox.Show("Password not pair", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+
+                
+
+                if (!uDAO.registration(fullname,password,email,phone,address,img,role+1))
+                {
+                    MessageBox.Show("Registration error", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else
+                {
+                    frmLogin frmLogin = new frmLogin(null);
+                    frmLogin.Show();
+                    this.Visible = false;
+                }
+                
                 //role 0 : admin
             }
 
