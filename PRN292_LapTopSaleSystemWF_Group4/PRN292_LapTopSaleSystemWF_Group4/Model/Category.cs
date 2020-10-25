@@ -15,9 +15,10 @@ namespace PRN292_LapTopSaleSystemWF_Group4.Model
     public partial class Category
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Category()
+        public Category(string name, bool active)
         {
             this.Products = new HashSet<Product>();
+
         }
     
         public int ID { get; set; }

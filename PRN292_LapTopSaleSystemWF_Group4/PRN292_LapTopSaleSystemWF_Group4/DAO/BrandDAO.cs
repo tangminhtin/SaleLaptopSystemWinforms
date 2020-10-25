@@ -1,9 +1,6 @@
 ﻿using PRN292_LapTopSaleSystemWF_Group4.Model;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PRN292_LapTopSaleSystemWF_Group4.DAO
 {
@@ -15,18 +12,12 @@ namespace PRN292_LapTopSaleSystemWF_Group4.DAO
         {
             try
             {
-                Brand brand = new Brand
-                {
-                    Name = name,
-                    Image = image,
-                    Active = active
-                };
-
+                Brand brand = new Brand(name,image,active);
                 db.Brands.Add(brand);
                 db.SaveChanges();
                 return true;
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 return false;
             }
@@ -36,30 +27,33 @@ namespace PRN292_LapTopSaleSystemWF_Group4.DAO
         {
             try
             {
-                /*Brand brand = new Brand
-                {
-                    Name = name,
-                    Image = image,
-                    Active = true
-                };*/
+                Brand brand = db.Brands.FirstOrDefault(a => a.ID == id);
 
-                var brands = db.Brands.Where(a => a.ID == id);
-
-                foreach(var brand in brands)
-                {
-                    brand.Name = name;
-                    brand.Image = image;
-                    brand.Active = active;
-
-                    db.Brands.Add(brand);
-                    db.SaveChanges();
-                }  
+                brand = new Brand(name, image, active);
+                db.Brands.Add(brand);
+                db.SaveChanges();
                 return true;
             }
             catch (Exception e)
             {
                 return false;
             }
+        }
+        public Boolean Delete(int id)
+        {
+            bool check = false;
+            var brands = db.Brands.Where(a => a.ID == id);
+            foreach (var brand in brands)
+            {
+                if (brand.ID==id)
+                {
+                    db.Brands.Remove(brand);
+                    check = true;
+                }
+            }
+            db.SaveChanges();
+
+            return check;
         }
     }
 }

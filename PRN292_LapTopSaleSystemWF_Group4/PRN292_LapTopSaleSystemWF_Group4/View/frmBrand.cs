@@ -25,49 +25,67 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
         {
             InitializeComponent();
             this.CenterToScreen();
+            brandsBindingSource1.DataSource = db.Brands.ToList();
         }
-
-        private void frmBrand_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'saleLaptopSystemDataSet.Brands' table. You can move, or remove it, as needed.
-            this.brandsTableAdapter.Fill(this.saleLaptopSystemDataSet.Brands);
-            brandsBindingSource.DataSource = db.Brands.ToList();
-        }
-
         private void btnAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            brandsBindingSource1.AddNew();
             isAdd = true;
-            brandsBindingSource.AddNew();
-            txtName.Focus();
         }
 
-        private void btnSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void btnDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Boolean active = false;
-            if (cbActive.Checked)
+            if (XtraMessageBox.Show("Do you want to delete", "Infor", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                active = true;
+                int id = Convert.ToInt32(txtId.Text.Trim());
+                if (brandDAO.Delete(id))
+                {
+                    XtraMessageBox.Show(" delete clmm");
+                    brandsBindingSource1.DataSource = db.Brands.ToList();
+                }
+                else
+                {
+                    XtraMessageBox.Show("Can not delete");
+                }
             }
-            else
-            {
-                active = false;
-            }
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
             if (isAdd)
             {
-                brandDAO.addBrand(txtName.Text.Trim(), txtImage.Text.Trim(), active);
+                String name = txtName.Text.Trim();
+                String image = txtImage.Text.Trim();
+                int activeint = ckCheck.Checked ? 1 : 0;
+                Boolean active = activeint == 1 ? true : false;
+                if (brandDAO.addBrand(name, image, active))
+                {
+                    brandsBindingSource1.DataSource = db.Brands.ToList();
+                }
+                else
+                {
+                    MessageBox.Show("loi");
+                }
                 isAdd = false;
             }
-            if (isUpdate)
+            
+            else
             {
-                int id = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "ID").ToString());
-                brandDAO.update(id, txtName.Text.Trim(), txtImage.Text.Trim(), active);
+                int id = Convert.ToInt32(txtId.Text.Trim());
+                String name = txtName.Text.Trim();
+                String image = txtImage.Text.Trim();
+                int activeint = ckCheck.Checked ? 1 : 0;
+                Boolean active = activeint == 1 ? true : false;
+                if (brandDAO.update(id, name, image, active))
+                {
+                    brandsBindingSource1.DataSource = db.Brands.ToList();
+                }
+                else
+                {
+                    MessageBox.Show("loi");
+                }
+                isUpdate = false;
             }
-
-        }
-
-        private void btnUpdate_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            isUpdate = true;
         }
     }
 }

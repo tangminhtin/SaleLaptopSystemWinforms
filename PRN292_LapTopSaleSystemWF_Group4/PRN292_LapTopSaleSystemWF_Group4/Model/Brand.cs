@@ -27,5 +27,12 @@ namespace PRN292_LapTopSaleSystemWF_Group4.Model
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Product> Products { get; set; }
+
+        public Brand(string name, string image, bool active)
+        {
+            Name = name;
+            Image = image;
+            Active = active;
+        }
     }
 }
