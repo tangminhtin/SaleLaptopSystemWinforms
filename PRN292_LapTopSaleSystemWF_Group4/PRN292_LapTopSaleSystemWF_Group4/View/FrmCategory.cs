@@ -19,7 +19,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
         SaleLaptopSystemEntities db = new SaleLaptopSystemEntities();
         bool isAdd = false;
         bool isDelete = false;
-        bool isUpdate = true;
+        bool isUpdate = false;
         public frmCategory()
         {
             InitializeComponent();
@@ -29,7 +29,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
         private void btnAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             categoriesBindingSource1.AddNew();
-            isAdd = false;
+            isAdd = true;
         }
 
         private void btnDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -39,7 +39,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
                 int id = Convert.ToInt32(txtId.Text.Trim());
                 if (categoryDao.delete(id))
                 {
-                    XtraMessageBox.Show(" delete clmm");
+                    XtraMessageBox.Show("Delete Success");
                     categoriesBindingSource1.DataSource = db.Categories.ToList();
                 }
                 else
