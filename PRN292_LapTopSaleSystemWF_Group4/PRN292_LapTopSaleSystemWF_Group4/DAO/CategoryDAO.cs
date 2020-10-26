@@ -11,7 +11,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4.DAO
         SaleLaptopSystemEntities db = new SaleLaptopSystemEntities();
 
         
-        public Boolean addCategory(string name, bool active)
+        public Boolean addCategory(string name, Boolean active)
         {
             try
             {
