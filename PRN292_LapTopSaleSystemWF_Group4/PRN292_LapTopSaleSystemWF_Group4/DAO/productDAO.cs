@@ -12,9 +12,9 @@ namespace PRN292_LapTopSaleSystemWF_Group4.DAO
     {
         SaleLaptopSystemEntities db = new SaleLaptopSystemEntities();
 
-        public List<Brand> loadBrand()
+        /*public List<Brand> loadBrand()
         {
             
-        }
+        }*/
     }
 }

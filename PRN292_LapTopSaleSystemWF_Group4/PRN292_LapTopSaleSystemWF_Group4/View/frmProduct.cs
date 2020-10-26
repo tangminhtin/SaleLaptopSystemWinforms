@@ -50,10 +50,10 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
 
         public void load()
         {
-            using(var brands = new frmProductDetail())
+            /*using(var brands = new frmProductDetail())
             {
                 var brand = 
-            }
+            }*/
         }
     }
 }
