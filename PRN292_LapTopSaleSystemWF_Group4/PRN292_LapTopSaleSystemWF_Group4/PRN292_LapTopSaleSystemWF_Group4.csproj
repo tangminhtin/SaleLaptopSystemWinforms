@@ -159,6 +159,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SaleLaptopSystemDataSet4.xsd</DependentUpon>
     </Compile>
+    <Compile Include="SaleLaptopSystemDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaleLaptopSystemDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SaleLaptopSystemDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaleLaptopSystemDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SaleLaptopSystemDataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaleLaptopSystemDataSet7.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Validate\AuthenticationValidate.cs" />
     <Compile Include="Validate\UserValidate.cs" />
     <Compile Include="View\frmBrand.cs">
@@ -167,11 +182,11 @@
     <Compile Include="View\frmBrand.Designer.cs">
       <DependentUpon>frmBrand.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FrmCategory.cs">
+    <Compile Include="View\frmCategory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FrmCategory.Designer.cs">
-      <DependentUpon>FrmCategory.cs</DependentUpon>
+    <Compile Include="View\frmCategory.Designer.cs">
+      <DependentUpon>frmCategory.cs</DependentUpon>
     </Compile>
     <Compile Include="View\frmMain.cs">
       <SubType>Form</SubType>
@@ -202,8 +217,8 @@
     <EmbeddedResource Include="View\frmBrand.resx">
       <DependentUpon>frmBrand.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\FrmCategory.resx">
-      <DependentUpon>FrmCategory.cs</DependentUpon>
+    <EmbeddedResource Include="View\frmCategory.resx">
+      <DependentUpon>frmCategory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
@@ -300,6 +315,39 @@
     </None>
     <None Include="SaleLaptopSystemDataSet4.xss">
       <DependentUpon>SaleLaptopSystemDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet5.xsc">
+      <DependentUpon>SaleLaptopSystemDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SaleLaptopSystemDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SaleLaptopSystemDataSet5.xss">
+      <DependentUpon>SaleLaptopSystemDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet6.xsc">
+      <DependentUpon>SaleLaptopSystemDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SaleLaptopSystemDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SaleLaptopSystemDataSet6.xss">
+      <DependentUpon>SaleLaptopSystemDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet7.xsc">
+      <DependentUpon>SaleLaptopSystemDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="SaleLaptopSystemDataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SaleLaptopSystemDataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SaleLaptopSystemDataSet7.xss">
+      <DependentUpon>SaleLaptopSystemDataSet7.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
