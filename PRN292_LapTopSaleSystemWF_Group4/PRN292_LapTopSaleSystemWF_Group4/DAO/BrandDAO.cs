@@ -28,9 +28,9 @@ namespace PRN292_LapTopSaleSystemWF_Group4.DAO
             try
             {
                 Brand brand = db.Brands.FirstOrDefault(a => a.ID == id);
-
-                brand = new Brand(name, image, active);
-                db.Brands.Add(brand);
+                brand.Name = name;
+                brand.Image = image;
+                brand.Active = active;
                 db.SaveChanges();
                 return true;
             }

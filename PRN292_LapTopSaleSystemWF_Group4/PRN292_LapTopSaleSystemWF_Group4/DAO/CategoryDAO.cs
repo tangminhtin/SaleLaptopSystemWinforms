@@ -28,15 +28,10 @@ namespace PRN292_LapTopSaleSystemWF_Group4.DAO
         {
             try
             {
-                var categorys = db.Categories.Where(a => a.ID == id);
-
-                foreach (var category in categorys)
-                {
-                    category.Name = name;
-                    category.Active = active;
-                    db.Categories.Add(category);
-                    db.SaveChanges();
-                }
+                var categorys = db.Categories.First(a => a.ID == id);
+                categorys.Name = name;
+                categorys.Active = active;
+                db.SaveChanges();              
                 return true;
             }
             catch (Exception e)

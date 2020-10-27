@@ -51,32 +51,41 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             String keyboard = txtKeyboard.Text.Trim();
             String battery = txtBettery.Text.Trim();
             int id = Convert.ToInt32(txtID.Text.Trim());
-
-            if(processor == "" || RAM == "" || screen =="" || storage == "" || graphic == "" || video == "" || keyboard == "" || battery == "")
-            {
-                MessageBox.Show("Please full the fill");
-            }
-            else
-            {
                 if (isAdd)
                 {
-                    if(pdDAO.add(processor, RAM, screen, storage, graphic, size, os, video, connection, keyboard, battery))
+                    if (processor == "" || RAM == "" || screen == "" || storage == "" || graphic == "" || video == "" || keyboard == "" || battery == "")
                     {
-                        XtraMessageBox.Show("Add successful");
-                        isAdd = false;
+                        MessageBox.Show("Please full the fill");
                     }
                     else
                     {
-                        XtraMessageBox.Show("Add fail");
-                    }               
+                        if (pdDAO.add(processor, RAM, screen, storage, graphic, size, os, video, connection, keyboard, battery))
+                        {
+                            XtraMessageBox.Show("Add successful");
+                            isAdd = false;
+                        }
+                        else
+                        {
+                            XtraMessageBox.Show("Add fail");
+                        }
+                    }
+
                 }
                 else
                 {
-                    pdDAO.update(id, processor, RAM, screen, storage, graphic, size, os, video, connection, keyboard, battery);
+                if (pdDAO.update(id, processor, RAM, screen, storage, graphic, size, os, video, connection, keyboard, battery))
+                {
+                    XtraMessageBox.Show("Update successful");
                     productDetailsBindingSource.DataSource = db.ProductDetails.ToList();
+                }
+                else
+                {
+                    XtraMessageBox.Show("update fail");
                 }
             }
             
+            
+
         }
 
         private void btnDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -92,7 +101,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
                 else
                 {
                     XtraMessageBox.Show("Delete fail");
-                } 
+                }
             }
         }
 

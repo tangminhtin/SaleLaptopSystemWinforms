@@ -52,6 +52,7 @@
             this.lblStatus = new DevExpress.XtraEditors.LabelControl();
             this.lblConf = new DevExpress.XtraEditors.LabelControl();
             this.lblEmailCheck = new DevExpress.XtraEditors.LabelControl();
+            this.lblPhonecheck = new DevExpress.XtraEditors.LabelControl();
             this.SuspendLayout();
             // 
             // lblName
@@ -290,6 +291,15 @@
             this.lblEmailCheck.TabIndex = 25;
             this.lblEmailCheck.Text = "labelControl8";
             // 
+            // lblPhonecheck
+            // 
+            this.lblPhonecheck.Location = new System.Drawing.Point(425, 288);
+            this.lblPhonecheck.Name = "lblPhonecheck";
+            this.lblPhonecheck.Size = new System.Drawing.Size(75, 16);
+            this.lblPhonecheck.TabIndex = 26;
+            this.lblPhonecheck.Text = "labelControl8";
+            this.lblPhonecheck.TextChanged += new System.EventHandler(this.lblPhonecheck_TextChanged);
+            // 
             // frmRegis
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -299,6 +309,7 @@
             this.BackgroundImageLayoutStore = System.Windows.Forms.ImageLayout.Stretch;
             this.BackgroundImageStore = global::PRN292_LapTopSaleSystemWF_Group4.Properties.Resources._1;
             this.ClientSize = new System.Drawing.Size(495, 451);
+            this.Controls.Add(this.lblPhonecheck);
             this.Controls.Add(this.lblEmailCheck);
             this.Controls.Add(this.lblConf);
             this.Controls.Add(this.lblStatus);
@@ -354,5 +365,6 @@
         private DevExpress.XtraEditors.LabelControl lblStatus;
         private DevExpress.XtraEditors.LabelControl lblConf;
         private DevExpress.XtraEditors.LabelControl lblEmailCheck;
+        private DevExpress.XtraEditors.LabelControl lblPhonecheck;
     }
 }

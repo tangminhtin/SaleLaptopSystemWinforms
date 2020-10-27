@@ -61,6 +61,12 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
                     return;
                 }
 
+                if (!validate.checkPhone(phone))
+                {
+                    MessageBox.Show("Incorrect phone format", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
 
                 if (password.Length <= 8)
                 {
@@ -133,6 +139,21 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             else
             {
                 this.lblEmailCheck.Text = "";
+            }
+        }
+
+        private void lblPhonecheck_TextChanged(object sender, EventArgs e)
+        {
+            AuthenticationValidate validate = new AuthenticationValidate();
+            String phone = txtPhone.Text.Trim();
+            if (!validate.checkPhone(phone))
+            {
+                this.lblPhonecheck.ForeColor = Color.Red;
+                this.lblPhonecheck.Text = "ERROR";
+            }
+            else
+            {
+                this.lblPhonecheck.Text = "";
             }
         }
     }

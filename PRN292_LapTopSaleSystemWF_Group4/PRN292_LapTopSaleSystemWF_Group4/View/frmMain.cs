@@ -35,5 +35,26 @@ namespace PRN292_LapTopSaleSystemWF_Group4
             frmLogin.Show();
             this.Visible = false;
         }
+
+        private void btnProduct_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmProduct frmProduct = new frmProduct();
+            frmProduct.MdiParent = this;
+            frmProduct.Show();
+        }
+
+        private void btnBrand_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmBrand frBrand = new frmBrand();
+            frBrand.MdiParent = this;
+            frBrand.Show();
+        }
+
+        private void btnCate_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmCategory frmCategory = new frmCategory();
+            frmCategory.MdiParent = this;
+            frmCategory.Show();
+        }
     }
 }

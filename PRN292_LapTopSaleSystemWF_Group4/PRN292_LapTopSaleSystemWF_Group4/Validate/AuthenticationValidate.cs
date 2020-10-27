@@ -22,6 +22,18 @@ namespace PRN292_LapTopSaleSystemWF_Group4.Validate
             }
         }
 
+        public Boolean checkPhone(String input)
+        {
+            try
+            {
+                String phonematch = @"^(\d{3})[ -]?(\d{3})[ -]?(\d{4}) x(\d*)";
+                return Regex.Match(input, phonematch).Success;
+            }catch(Exception e)
+            {
+                return false;
+            }
+        }
+
         public String checkPassword(String password)
         {
             /*int score = 0;

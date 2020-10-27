@@ -35,9 +35,9 @@
             this.skinRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
             this.barSSInfo = new DevExpress.XtraBars.BarStaticItem();
             this.btnInfo = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnProduct = new DevExpress.XtraBars.BarButtonItem();
+            this.btnBrand = new DevExpress.XtraBars.BarButtonItem();
+            this.btnCate = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
@@ -58,9 +58,9 @@
             this.skinRibbonGalleryBarItem1,
             this.barSSInfo,
             this.btnInfo,
-            this.barButtonItem2,
-            this.barButtonItem3,
-            this.barButtonItem4,
+            this.btnProduct,
+            this.btnBrand,
+            this.btnCate,
             this.barButtonItem5,
             this.barButtonItem6,
             this.barButtonItem7});
@@ -71,7 +71,7 @@
             this.ribbonControl1.OptionsMenuMinWidth = 385;
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbonControl1.Size = new System.Drawing.Size(1429, 193);
+            this.ribbonControl1.Size = new System.Drawing.Size(1357, 193);
             // 
             // barButtonItem1
             // 
@@ -108,29 +108,32 @@
             this.btnInfo.Id = 5;
             this.btnInfo.Name = "btnInfo";
             // 
-            // barButtonItem2
+            // btnProduct
             // 
-            this.barButtonItem2.Caption = "Product";
-            this.barButtonItem2.Id = 6;
-            this.barButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
-            this.barButtonItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
-            this.barButtonItem2.Name = "barButtonItem2";
+            this.btnProduct.Caption = "Product";
+            this.btnProduct.Id = 6;
+            this.btnProduct.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnProduct.ImageOptions.Image")));
+            this.btnProduct.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnProduct.ImageOptions.LargeImage")));
+            this.btnProduct.Name = "btnProduct";
+            this.btnProduct.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnProduct_ItemClick);
             // 
-            // barButtonItem3
+            // btnBrand
             // 
-            this.barButtonItem3.Caption = "Brand";
-            this.barButtonItem3.Id = 7;
-            this.barButtonItem3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
-            this.barButtonItem3.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
-            this.barButtonItem3.Name = "barButtonItem3";
+            this.btnBrand.Caption = "Brand";
+            this.btnBrand.Id = 7;
+            this.btnBrand.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBrand.ImageOptions.Image")));
+            this.btnBrand.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnBrand.ImageOptions.LargeImage")));
+            this.btnBrand.Name = "btnBrand";
+            this.btnBrand.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBrand_ItemClick);
             // 
-            // barButtonItem4
+            // btnCate
             // 
-            this.barButtonItem4.Caption = "Category";
-            this.barButtonItem4.Id = 8;
-            this.barButtonItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
-            this.barButtonItem4.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
-            this.barButtonItem4.Name = "barButtonItem4";
+            this.btnCate.Caption = "Category";
+            this.btnCate.Id = 8;
+            this.btnCate.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCate.ImageOptions.Image")));
+            this.btnCate.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnCate.ImageOptions.LargeImage")));
+            this.btnCate.Name = "btnCate";
+            this.btnCate.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCate_ItemClick);
             // 
             // barButtonItem5
             // 
@@ -169,25 +172,25 @@
             // 
             // ribbonPageGroup2
             // 
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem2);
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem3);
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem4);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnProduct);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnBrand);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnCate);
             this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem5);
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem6);
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem7);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
-            this.ribbonPageGroup2.Text = "ribbonPageGroup2";
+            this.ribbonPageGroup2.Text = "Management System";
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1429, 813);
+            this.ClientSize = new System.Drawing.Size(1357, 576);
             this.Controls.Add(this.ribbonControl1);
+            this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmMain";
             this.Ribbon = this.ribbonControl1;
             this.Text = "Laptop sale system";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -204,9 +207,9 @@
         private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem1;
         private DevExpress.XtraBars.BarStaticItem barSSInfo;
         private DevExpress.XtraBars.BarButtonItem btnInfo;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraBars.BarButtonItem btnProduct;
+        private DevExpress.XtraBars.BarButtonItem btnBrand;
+        private DevExpress.XtraBars.BarButtonItem btnCate;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
         private DevExpress.XtraBars.BarButtonItem barButtonItem7;

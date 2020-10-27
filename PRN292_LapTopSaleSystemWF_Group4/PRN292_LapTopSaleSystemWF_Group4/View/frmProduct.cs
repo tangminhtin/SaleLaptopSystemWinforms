@@ -16,6 +16,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
         public frmProduct()
         {
             InitializeComponent();
+            this.CenterToScreen();
         }
 
         private void frmProduct_Load(object sender, EventArgs e)

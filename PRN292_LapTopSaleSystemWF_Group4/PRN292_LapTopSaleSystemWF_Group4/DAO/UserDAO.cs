@@ -15,7 +15,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4.DAO
         public User login(String email, String input)
         {
             String password = MD5Hash(input);
-            var users = db.Users.Where(u => u.Email == email && u.Password == password);
+            var users = db.Users.Where(u => u.Email == email && u.Password == password && u.Role == "1");
             foreach (User u in users)
             {
                 return u;
