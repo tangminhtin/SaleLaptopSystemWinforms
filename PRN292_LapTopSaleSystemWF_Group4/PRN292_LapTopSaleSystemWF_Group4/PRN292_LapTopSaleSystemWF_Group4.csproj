@@ -89,6 +89,7 @@
     <Compile Include="DAO\BrandDAO.cs" />
     <Compile Include="DAO\CategoryDAO.cs" />
     <Compile Include="DAO\productDAO.cs" />
+    <Compile Include="DAO\ProductDetailDAO.cs" />
     <Compile Include="DAO\UserDAO.cs" />
     <Compile Include="Model\Brand.cs">
       <DependentUpon>Model1.tt</DependentUpon>

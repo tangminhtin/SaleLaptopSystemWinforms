@@ -1,4 +1,5 @@
-﻿using PRN292_LapTopSaleSystemWF_Group4.Model;
+﻿using DevExpress.Data.ODataLinq.Helpers;
+using PRN292_LapTopSaleSystemWF_Group4.Model;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,9 +13,5 @@ namespace PRN292_LapTopSaleSystemWF_Group4.DAO
     {
         SaleLaptopSystemEntities db = new SaleLaptopSystemEntities();
 
-        /*public List<Brand> loadBrand()
-        {
-            
-        }*/
     }
 }

@@ -53,6 +53,7 @@
             this.txtID = new DevExpress.XtraEditors.TextEdit();
             this.txtGraphic = new DevExpress.XtraEditors.TextEdit();
             this.txtRAM = new DevExpress.XtraEditors.TextEdit();
+            this.txtStorage = new DevExpress.XtraEditors.TextEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
@@ -83,7 +84,6 @@
             this.productDetailsTableAdapter = new PRN292_LapTopSaleSystemWF_Group4.SaleLaptopSystemDataSet9TableAdapters.ProductDetailsTableAdapter();
             this.numericChartRangeControlClient1 = new DevExpress.XtraEditors.NumericChartRangeControlClient();
             this.numericChartRangeControlClient2 = new DevExpress.XtraEditors.NumericChartRangeControlClient();
-            this.txtStorage = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -100,6 +100,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGraphic.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRAM.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtStorage.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
@@ -117,7 +118,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericChartRangeControlClient1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericChartRangeControlClient2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtStorage.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -158,6 +158,7 @@
             this.btnAdd.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnAdd.ImageOptions.LargeImage")));
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnAdd.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAdd_ItemClick);
             // 
             // btnDelete
             // 
@@ -167,6 +168,7 @@
             this.btnDelete.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDelete.ImageOptions.LargeImage")));
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnDelete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDelete_ItemClick);
             // 
             // btnSave
             // 
@@ -176,6 +178,7 @@
             this.btnSave.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.LargeImage")));
             this.btnSave.Name = "btnSave";
             this.btnSave.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnSave.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSave_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -352,6 +355,17 @@
             this.txtRAM.Size = new System.Drawing.Size(318, 22);
             this.txtRAM.StyleController = this.layoutControl1;
             this.txtRAM.TabIndex = 6;
+            // 
+            // txtStorage
+            // 
+            this.txtStorage.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.productDetailsBindingSource, "Storage", true));
+            this.txtStorage.EditValue = "";
+            this.txtStorage.Location = new System.Drawing.Point(78, 116);
+            this.txtStorage.MenuManager = this.barManager1;
+            this.txtStorage.Name = "txtStorage";
+            this.txtStorage.Size = new System.Drawing.Size(318, 22);
+            this.txtStorage.StyleController = this.layoutControl1;
+            this.txtStorage.TabIndex = 17;
             // 
             // Root
             // 
@@ -631,17 +645,6 @@
             // 
             this.productDetailsTableAdapter.ClearBeforeFill = true;
             // 
-            // txtStorage
-            // 
-            this.txtStorage.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.productDetailsBindingSource, "Storage", true));
-            this.txtStorage.EditValue = "";
-            this.txtStorage.Location = new System.Drawing.Point(78, 116);
-            this.txtStorage.MenuManager = this.barManager1;
-            this.txtStorage.Name = "txtStorage";
-            this.txtStorage.Size = new System.Drawing.Size(318, 22);
-            this.txtStorage.StyleController = this.layoutControl1;
-            this.txtStorage.TabIndex = 17;
-            // 
             // frmProductDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -672,6 +675,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtID.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGraphic.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRAM.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtStorage.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
@@ -689,7 +693,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericChartRangeControlClient1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericChartRangeControlClient2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtStorage.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

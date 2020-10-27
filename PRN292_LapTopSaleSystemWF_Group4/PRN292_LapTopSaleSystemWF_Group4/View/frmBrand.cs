@@ -40,7 +40,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
                 int id = Convert.ToInt32(txtId.Text.Trim());
                 if (brandDAO.Delete(id))
                 {
-                    XtraMessageBox.Show(" delete clmm");
+                    XtraMessageBox.Show("Delete successful");
                     brandsBindingSource1.DataSource = db.Brands.ToList();
                 }
                 else
