@@ -53,7 +53,6 @@ namespace PRN292_LapTopSaleSystemWF_Group4
         private void btnCate_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmCategory frmCategory = new frmCategory();
-            frmCategory.MdiParent = this;
             frmCategory.Show();
         }
     }

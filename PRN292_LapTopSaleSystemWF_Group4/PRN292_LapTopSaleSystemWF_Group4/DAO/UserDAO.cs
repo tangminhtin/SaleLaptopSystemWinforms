@@ -48,7 +48,43 @@ namespace PRN292_LapTopSaleSystemWF_Group4.DAO
             }
             
         }
-
+        public Boolean update(int id, string fullname, string password, string email, string phone, string address, string image, string role, bool active)
+        {
+            try
+            {
+                var users = db.Users.First(a => a.ID == id);
+                users.Fullname = fullname;
+                users.Password = password;
+                users.Email = email;
+                users.Phone = phone;
+                users.Address = address;
+                users.Image = image;
+                users.Role = role;
+                users.Active = active;
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+        // delte user 
+        public Boolean delete(int id)
+        {
+            bool check = false;
+            var users = db.Users.Where(a => a.ID == id);
+            foreach (var user in users)
+            {
+                if (user.ID == id)
+                {
+                    db.Users.Remove(user);
+                    check = true;
+                }
+            }
+            db.SaveChanges();
+            return check;
+        }
         public String MD5Hash(String input)
         {
             MD5 md5 = new MD5CryptoServiceProvider();

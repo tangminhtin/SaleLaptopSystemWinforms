@@ -192,6 +192,7 @@
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(206, 23);
             this.txtPhone.TabIndex = 14;
+            this.txtPhone.TextChanged += new System.EventHandler(this.txtPhone_TextChanged);
             // 
             // txtAddress
             // 
@@ -298,7 +299,6 @@
             this.lblPhonecheck.Size = new System.Drawing.Size(75, 16);
             this.lblPhonecheck.TabIndex = 26;
             this.lblPhonecheck.Text = "labelControl8";
-            this.lblPhonecheck.TextChanged += new System.EventHandler(this.lblPhonecheck_TextChanged);
             // 
             // frmRegis
             // 

@@ -61,11 +61,11 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
                     return;
                 }
 
-                if (!validate.checkPhone(phone))
+                /*if (!validate.checkPhone(phone))
                 {
                     MessageBox.Show("Incorrect phone format", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
-                }
+                }*/
 
 
                 if (password.Length <= 8)
@@ -142,7 +142,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             }
         }
 
-        private void lblPhonecheck_TextChanged(object sender, EventArgs e)
+        private void txtPhone_TextChanged(object sender, EventArgs e)
         {
             AuthenticationValidate validate = new AuthenticationValidate();
             String phone = txtPhone.Text.Trim();
