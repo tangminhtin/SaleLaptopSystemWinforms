@@ -84,6 +84,8 @@
             this.productDetailsTableAdapter = new PRN292_LapTopSaleSystemWF_Group4.SaleLaptopSystemDataSet9TableAdapters.ProductDetailsTableAdapter();
             this.numericChartRangeControlClient1 = new DevExpress.XtraEditors.NumericChartRangeControlClient();
             this.numericChartRangeControlClient2 = new DevExpress.XtraEditors.NumericChartRangeControlClient();
+            this.btnBack = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -118,6 +120,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericChartRangeControlClient1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericChartRangeControlClient2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -214,6 +217,7 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.btnBack);
             this.layoutControl1.Controls.Add(this.txtBettery);
             this.layoutControl1.Controls.Add(this.txtKeyboard);
             this.layoutControl1.Controls.Add(this.txtConnection);
@@ -384,7 +388,8 @@
             this.layoutControlItem10,
             this.layoutControlItem11,
             this.layoutControlItem12,
-            this.layoutControlItem5});
+            this.layoutControlItem5,
+            this.layoutControlItem13});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(408, 500);
             this.Root.TextVisible = false;
@@ -401,9 +406,9 @@
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 312);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 352);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(388, 168);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(388, 128);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem2
@@ -645,6 +650,26 @@
             // 
             this.productDetailsTableAdapter.ClearBeforeFill = true;
             // 
+            // btnBack
+            // 
+            this.btnBack.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnBack.Location = new System.Drawing.Point(12, 324);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(384, 36);
+            this.btnBack.StyleController = this.layoutControl1;
+            this.btnBack.TabIndex = 18;
+            this.btnBack.Text = "Back";
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // layoutControlItem13
+            // 
+            this.layoutControlItem13.Control = this.btnBack;
+            this.layoutControlItem13.Location = new System.Drawing.Point(0, 312);
+            this.layoutControlItem13.Name = "layoutControlItem13";
+            this.layoutControlItem13.Size = new System.Drawing.Size(388, 40);
+            this.layoutControlItem13.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem13.TextVisible = false;
+            // 
             // frmProductDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -693,6 +718,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericChartRangeControlClient1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericChartRangeControlClient2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -754,5 +780,7 @@
         private DevExpress.XtraBars.BarButtonItem btnDelete;
         private DevExpress.XtraBars.BarButtonItem btnSave;
         private DevExpress.XtraEditors.TextEdit txtStorage;
+        private DevExpress.XtraEditors.SimpleButton btnBack;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem13;
     }
 }
