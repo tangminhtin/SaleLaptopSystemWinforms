@@ -18,9 +18,9 @@ namespace PRN292_LapTopSaleSystemWF_Group4
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new frmLogin(null));
+            Application.Run(new frmLogin(null));
             // Application.Run(new frmCategory());
-            Application.Run(new frmUser());
+            //Application.Run(new frmUser());
         }
     }
 }

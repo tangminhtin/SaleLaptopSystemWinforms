@@ -48,17 +48,12 @@ namespace PRN292_LapTopSaleSystemWF_Group4.DAO
             }
             
         }
-        public Boolean update(int id, string fullname, string password, string email, string phone, string address, string image, string role, bool active)
+        public Boolean update(int id, string address, string role, Boolean active)
         {
             try
             {
                 var users = db.Users.First(a => a.ID == id);
-                users.Fullname = fullname;
-                users.Password = password;
-                users.Email = email;
-                users.Phone = phone;
                 users.Address = address;
-                users.Image = image;
                 users.Role = role;
                 users.Active = active;
                 db.SaveChanges();

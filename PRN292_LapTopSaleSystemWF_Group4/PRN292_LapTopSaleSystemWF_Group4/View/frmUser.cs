@@ -20,20 +20,14 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
         public frmUser()
         {
             InitializeComponent();
+            this.CenterToScreen();
         }
 
         private void frmUser_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'saleLaptopSystemDataSet10.Users' table. You can move, or remove it, as needed.
             this.usersTableAdapter.Fill(this.saleLaptopSystemDataSet10.Users);
-
-        }
-
-        private void btnAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            frmRegis frmR = new frmRegis();
-            //frmR.MdiParent = this;
-            frmR.Show();
+            usersBindingSource.DataSource = db.Users.ToList();
         }
 
         private void btnDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -51,6 +45,16 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
                     XtraMessageBox.Show("Can not delete");
                 }
             }
+        }
+
+        private void btnSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            int id = Convert.ToInt32(txtId.Text.Trim());
+            String address = txtAddress.Text.Trim();
+            String role = (cbbRole.SelectedIndex+1).ToString();
+            Boolean active = ckCheck.Checked ? true : false;
+
+            userDao.update(id, address, role, active);
         }
     }
 }

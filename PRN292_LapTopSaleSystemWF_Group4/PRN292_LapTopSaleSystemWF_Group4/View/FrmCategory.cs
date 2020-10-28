@@ -18,8 +18,6 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
         CategoryDAO categoryDao = new CategoryDAO();
         SaleLaptopSystemEntities db = new SaleLaptopSystemEntities();
         bool isAdd = false;
-        bool isDelete = false;
-        bool isUpdate = false;
         public frmCategory()
         {
             InitializeComponent();
@@ -82,7 +80,6 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
                 {
                     MessageBox.Show("loi");
                 }
-                isUpdate = false;
             }
 
         }
