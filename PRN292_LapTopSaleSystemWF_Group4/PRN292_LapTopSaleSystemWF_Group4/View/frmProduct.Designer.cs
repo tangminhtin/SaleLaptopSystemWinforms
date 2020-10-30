@@ -181,7 +181,7 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1172, 30);
+            this.barDockControlTop.Size = new System.Drawing.Size(1290, 30);
             // 
             // barDockControlBottom
             // 
@@ -189,7 +189,7 @@
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 486);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1172, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1290, 0);
             // 
             // barDockControlLeft
             // 
@@ -203,7 +203,7 @@
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1172, 30);
+            this.barDockControlRight.Location = new System.Drawing.Point(1290, 30);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 456);
             // 
@@ -235,7 +235,7 @@
             this.layoutControl1.Controls.Add(this.txtPrice);
             this.layoutControl1.Controls.Add(this.txtDiscount);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.layoutControl1.Location = new System.Drawing.Point(851, 30);
+            this.layoutControl1.Location = new System.Drawing.Point(969, 30);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.Root;
             this.layoutControl1.Size = new System.Drawing.Size(321, 456);
@@ -542,7 +542,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(833, 443);
+            this.dataGridView1.Size = new System.Drawing.Size(933, 443);
             this.dataGridView1.TabIndex = 10;
             // 
             // iDDataGridViewTextBoxColumn
@@ -643,7 +643,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1172, 486);
+            this.ClientSize = new System.Drawing.Size(1290, 486);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.barDockControlLeft);
