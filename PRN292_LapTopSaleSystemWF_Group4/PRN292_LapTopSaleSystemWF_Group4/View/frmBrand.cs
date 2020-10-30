@@ -19,8 +19,6 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
         BrandDAO brandDAO = new BrandDAO();
         SaleLaptopSystemEntities db = new SaleLaptopSystemEntities();
         Boolean isAdd = false;
-        Boolean isUpdate = false;
-        Boolean isDelete = false;
         public frmBrand()
         {
             InitializeComponent();
@@ -84,8 +82,17 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
                 {
                     MessageBox.Show("loi");
                 }
-                isUpdate = false;
             }
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            brandsBindingSource1.DataSource = brandDAO.search(txtSearch.Text.Trim());
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            brandsBindingSource1.DataSource = db.Brands.ToList();
         }
     }
 }

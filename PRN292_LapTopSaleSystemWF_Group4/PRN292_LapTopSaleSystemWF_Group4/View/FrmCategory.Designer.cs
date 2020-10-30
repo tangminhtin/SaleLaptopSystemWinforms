@@ -60,6 +60,9 @@
             this.categoriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.categoriesTableAdapter = new PRN292_LapTopSaleSystemWF_Group4.SaleLaptopSystemDataSet6TableAdapters.CategoriesTableAdapter();
             this.categoriesTableAdapter1 = new PRN292_LapTopSaleSystemWF_Group4.SaleLaptopSystemDataSet7TableAdapters.CategoriesTableAdapter();
+            this.txtSearch = new DevExpress.XtraEditors.TextEdit();
+            this.simpleButton11 = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -77,6 +80,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.saleLaptopSystemDataSet6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSearch.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             this.SuspendLayout();
             // 
             // entityCommand1
@@ -185,6 +190,7 @@
             this.layoutControl1.Controls.Add(this.txtName);
             this.layoutControl1.Controls.Add(this.txtId);
             this.layoutControl1.Controls.Add(this.ckCheck);
+            this.layoutControl1.Controls.Add(this.txtSearch);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 30);
             this.layoutControl1.Name = "layoutControl1";
@@ -204,12 +210,12 @@
             this.nameDataGridViewTextBoxColumn,
             this.activeDataGridViewCheckBoxColumn});
             this.dataGridView1.DataSource = this.categoriesBindingSource1;
-            this.dataGridView1.Location = new System.Drawing.Point(48, 92);
+            this.dataGridView1.Location = new System.Drawing.Point(55, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(799, 308);
+            this.dataGridView1.Size = new System.Drawing.Size(541, 388);
             this.dataGridView1.TabIndex = 7;
             // 
             // iDDataGridViewTextBoxColumn
@@ -252,10 +258,10 @@
             // txtName
             // 
             this.txtName.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.categoriesBindingSource1, "Name", true));
-            this.txtName.Location = new System.Drawing.Point(48, 38);
+            this.txtName.Location = new System.Drawing.Point(643, 38);
             this.txtName.MenuManager = this.barManager1;
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(809, 22);
+            this.txtName.Size = new System.Drawing.Size(214, 22);
             this.txtName.StyleController = this.layoutControl1;
             this.txtName.TabIndex = 6;
             // 
@@ -263,10 +269,10 @@
             // 
             this.txtId.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.categoriesBindingSource1, "ID", true));
             this.txtId.Enabled = false;
-            this.txtId.Location = new System.Drawing.Point(48, 12);
+            this.txtId.Location = new System.Drawing.Point(643, 12);
             this.txtId.MenuManager = this.barManager1;
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(809, 22);
+            this.txtId.Size = new System.Drawing.Size(214, 22);
             this.txtId.StyleController = this.layoutControl1;
             this.txtId.TabIndex = 4;
             // 
@@ -274,12 +280,12 @@
             // 
             this.ckCheck.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.categoriesBindingSource1, "Active", true));
             this.ckCheck.EditValue = null;
-            this.ckCheck.Location = new System.Drawing.Point(12, 64);
+            this.ckCheck.Location = new System.Drawing.Point(600, 64);
             this.ckCheck.MenuManager = this.barManager1;
             this.ckCheck.Name = "ckCheck";
             this.ckCheck.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
             this.ckCheck.Properties.Caption = " Active";
-            this.ckCheck.Size = new System.Drawing.Size(845, 24);
+            this.ckCheck.Size = new System.Drawing.Size(257, 24);
             this.ckCheck.StyleController = this.layoutControl1;
             this.ckCheck.TabIndex = 5;
             // 
@@ -289,9 +295,10 @@
             this.Root.GroupBordersVisible = false;
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1,
-            this.emptySpaceItem1,
             this.layoutControlItem2,
             this.layoutControlItem3,
+            this.layoutControlItem5,
+            this.emptySpaceItem1,
             this.layoutControlItem4});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(869, 412);
@@ -301,46 +308,46 @@
             // 
             this.layoutControlItem1.Control = this.txtId;
             this.layoutControlItem1.DataBindings.Add(new System.Windows.Forms.Binding("CustomizationFormText", this.categoriesBindingSource1, "ID", true));
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem1.Location = new System.Drawing.Point(588, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(849, 26);
+            this.layoutControlItem1.Size = new System.Drawing.Size(261, 26);
             this.layoutControlItem1.Text = "ID";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(33, 16);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(40, 16);
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(839, 80);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(588, 106);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(10, 312);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(261, 286);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.ckCheck;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 52);
+            this.layoutControlItem2.Location = new System.Drawing.Point(588, 52);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(849, 28);
+            this.layoutControlItem2.Size = new System.Drawing.Size(261, 28);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.txtName;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 26);
+            this.layoutControlItem3.Location = new System.Drawing.Point(588, 26);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(849, 26);
+            this.layoutControlItem3.Size = new System.Drawing.Size(261, 26);
             this.layoutControlItem3.Text = "Name";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(33, 16);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(40, 16);
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.dataGridView1;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 80);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(839, 312);
+            this.layoutControlItem4.Size = new System.Drawing.Size(588, 392);
             this.layoutControlItem4.Text = " ";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(33, 16);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(40, 16);
             // 
             // saleLaptopSystemDataSet6
             // 
@@ -359,6 +366,33 @@
             // categoriesTableAdapter1
             // 
             this.categoriesTableAdapter1.ClearBeforeFill = true;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(643, 92);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(214, 22);
+            this.txtSearch.StyleController = this.layoutControl1;
+            this.txtSearch.TabIndex = 12;
+            // 
+            // simpleButton11
+            // 
+            this.simpleButton11.Location = new System.Drawing.Point(12, 144);
+            this.simpleButton11.Name = "simpleButton11";
+            this.simpleButton11.Size = new System.Drawing.Size(280, 27);
+            this.simpleButton11.TabIndex = 13;
+            this.simpleButton11.Text = "simpleButton1";
+            // 
+            // layoutControlItem5
+            // 
+            this.layoutControlItem5.Control = this.txtSearch;
+            this.layoutControlItem5.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.layoutControlItem5.CustomizationFormText = "Search";
+            this.layoutControlItem5.Location = new System.Drawing.Point(588, 80);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Size = new System.Drawing.Size(261, 26);
+            this.layoutControlItem5.Text = "Search";
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(40, 16);
             // 
             // frmCategory
             // 
@@ -389,6 +423,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.saleLaptopSystemDataSet6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSearch.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -426,5 +462,8 @@
         private SaleLaptopSystemDataSet7 saleLaptopSystemDataSet7;
         private System.Windows.Forms.BindingSource categoriesBindingSource1;
         private SaleLaptopSystemDataSet7TableAdapters.CategoriesTableAdapter categoriesTableAdapter1;
+        private DevExpress.XtraEditors.TextEdit txtSearch;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
+        private DevExpress.XtraEditors.SimpleButton simpleButton11;
     }
 }

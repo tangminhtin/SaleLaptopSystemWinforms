@@ -1,5 +1,6 @@
 ﻿using PRN292_LapTopSaleSystemWF_Group4.Model;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace PRN292_LapTopSaleSystemWF_Group4.DAO
@@ -54,6 +55,17 @@ namespace PRN292_LapTopSaleSystemWF_Group4.DAO
             db.SaveChanges();
 
             return check;
+        }
+
+        public List<Brand> search(String input)
+        {
+            List<Brand> listOfBrand = new List<Brand>();
+            var brands = db.Brands.Where(b => b.Name == input);
+            foreach(var brand in brands)
+            {
+                listOfBrand.Add(brand);
+            }
+            return listOfBrand;
         }
     }
 }

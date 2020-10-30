@@ -1,5 +1,6 @@
 ﻿using PRN292_LapTopSaleSystemWF_Group4.Model;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -53,6 +54,17 @@ namespace PRN292_LapTopSaleSystemWF_Group4.DAO
             }
             db.SaveChanges();
             return check;
+        }
+
+        public List<Category> search(String input)
+        {
+            List<Category> listOfCategory = new List<Category>();
+            var categorys = db.Categories.Where(b => b.Name == input);
+            foreach (var category in categorys)
+            {
+                listOfCategory.Add(category);
+            }
+            return listOfCategory;
         }
     }
 }

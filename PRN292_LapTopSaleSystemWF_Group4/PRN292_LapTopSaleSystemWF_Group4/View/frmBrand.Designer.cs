@@ -41,6 +41,8 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.btnUpdate = new DevExpress.XtraBars.BarButtonItem();
             this.btnSave = new DevExpress.XtraBars.BarButtonItem();
+            this.barEditItem1 = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.brandsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.saleLaptopSystemDataSet1 = new PRN292_LapTopSaleSystemWF_Group4.SaleLaptopSystemDataSet1();
             this.brandsBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -53,6 +55,8 @@
             this.brandsTableAdapter1 = new PRN292_LapTopSaleSystemWF_Group4.SaleLaptopSystemDataSet1TableAdapters.BrandsTableAdapter();
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.txtSearch = new DevExpress.XtraEditors.TextEdit();
             this.txtImage = new DevExpress.XtraEditors.TextEdit();
             this.txtName = new DevExpress.XtraEditors.TextEdit();
             this.txtId = new DevExpress.XtraEditors.TextEdit();
@@ -63,6 +67,8 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.table = new System.Windows.Forms.DataGridView();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,12 +78,14 @@
             this.brandsBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.brandsTableAdapter2 = new PRN292_LapTopSaleSystemWF_Group4.SaleLaptopSystemDataSet4TableAdapters.BrandsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.brandsBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.saleLaptopSystemDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.brandsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.saleLaptopSystemDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSearch.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtImage.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).BeginInit();
@@ -88,6 +96,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.table)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.saleLaptopSystemDataSet4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.brandsBindingSource2)).BeginInit();
@@ -107,9 +117,12 @@
             this.btnUpdate,
             this.btnDelete,
             this.btnSave,
-            this.barButtonItem1});
+            this.barButtonItem1,
+            this.barEditItem1});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 5;
+            this.barManager1.MaxItemId = 6;
+            this.barManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemTextEdit1});
             // 
             // bar2
             // 
@@ -205,6 +218,17 @@
             this.btnSave.Name = "btnSave";
             this.btnSave.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
+            // barEditItem1
+            // 
+            this.barEditItem1.Edit = this.repositoryItemTextEdit1;
+            this.barEditItem1.Id = 5;
+            this.barEditItem1.Name = "barEditItem1";
+            // 
+            // repositoryItemTextEdit1
+            // 
+            this.repositoryItemTextEdit1.AutoHeight = false;
+            this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
+            // 
             // brandsBindingSource1
             // 
             this.brandsBindingSource1.DataMember = "Brands";
@@ -279,6 +303,8 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.simpleButton1);
+            this.layoutControl1.Controls.Add(this.txtSearch);
             this.layoutControl1.Controls.Add(this.txtImage);
             this.layoutControl1.Controls.Add(this.txtName);
             this.layoutControl1.Controls.Add(this.txtId);
@@ -291,23 +317,40 @@
             this.layoutControl1.TabIndex = 9;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Location = new System.Drawing.Point(12, 144);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(280, 27);
+            this.simpleButton1.TabIndex = 13;
+            this.simpleButton1.Text = "simpleButton1";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(55, 118);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(237, 22);
+            this.txtSearch.TabIndex = 12;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
             // txtImage
             // 
             this.txtImage.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.brandsBindingSource1, "Image", true));
-            this.txtImage.Location = new System.Drawing.Point(51, 64);
+            this.txtImage.Location = new System.Drawing.Point(55, 64);
             this.txtImage.MenuManager = this.barManager1;
             this.txtImage.Name = "txtImage";
-            this.txtImage.Size = new System.Drawing.Size(241, 22);
+            this.txtImage.Size = new System.Drawing.Size(237, 22);
             this.txtImage.StyleController = this.layoutControl1;
             this.txtImage.TabIndex = 10;
             // 
             // txtName
             // 
             this.txtName.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.brandsBindingSource1, "Name", true));
-            this.txtName.Location = new System.Drawing.Point(51, 38);
+            this.txtName.Location = new System.Drawing.Point(55, 38);
             this.txtName.MenuManager = this.barManager1;
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(241, 22);
+            this.txtName.Size = new System.Drawing.Size(237, 22);
             this.txtName.StyleController = this.layoutControl1;
             this.txtName.TabIndex = 9;
             // 
@@ -316,10 +359,10 @@
             this.txtId.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtId.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.brandsBindingSource1, "ID", true));
             this.txtId.Enabled = false;
-            this.txtId.Location = new System.Drawing.Point(51, 12);
+            this.txtId.Location = new System.Drawing.Point(55, 12);
             this.txtId.MenuManager = this.barManager1;
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(241, 22);
+            this.txtId.Size = new System.Drawing.Size(237, 22);
             this.txtId.StyleController = this.layoutControl1;
             this.txtId.TabIndex = 8;
             // 
@@ -345,7 +388,9 @@
             this.layoutControlItem1,
             this.layoutControlItem2,
             this.layoutControlItem3,
-            this.layoutControlItem4});
+            this.layoutControlItem4,
+            this.layoutControlItem5,
+            this.layoutControlItem6});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(304, 460);
             this.Root.TextVisible = false;
@@ -353,9 +398,9 @@
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 106);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 163);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(284, 334);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(284, 277);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem1
@@ -365,7 +410,7 @@
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(284, 26);
             this.layoutControlItem1.Text = "ID";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(36, 16);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(40, 16);
             // 
             // layoutControlItem2
             // 
@@ -374,7 +419,7 @@
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(284, 26);
             this.layoutControlItem2.Text = "Name";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(36, 16);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(40, 16);
             // 
             // layoutControlItem3
             // 
@@ -383,7 +428,7 @@
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(284, 26);
             this.layoutControlItem3.Text = "Image";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(36, 16);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(40, 16);
             // 
             // layoutControlItem4
             // 
@@ -393,6 +438,24 @@
             this.layoutControlItem4.Size = new System.Drawing.Size(284, 28);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
+            // 
+            // layoutControlItem5
+            // 
+            this.layoutControlItem5.Control = this.txtSearch;
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 106);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Size = new System.Drawing.Size(284, 26);
+            this.layoutControlItem5.Text = "Search";
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(40, 16);
+            // 
+            // layoutControlItem6
+            // 
+            this.layoutControlItem6.Control = this.simpleButton1;
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 132);
+            this.layoutControlItem6.Name = "layoutControlItem6";
+            this.layoutControlItem6.Size = new System.Drawing.Size(284, 31);
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem6.TextVisible = false;
             // 
             // table
             // 
@@ -478,12 +541,14 @@
             this.Name = "frmBrand";
             this.Text = "frmBrand";
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.brandsBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.saleLaptopSystemDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.brandsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.saleLaptopSystemDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtSearch.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtImage.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).EndInit();
@@ -494,6 +559,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.table)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.saleLaptopSystemDataSet4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.brandsBindingSource2)).EndInit();
@@ -545,5 +612,11 @@
         private SaleLaptopSystemDataSet4 saleLaptopSystemDataSet4;
         private System.Windows.Forms.BindingSource brandsBindingSource2;
         private SaleLaptopSystemDataSet4TableAdapters.BrandsTableAdapter brandsTableAdapter2;
+        private DevExpress.XtraEditors.TextEdit txtSearch;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
+        private DevExpress.XtraBars.BarEditItem barEditItem1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
     }
 }
