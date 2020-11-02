@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using System.Runtime.InteropServices;
 using FontAwesome.Sharp;
+using DevExpress.LookAndFeel;
 
 namespace PRN292_LapTopSaleSystemWF_Group4.View
 {
@@ -22,6 +23,9 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
         public Main2()
         {
             InitializeComponent();
+            UserLookAndFeel.Default.SetSkinStyle("Valentine");
+            this.CenterToScreen();
+            WindowState = FormWindowState.Maximized;
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 60);
             panel1.Controls.Add(leftBorderBtn);

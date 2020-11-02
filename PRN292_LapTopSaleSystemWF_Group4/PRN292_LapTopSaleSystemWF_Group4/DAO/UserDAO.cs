@@ -23,6 +23,8 @@ namespace PRN292_LapTopSaleSystemWF_Group4.DAO
             return null;
         }
 
+        
+
         public Boolean registration(String fullname, String password, String email, String phone, String address, String img, int role)
         {
             try

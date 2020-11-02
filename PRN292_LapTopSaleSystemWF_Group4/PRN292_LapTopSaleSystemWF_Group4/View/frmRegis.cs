@@ -81,6 +81,12 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
                     return;
                 }
 
+                if(validate.checkUserExist(txtEmail.Text.Trim())!=null)
+                {
+                    MessageBox.Show("Email existed", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
                 
 
                 if (!uDAO.registration(fullname,password,email,phone,address,img,role+1))
@@ -139,6 +145,14 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             else
             {
                 this.lblEmailCheck.Text = "";
+                if(validate.checkUserExist(email) == null)
+                {
+                    this.lblEmailCheck.Text = "";
+                }
+                else
+                {
+                    this.lblEmailCheck.Text = "Email exist";
+                }
             }
         }
 
@@ -155,6 +169,11 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             {
                 this.lblPhonecheck.Text = "";
             }
+        }
+
+        private void txtEmail_Validating(object sender, CancelEventArgs e)
+        {
+
         }
     }
 }

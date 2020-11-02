@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PRN292_LapTopSaleSystemWF_Group4.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4.Validate
 {
     class AuthenticationValidate
     {
+        SaleLaptopSystemEntities db = new SaleLaptopSystemEntities();
         public Boolean checkEmail(String input)
         {
             try
@@ -20,6 +22,19 @@ namespace PRN292_LapTopSaleSystemWF_Group4.Validate
                 Console.WriteLine(e.Message);
                 return false;
             }
+        }
+
+        public User checkUserExist(String email)
+        {
+            var users = db.Users.Where(u => u.Email == email);
+            foreach(var user in users)
+            {
+                if(user.Email == email)
+                {
+                    return user;
+                }
+            }
+            return null;
         }
 
         public Boolean checkPhone(String input)

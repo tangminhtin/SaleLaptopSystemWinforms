@@ -217,6 +217,7 @@
             this.txtEmail.Size = new System.Drawing.Size(206, 23);
             this.txtEmail.TabIndex = 17;
             this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
+            this.txtEmail.Validating += new System.ComponentModel.CancelEventHandler(this.txtEmail_Validating);
             // 
             // btnCancel
             // 
