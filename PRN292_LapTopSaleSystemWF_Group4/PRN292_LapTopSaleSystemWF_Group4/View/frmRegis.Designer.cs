@@ -41,7 +41,6 @@
             this.txtFullname = new System.Windows.Forms.TextBox();
             this.txtConfirm = new System.Windows.Forms.TextBox();
             this.txtImage = new System.Windows.Forms.TextBox();
-            this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtPass = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -49,10 +48,11 @@
             this.btnSubmit = new DevExpress.XtraEditors.SimpleButton();
             this.cbbRole = new System.Windows.Forms.ComboBox();
             this.lblPassStatus = new DevExpress.XtraEditors.LabelControl();
-            this.lblStatus = new DevExpress.XtraEditors.LabelControl();
+            this.lblcheckPass = new DevExpress.XtraEditors.LabelControl();
             this.lblConf = new DevExpress.XtraEditors.LabelControl();
             this.lblEmailCheck = new DevExpress.XtraEditors.LabelControl();
             this.lblPhonecheck = new DevExpress.XtraEditors.LabelControl();
+            this.txtPhone = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // lblName
@@ -186,14 +186,6 @@
             this.txtImage.Size = new System.Drawing.Size(206, 23);
             this.txtImage.TabIndex = 13;
             // 
-            // txtPhone
-            // 
-            this.txtPhone.Location = new System.Drawing.Point(213, 283);
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(206, 23);
-            this.txtPhone.TabIndex = 14;
-            this.txtPhone.TextChanged += new System.EventHandler(this.txtPhone_TextChanged);
-            // 
             // txtAddress
             // 
             this.txtAddress.Location = new System.Drawing.Point(213, 240);
@@ -217,6 +209,7 @@
             this.txtEmail.Size = new System.Drawing.Size(206, 23);
             this.txtEmail.TabIndex = 17;
             this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
+            this.txtEmail.Validating += new System.ComponentModel.CancelEventHandler(this.txtEmail_Validating);
             // 
             // btnCancel
             // 
@@ -262,15 +255,15 @@
             this.lblPassStatus.Size = new System.Drawing.Size(0, 18);
             this.lblPassStatus.TabIndex = 22;
             // 
-            // lblStatus
+            // lblcheckPass
             // 
-            this.lblStatus.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatus.Appearance.Options.UseFont = true;
-            this.lblStatus.Location = new System.Drawing.Point(425, 150);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(28, 18);
-            this.lblStatus.TabIndex = 23;
-            this.lblStatus.Text = "label";
+            this.lblcheckPass.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblcheckPass.Appearance.Options.UseFont = true;
+            this.lblcheckPass.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("lblcheckPass.ImageOptions.Image")));
+            this.lblcheckPass.Location = new System.Drawing.Point(425, 146);
+            this.lblcheckPass.Name = "lblcheckPass";
+            this.lblcheckPass.Size = new System.Drawing.Size(32, 32);
+            this.lblcheckPass.TabIndex = 23;
             // 
             // lblConf
             // 
@@ -278,27 +271,37 @@
             this.lblConf.Appearance.ForeColor = System.Drawing.Color.Red;
             this.lblConf.Appearance.Options.UseFont = true;
             this.lblConf.Appearance.Options.UseForeColor = true;
-            this.lblConf.Location = new System.Drawing.Point(425, 196);
+            this.lblConf.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("lblConf.ImageOptions.Image")));
+            this.lblConf.Location = new System.Drawing.Point(425, 189);
             this.lblConf.Name = "lblConf";
-            this.lblConf.Size = new System.Drawing.Size(81, 18);
+            this.lblConf.Size = new System.Drawing.Size(32, 32);
             this.lblConf.TabIndex = 24;
-            this.lblConf.Text = "labelControl8";
             // 
             // lblEmailCheck
             // 
-            this.lblEmailCheck.Location = new System.Drawing.Point(425, 107);
+            this.lblEmailCheck.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("lblEmailCheck.ImageOptions.Image")));
+            this.lblEmailCheck.LineLocation = DevExpress.XtraEditors.LineLocation.Bottom;
+            this.lblEmailCheck.Location = new System.Drawing.Point(425, 105);
             this.lblEmailCheck.Name = "lblEmailCheck";
-            this.lblEmailCheck.Size = new System.Drawing.Size(75, 16);
+            this.lblEmailCheck.Size = new System.Drawing.Size(32, 32);
             this.lblEmailCheck.TabIndex = 25;
-            this.lblEmailCheck.Text = "labelControl8";
             // 
             // lblPhonecheck
             // 
-            this.lblPhonecheck.Location = new System.Drawing.Point(425, 288);
+            this.lblPhonecheck.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("lblPhonecheck.ImageOptions.Image")));
+            this.lblPhonecheck.Location = new System.Drawing.Point(425, 281);
             this.lblPhonecheck.Name = "lblPhonecheck";
-            this.lblPhonecheck.Size = new System.Drawing.Size(75, 16);
+            this.lblPhonecheck.Size = new System.Drawing.Size(32, 32);
             this.lblPhonecheck.TabIndex = 26;
-            this.lblPhonecheck.Text = "labelControl8";
+            // 
+            // txtPhone
+            // 
+            this.txtPhone.Location = new System.Drawing.Point(213, 284);
+            this.txtPhone.Mask = "(99) 0000-00000";
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(206, 23);
+            this.txtPhone.TabIndex = 27;
+            this.txtPhone.Text = "84";
             // 
             // frmRegis
             // 
@@ -308,11 +311,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayoutStore = System.Windows.Forms.ImageLayout.Stretch;
             this.BackgroundImageStore = global::PRN292_LapTopSaleSystemWF_Group4.Properties.Resources._1;
-            this.ClientSize = new System.Drawing.Size(495, 451);
+            this.ClientSize = new System.Drawing.Size(518, 451);
+            this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.lblPhonecheck);
             this.Controls.Add(this.lblEmailCheck);
             this.Controls.Add(this.lblConf);
-            this.Controls.Add(this.lblStatus);
+            this.Controls.Add(this.lblcheckPass);
             this.Controls.Add(this.lblPassStatus);
             this.Controls.Add(this.cbbRole);
             this.Controls.Add(this.btnSubmit);
@@ -320,7 +324,6 @@
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtPass);
             this.Controls.Add(this.txtAddress);
-            this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.txtImage);
             this.Controls.Add(this.txtConfirm);
             this.Controls.Add(this.txtFullname);
@@ -354,7 +357,6 @@
         private System.Windows.Forms.TextBox txtFullname;
         private System.Windows.Forms.TextBox txtConfirm;
         private System.Windows.Forms.TextBox txtImage;
-        private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.TextBox txtEmail;
@@ -362,9 +364,10 @@
         private DevExpress.XtraEditors.SimpleButton btnSubmit;
         private System.Windows.Forms.ComboBox cbbRole;
         private DevExpress.XtraEditors.LabelControl lblPassStatus;
-        private DevExpress.XtraEditors.LabelControl lblStatus;
+        private DevExpress.XtraEditors.LabelControl lblcheckPass;
         private DevExpress.XtraEditors.LabelControl lblConf;
         private DevExpress.XtraEditors.LabelControl lblEmailCheck;
         private DevExpress.XtraEditors.LabelControl lblPhonecheck;
+        private System.Windows.Forms.MaskedTextBox txtPhone;
     }
 }

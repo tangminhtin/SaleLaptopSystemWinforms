@@ -21,9 +21,10 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
         {
             InitializeComponent();
             this.CenterToScreen();
-            this.lblStatus.Text = "";
-            this.lblConf.Text = "";
-            this.lblEmailCheck.Text = "";
+            this.lblcheckPass.Visible = false;
+            this.lblConf.Visible = false;
+            this.lblEmailCheck.Visible = false;
+            this.lblPhonecheck.Visible = false;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -61,7 +62,13 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
                     return;
                 }
 
-                /*if (!validate.checkPhone(phone))
+/*                if (!validate.checkPassword(password))
+                {
+                    MessageBox.Show("Password must have 8-15 character and have 1 special and number", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }*/
+
+/*                if (!validate.checkPhone(phone))
                 {
                     MessageBox.Show("Incorrect phone format", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -81,6 +88,12 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
                     return;
                 }
 
+                if(validate.checkUserExist(txtEmail.Text.Trim())!=null)
+                {
+                    MessageBox.Show("Email existed", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
                 
 
                 if (!uDAO.registration(fullname,password,email,phone,address,img,role+1))
@@ -94,8 +107,6 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
                     frmLogin.Show();
                     this.Visible = false;
                 }
-                
-                //role 0 : admin
             }
 
 
@@ -105,9 +116,15 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
         {
             AuthenticationValidate validate = new AuthenticationValidate();
             String password = txtPass.Text.Trim();
-            String passStatus = validate.checkPassword(password);
-            lblStatus.Text = passStatus;
-            //lblStatus.Refresh();
+            if (validate.checkPassword(password))
+            {
+                lblcheckPass.Visible = true;
+            }
+            else
+            {
+                lblcheckPass.Visible = false;
+            }
+            
         }
 
         private void txtConfirm_TextChanged(object sender, EventArgs e)
@@ -117,13 +134,11 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             String confirm = txtConfirm.Text.Trim();
             if (password != confirm)
             {
-                this.lblConf.ForeColor = Color.Red;
-                this.lblConf.Text = "Not pair";
+                this.lblConf.Visible = false;
             }
             else
             {
-                this.lblConf.ForeColor = Color.Green;
-                this.lblConf.Text = "Pair";
+                this.lblConf.Visible = true;
             }
         }
 
@@ -133,12 +148,18 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             String email = txtEmail.Text.Trim();
             if (!validate.checkEmail(email))
             {
-                this.lblEmailCheck.ForeColor = Color.Red;
-                this.lblEmailCheck.Text = "ERROR";
+                this.lblEmailCheck.Visible = false;
             }
             else
             {
-                this.lblEmailCheck.Text = "";
+                if(validate.checkUserExist(email) == null)
+                {
+                    this.lblEmailCheck.Visible = true;
+                }
+                else
+                {
+                    this.lblEmailCheck.Visible = false;
+                }
             }
         }
 
@@ -148,13 +169,17 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             String phone = txtPhone.Text.Trim();
             if (!validate.checkPhone(phone))
             {
-                this.lblPhonecheck.ForeColor = Color.Red;
-                this.lblPhonecheck.Text = "ERROR";
+                this.lblPhonecheck.Visible = false;
             }
             else
             {
-                this.lblPhonecheck.Text = "";
+                this.lblPhonecheck.Visible = true;
             }
+        }
+
+        private void txtEmail_Validating(object sender, CancelEventArgs e)
+        {
+            TextBox txt = sender as TextBox;
         }
     }
 }

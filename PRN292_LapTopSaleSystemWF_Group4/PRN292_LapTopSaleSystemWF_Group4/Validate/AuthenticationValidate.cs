@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PRN292_LapTopSaleSystemWF_Group4.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4.Validate
 {
     class AuthenticationValidate
     {
+        SaleLaptopSystemEntities db = new SaleLaptopSystemEntities();
         public Boolean checkEmail(String input)
         {
             try
@@ -22,80 +24,38 @@ namespace PRN292_LapTopSaleSystemWF_Group4.Validate
             }
         }
 
-        public Boolean checkPhone(String input)
+        public User checkUserExist(String email)
         {
-            try
+            var users = db.Users.Where(u => u.Email == email);
+            foreach(var user in users)
             {
-                String phonematch = @"^(\d{3})[ -]?(\d{3})[ -]?(\d{4}) x(\d*)";
-                return Regex.Match(input, phonematch).Success;
-            }catch(Exception e)
-            {
-                return false;
+                if(user.Email == email)
+                {
+                    return user;
+                }
             }
+            return null;
         }
 
-        public String checkPassword(String password)
+        public Boolean checkPhone(String input)
         {
-            /*int score = 0;
+                String phonematch = @"^(\d{3})[ -]?(\d{3})[ -]?(\d{4}) x(\d*)";
+                if(Regex.Match(input, phonematch).Success)
+                {
+                    return true;
+                }
+                return false;
+        }
 
-            if (password.Length < 1)
-                return "Blank";
-            if (password.Length < 4)
-                return "VeryWeak";
+        public Boolean checkPassword(String password)
+        {       
+            string rex = @"^(?=.*[a - z])(?=.*[A - Z])(?=.*\d)(?=.*[^\da - zA - Z]).{ 8,15}$"; //match digits
 
-            if (password.Length >= 8)
-                score++;
-            if (password.Length >= 12)
-                score++;
-            if (Regex.Match(password, @"/\d+/", RegexOptions.ECMAScript).Success)
-                score++;
-            if (Regex.Match(password, @"/[a-z]/", RegexOptions.ECMAScript).Success &&
-              Regex.Match(password, @"/[A-Z]/", RegexOptions.ECMAScript).Success)
-                score++;
-            if (Regex.Match(password, @"/.[!,@,#,$,%,^,&,*,?,_,~,-,£,(,)]/", RegexOptions.ECMAScript).Success)
-                score++;
-
-            switch (score)
+            if(Regex.Match(password, rex).Success)
             {
-                case 1:
-                    return "VeryWeak";
-                    break;
-                case 2:
-                    return "Weak";
-                    break;
-                case 3:
-                    return "Medium";
-                    break;
-                case 4:
-                    return "Strong";
-                    break;
-                case 5:
-                    return "VeryStrong";
-                    break;
-                default:
-                    return "";
-                    
-            }*/
-
-            
-            string patdi = @"\d+"; //match digits
-            string patupp = @"[A-Z]+"; //match upper cases
-            string patlow = @"[a-z]+"; //match lower cases
-            string patsym = @"[`~!@$%^&\\-\\+*/_=,;.':|\\(\\)\\[\\]\\{\\}]+"; //match symbols
-
-            Match id = Regex.Match(password, patdi);
-            Match upp = Regex.Match(password, patupp);
-            Match low = Regex.Match(password, patlow);
-            Match sym = Regex.Match(password, patsym);
-
-            if(id.Success && upp.Success && low.Success && sym.Success)
-            {
-                return "VeryStrong";
+                return true;
             }
-            else
-            {
-                return "";
-            }
+            return false;
            
         }
     }

@@ -432,6 +432,7 @@ D:\LearningCSharp\SaleLaptopSystemWinforms\PRN292_LapTopSaleSystemWF_Group4\PRN2
 D:\LearningCSharp\SaleLaptopSystemWinforms\PRN292_LapTopSaleSystemWF_Group4\PRN292_LapTopSaleSystemWF_Group4\obj\Debug\PRN292_LapTopSaleSystemWF_Group4.View.frmUser.resources
 C:\Users\MSI\Downloads\JLP0002\SaleLaptopSystemWinforms\PRN292_LapTopSaleSystemWF_Group4\PRN292_LapTopSaleSystemWF_Group4\obj\Debug\PRN292_LapTopSaleSystemWF_Group4.View.frmUser.resources
 D:\LearningCSharp\SaleLaptopSystemWinforms\PRN292_LapTopSaleSystemWF_Group4\PRN292_LapTopSaleSystemWF_Group4\bin\Debug\FontAwesome.Sharp.dll
+<<<<<<< HEAD
 D:\LearningCSharp\SaleLaptopSystemWinforms\PRN292_LapTopSaleSystemWF_Group4\PRN292_LapTopSaleSystemWF_Group4\bin\Debug\DevExpress.XtraNavBar.v20.1.dll
 D:\LearningCSharp\SaleLaptopSystemWinforms\PRN292_LapTopSaleSystemWF_Group4\PRN292_LapTopSaleSystemWF_Group4\bin\Debug\DevExpress.XtraNavBar.v20.1.xml
 D:\LearningCSharp\SaleLaptopSystemWinforms\PRN292_LapTopSaleSystemWF_Group4\PRN292_LapTopSaleSystemWF_Group4\bin\Debug\de\DevExpress.XtraNavBar.v20.1.resources.dll
@@ -453,3 +454,8 @@ D:\LearningCSharp\SaleLaptopSystemWinforms\PRN292_LapTopSaleSystemWF_Group4\PRN2
 D:\LearningCSharp\SaleLaptopSystemWinforms\PRN292_LapTopSaleSystemWF_Group4\PRN292_LapTopSaleSystemWF_Group4\bin\Debug\es\DevExpress.Diagram.v20.1.Core.resources.dll
 D:\LearningCSharp\SaleLaptopSystemWinforms\PRN292_LapTopSaleSystemWF_Group4\PRN292_LapTopSaleSystemWF_Group4\bin\Debug\ja\DevExpress.Diagram.v20.1.Core.resources.dll
 D:\LearningCSharp\SaleLaptopSystemWinforms\PRN292_LapTopSaleSystemWF_Group4\PRN292_LapTopSaleSystemWF_Group4\bin\Debug\ru\DevExpress.Diagram.v20.1.Core.resources.dll
+=======
+D:\LearningCSharp\SaleLaptopSystemWinforms\PRN292_LapTopSaleSystemWF_Group4\PRN292_LapTopSaleSystemWF_Group4\obj\Debug\PRN292_LapTopSaleSystemWF_Group4.View.Main2.resources
+C:\Users\MSI\Downloads\JLP0002\SaleLaptopSystemWinforms\PRN292_LapTopSaleSystemWF_Group4\PRN292_LapTopSaleSystemWF_Group4\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\MSI\Downloads\JLP0002\SaleLaptopSystemWinforms\PRN292_LapTopSaleSystemWF_Group4\PRN292_LapTopSaleSystemWF_Group4\obj\Debug\PRN292_LapTopSaleSystemWF_Group4.View.Main2.resources
+>>>>>>> a429ad988855b0d7381ae7004193cfc5b1ab2970
