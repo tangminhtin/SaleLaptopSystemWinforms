@@ -117,6 +117,7 @@
             this.bar2.DockCol = 0;
             this.bar2.DockRow = 0;
             this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.bar2.FloatLocation = new System.Drawing.Point(580, 165);
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.btnDelete),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnSave)});
@@ -227,18 +228,18 @@
             this.cbbRole.Items.AddRange(new object[] {
             "Admin",
             "User"});
-            this.cbbRole.Location = new System.Drawing.Point(971, 142);
+            this.cbbRole.Location = new System.Drawing.Point(1010, 142);
             this.cbbRole.Name = "cbbRole";
-            this.cbbRole.Size = new System.Drawing.Size(288, 24);
+            this.cbbRole.Size = new System.Drawing.Size(249, 24);
             this.cbbRole.TabIndex = 14;
             // 
             // txtAddress
             // 
             this.txtAddress.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.usersBindingSource, "Address", true));
-            this.txtAddress.Location = new System.Drawing.Point(971, 116);
+            this.txtAddress.Location = new System.Drawing.Point(1010, 116);
             this.txtAddress.MenuManager = this.barManager1;
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(288, 22);
+            this.txtAddress.Size = new System.Drawing.Size(249, 22);
             this.txtAddress.StyleController = this.layoutControl1;
             this.txtAddress.TabIndex = 10;
             // 
@@ -256,10 +257,10 @@
             // 
             this.txtPhone.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.usersBindingSource, "Phone", true));
             this.txtPhone.Enabled = false;
-            this.txtPhone.Location = new System.Drawing.Point(971, 90);
+            this.txtPhone.Location = new System.Drawing.Point(1010, 90);
             this.txtPhone.MenuManager = this.barManager1;
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(288, 22);
+            this.txtPhone.Size = new System.Drawing.Size(249, 22);
             this.txtPhone.StyleController = this.layoutControl1;
             this.txtPhone.TabIndex = 9;
             // 
@@ -267,10 +268,10 @@
             // 
             this.txtEmail.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.usersBindingSource, "Email", true));
             this.txtEmail.Enabled = false;
-            this.txtEmail.Location = new System.Drawing.Point(971, 64);
+            this.txtEmail.Location = new System.Drawing.Point(1010, 64);
             this.txtEmail.MenuManager = this.barManager1;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(288, 22);
+            this.txtEmail.Size = new System.Drawing.Size(249, 22);
             this.txtEmail.StyleController = this.layoutControl1;
             this.txtEmail.TabIndex = 8;
             // 
@@ -278,10 +279,10 @@
             // 
             this.txtFullname.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.usersBindingSource, "Fullname", true));
             this.txtFullname.Enabled = false;
-            this.txtFullname.Location = new System.Drawing.Point(971, 38);
+            this.txtFullname.Location = new System.Drawing.Point(1010, 38);
             this.txtFullname.MenuManager = this.barManager1;
             this.txtFullname.Name = "txtFullname";
-            this.txtFullname.Size = new System.Drawing.Size(288, 22);
+            this.txtFullname.Size = new System.Drawing.Size(249, 22);
             this.txtFullname.StyleController = this.layoutControl1;
             this.txtFullname.TabIndex = 6;
             // 
@@ -289,10 +290,10 @@
             // 
             this.txtId.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.usersBindingSource, "ID", true));
             this.txtId.Enabled = false;
-            this.txtId.Location = new System.Drawing.Point(971, 12);
+            this.txtId.Location = new System.Drawing.Point(1010, 12);
             this.txtId.MenuManager = this.barManager1;
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(288, 22);
+            this.txtId.Size = new System.Drawing.Size(249, 22);
             this.txtId.StyleController = this.layoutControl1;
             this.txtId.TabIndex = 5;
             // 
@@ -316,7 +317,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(835, 405);
+            this.dataGridView1.Size = new System.Drawing.Size(874, 405);
             this.dataGridView1.TabIndex = 4;
             // 
             // iDDataGridViewTextBoxColumn
@@ -386,12 +387,12 @@
             // 
             this.ckCheck.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.usersBindingSource, "Active", true));
             this.ckCheck.EditValue = null;
-            this.ckCheck.Location = new System.Drawing.Point(911, 172);
+            this.ckCheck.Location = new System.Drawing.Point(950, 172);
             this.ckCheck.MenuManager = this.barManager1;
             this.ckCheck.Name = "ckCheck";
             this.ckCheck.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
             this.ckCheck.Properties.Caption = "Active";
-            this.ckCheck.Size = new System.Drawing.Size(348, 24);
+            this.ckCheck.Size = new System.Drawing.Size(309, 24);
             this.ckCheck.StyleController = this.layoutControl1;
             this.ckCheck.TabIndex = 13;
             // 
@@ -416,51 +417,51 @@
             // 
             this.id.AllowHtmlStringInCaption = true;
             this.id.Control = this.txtId;
-            this.id.Location = new System.Drawing.Point(899, 0);
+            this.id.Location = new System.Drawing.Point(938, 0);
             this.id.Name = "id";
-            this.id.Size = new System.Drawing.Size(352, 26);
+            this.id.Size = new System.Drawing.Size(313, 26);
             this.id.Text = "ID";
             this.id.TextSize = new System.Drawing.Size(57, 16);
             // 
             // name
             // 
             this.name.Control = this.txtFullname;
-            this.name.Location = new System.Drawing.Point(899, 26);
+            this.name.Location = new System.Drawing.Point(938, 26);
             this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(352, 26);
+            this.name.Size = new System.Drawing.Size(313, 26);
             this.name.Text = "Full Name";
             this.name.TextSize = new System.Drawing.Size(57, 16);
             // 
             // Email
             // 
             this.Email.Control = this.txtEmail;
-            this.Email.Location = new System.Drawing.Point(899, 52);
+            this.Email.Location = new System.Drawing.Point(938, 52);
             this.Email.Name = "Email";
-            this.Email.Size = new System.Drawing.Size(352, 26);
+            this.Email.Size = new System.Drawing.Size(313, 26);
             this.Email.TextSize = new System.Drawing.Size(57, 16);
             // 
             // Phone
             // 
             this.Phone.Control = this.txtPhone;
-            this.Phone.Location = new System.Drawing.Point(899, 78);
+            this.Phone.Location = new System.Drawing.Point(938, 78);
             this.Phone.Name = "Phone";
-            this.Phone.Size = new System.Drawing.Size(352, 26);
+            this.Phone.Size = new System.Drawing.Size(313, 26);
             this.Phone.TextSize = new System.Drawing.Size(57, 16);
             // 
             // Address
             // 
             this.Address.Control = this.txtAddress;
-            this.Address.Location = new System.Drawing.Point(899, 104);
+            this.Address.Location = new System.Drawing.Point(938, 104);
             this.Address.Name = "Address";
-            this.Address.Size = new System.Drawing.Size(352, 26);
+            this.Address.Size = new System.Drawing.Size(313, 26);
             this.Address.TextSize = new System.Drawing.Size(57, 16);
             // 
             // Active
             // 
             this.Active.Control = this.ckCheck;
-            this.Active.Location = new System.Drawing.Point(899, 160);
+            this.Active.Location = new System.Drawing.Point(938, 160);
             this.Active.Name = "Active";
-            this.Active.Size = new System.Drawing.Size(352, 249);
+            this.Active.Size = new System.Drawing.Size(313, 249);
             this.Active.TextSize = new System.Drawing.Size(0, 0);
             this.Active.TextVisible = false;
             // 
@@ -469,7 +470,7 @@
             this.layoutControlItem1.Control = this.dataGridView1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(899, 409);
+            this.layoutControlItem1.Size = new System.Drawing.Size(938, 409);
             this.layoutControlItem1.Text = " ";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(57, 16);
             // 
@@ -477,9 +478,9 @@
             // 
             this.Role.Control = this.cbbRole;
             this.Role.DataBindings.Add(new System.Windows.Forms.Binding("CustomizationFormText", this.usersBindingSource, "Role", true));
-            this.Role.Location = new System.Drawing.Point(899, 130);
+            this.Role.Location = new System.Drawing.Point(938, 130);
             this.Role.Name = "Role";
-            this.Role.Size = new System.Drawing.Size(352, 30);
+            this.Role.Size = new System.Drawing.Size(313, 30);
             this.Role.TextSize = new System.Drawing.Size(57, 16);
             // 
             // usersTableAdapter

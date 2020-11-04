@@ -38,9 +38,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4
 
         private void btnProduct_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmProduct frmProduct = new frmProduct();
-            frmProduct.MdiParent = this;
-            frmProduct.Show();
+      
         }
 
         private void btnBrand_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
