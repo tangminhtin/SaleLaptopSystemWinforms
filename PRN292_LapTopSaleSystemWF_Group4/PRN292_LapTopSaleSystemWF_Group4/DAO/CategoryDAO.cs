@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Windows.Forms;
 
 namespace PRN292_LapTopSaleSystemWF_Group4.DAO
 {
@@ -11,7 +10,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4.DAO
 
         SaleLaptopSystemEntities db = new SaleLaptopSystemEntities();
 
-        
+
         public Boolean addCategory(string name, Boolean active)
         {
             try
@@ -20,11 +19,12 @@ namespace PRN292_LapTopSaleSystemWF_Group4.DAO
                 db.Categories.Add(category);
                 db.SaveChanges();
                 return true;
-            }catch(Exception e)
+            }
+            catch (Exception e)
             {
                 return false;
-            } 
-        } 
+            }
+        }
         public Boolean update(int id, string name, Boolean active)
         {
             try
@@ -32,7 +32,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4.DAO
                 var categorys = db.Categories.First(a => a.ID == id);
                 categorys.Name = name;
                 categorys.Active = active;
-                db.SaveChanges();              
+                db.SaveChanges();
                 return true;
             }
             catch (Exception e)
@@ -44,9 +44,9 @@ namespace PRN292_LapTopSaleSystemWF_Group4.DAO
         {
             bool check = false;
             var categories = db.Categories.Where(a => a.ID == id);
-            foreach(var category in categories)
+            foreach (var category in categories)
             {
-                if(category.ID == id)
+                if (category.ID == id)
                 {
                     db.Categories.Remove(category);
                     check = true;
