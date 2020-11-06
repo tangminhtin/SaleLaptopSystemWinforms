@@ -306,29 +306,11 @@
     </Compile>
     <Compile Include="Validate\AuthenticationValidate.cs" />
     <Compile Include="Validate\UserValidate.cs" />
-    <Compile Include="View\AddProduct.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="View\AddProduct.Designer.cs">
-      <DependentUpon>AddProduct.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\CategoriesLoad.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="View\CategoriesLoad.Designer.cs">
       <DependentUpon>CategoriesLoad.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\frmBrand.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\frmBrand.Designer.cs">
-      <DependentUpon>frmBrand.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\frmCategory.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\frmCategory.Designer.cs">
-      <DependentUpon>frmCategory.cs</DependentUpon>
     </Compile>
     <Compile Include="View\frmMain.cs">
       <SubType>Form</SubType>
@@ -392,20 +374,11 @@
     <Compile Include="View\UserLoad.Designer.cs">
       <DependentUpon>UserLoad.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="View\AddProduct.resx">
-      <DependentUpon>AddProduct.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\BrandLoad.resx">
       <DependentUpon>BrandLoad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\CategoriesLoad.resx">
       <DependentUpon>CategoriesLoad.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\frmBrand.resx">
-      <DependentUpon>frmBrand.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\frmCategory.resx">
-      <DependentUpon>frmCategory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>

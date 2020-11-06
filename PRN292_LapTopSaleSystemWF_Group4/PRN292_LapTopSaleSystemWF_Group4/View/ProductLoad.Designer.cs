@@ -63,15 +63,15 @@
             this.colBrandID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCategoryID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colProductDetailID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit5 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit6 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit8 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit9 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit10 = new DevExpress.XtraEditors.TextEdit();
+            this.txtId = new DevExpress.XtraEditors.TextEdit();
+            this.txtName = new DevExpress.XtraEditors.TextEdit();
+            this.txtPrice = new DevExpress.XtraEditors.TextEdit();
+            this.txtDiscount = new DevExpress.XtraEditors.TextEdit();
+            this.txtDescription = new DevExpress.XtraEditors.TextEdit();
+            this.txtFeatures = new DevExpress.XtraEditors.TextEdit();
+            this.txtBrandId = new DevExpress.XtraEditors.TextEdit();
+            this.txtCategoryId = new DevExpress.XtraEditors.TextEdit();
+            this.txtProductId = new DevExpress.XtraEditors.TextEdit();
             this.cbActive = new DevExpress.XtraEditors.CheckEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.ID = new DevExpress.XtraLayout.LayoutControlItem();
@@ -81,7 +81,7 @@
             this.Description = new DevExpress.XtraLayout.LayoutControlItem();
             this.Features = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtBrandID = new DevExpress.XtraLayout.LayoutControlItem();
+            this.brand = new DevExpress.XtraLayout.LayoutControlItem();
             this.CategoryID = new DevExpress.XtraLayout.LayoutControlItem();
             this.ProductDetailID = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -100,15 +100,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.saleLaptopSystemDataSet26)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit8.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit9.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit10.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPrice.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDiscount.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDescription.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFeatures.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtBrandId.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCategoryId.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtProductId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbActive.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ID)).BeginInit();
@@ -118,7 +118,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Description)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Features)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtBrandID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.brand)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CategoryID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductDetailID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
@@ -192,6 +192,7 @@
             this.btnAdd.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnAdd.ImageOptions.LargeImage")));
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnAdd.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAdd_ItemClick);
             // 
             // barButtonItem2
             // 
@@ -201,6 +202,7 @@
             this.barButtonItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
             this.barButtonItem2.Name = "barButtonItem2";
             this.barButtonItem2.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
             // 
             // barButtonItem3
             // 
@@ -296,15 +298,15 @@
             // layoutControl1
             // 
             this.layoutControl1.Controls.Add(this.gridControl1);
-            this.layoutControl1.Controls.Add(this.textEdit1);
-            this.layoutControl1.Controls.Add(this.textEdit2);
-            this.layoutControl1.Controls.Add(this.textEdit3);
-            this.layoutControl1.Controls.Add(this.textEdit4);
-            this.layoutControl1.Controls.Add(this.textEdit5);
-            this.layoutControl1.Controls.Add(this.textEdit6);
-            this.layoutControl1.Controls.Add(this.textEdit8);
-            this.layoutControl1.Controls.Add(this.textEdit9);
-            this.layoutControl1.Controls.Add(this.textEdit10);
+            this.layoutControl1.Controls.Add(this.txtId);
+            this.layoutControl1.Controls.Add(this.txtName);
+            this.layoutControl1.Controls.Add(this.txtPrice);
+            this.layoutControl1.Controls.Add(this.txtDiscount);
+            this.layoutControl1.Controls.Add(this.txtDescription);
+            this.layoutControl1.Controls.Add(this.txtFeatures);
+            this.layoutControl1.Controls.Add(this.txtBrandId);
+            this.layoutControl1.Controls.Add(this.txtCategoryId);
+            this.layoutControl1.Controls.Add(this.txtProductId);
             this.layoutControl1.Controls.Add(this.cbActive);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 30);
@@ -442,96 +444,95 @@
             this.colProductDetailID.VisibleIndex = 9;
             this.colProductDetailID.Width = 94;
             // 
-            // textEdit1
+            // txtId
             // 
-            this.textEdit1.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.productsBindingSource2, "ID", true));
-            this.textEdit1.EditValue = "";
-            this.textEdit1.Location = new System.Drawing.Point(1172, 12);
-            this.textEdit1.MenuManager = this.barManager1;
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(257, 22);
-            this.textEdit1.StyleController = this.layoutControl1;
-            this.textEdit1.TabIndex = 4;
+            this.txtId.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.productsBindingSource2, "ID", true));
+            this.txtId.EditValue = "";
+            this.txtId.Location = new System.Drawing.Point(1172, 12);
+            this.txtId.MenuManager = this.barManager1;
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(257, 22);
+            this.txtId.TabIndex = 4;
             // 
-            // textEdit2
+            // txtName
             // 
-            this.textEdit2.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.productsBindingSource2, "Name", true));
-            this.textEdit2.Location = new System.Drawing.Point(1172, 38);
-            this.textEdit2.MenuManager = this.barManager2;
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(257, 22);
-            this.textEdit2.StyleController = this.layoutControl1;
-            this.textEdit2.TabIndex = 5;
+            this.txtName.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.productsBindingSource2, "Name", true));
+            this.txtName.Location = new System.Drawing.Point(1172, 38);
+            this.txtName.MenuManager = this.barManager2;
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(257, 22);
+            this.txtName.StyleController = this.layoutControl1;
+            this.txtName.TabIndex = 5;
             // 
-            // textEdit3
+            // txtPrice
             // 
-            this.textEdit3.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.productsBindingSource2, "Price", true));
-            this.textEdit3.Location = new System.Drawing.Point(1172, 64);
-            this.textEdit3.MenuManager = this.barManager2;
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Size = new System.Drawing.Size(257, 22);
-            this.textEdit3.StyleController = this.layoutControl1;
-            this.textEdit3.TabIndex = 6;
+            this.txtPrice.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.productsBindingSource2, "Price", true));
+            this.txtPrice.Location = new System.Drawing.Point(1172, 64);
+            this.txtPrice.MenuManager = this.barManager2;
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Size = new System.Drawing.Size(257, 22);
+            this.txtPrice.StyleController = this.layoutControl1;
+            this.txtPrice.TabIndex = 6;
             // 
-            // textEdit4
+            // txtDiscount
             // 
-            this.textEdit4.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.productsBindingSource2, "Discount", true));
-            this.textEdit4.Location = new System.Drawing.Point(1172, 90);
-            this.textEdit4.MenuManager = this.barManager2;
-            this.textEdit4.Name = "textEdit4";
-            this.textEdit4.Size = new System.Drawing.Size(257, 22);
-            this.textEdit4.StyleController = this.layoutControl1;
-            this.textEdit4.TabIndex = 7;
+            this.txtDiscount.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.productsBindingSource2, "Discount", true));
+            this.txtDiscount.Location = new System.Drawing.Point(1172, 90);
+            this.txtDiscount.MenuManager = this.barManager2;
+            this.txtDiscount.Name = "txtDiscount";
+            this.txtDiscount.Size = new System.Drawing.Size(257, 22);
+            this.txtDiscount.StyleController = this.layoutControl1;
+            this.txtDiscount.TabIndex = 7;
             // 
-            // textEdit5
+            // txtDescription
             // 
-            this.textEdit5.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.productsBindingSource2, "Description", true));
-            this.textEdit5.Location = new System.Drawing.Point(1172, 116);
-            this.textEdit5.MenuManager = this.barManager2;
-            this.textEdit5.Name = "textEdit5";
-            this.textEdit5.Size = new System.Drawing.Size(257, 22);
-            this.textEdit5.StyleController = this.layoutControl1;
-            this.textEdit5.TabIndex = 8;
+            this.txtDescription.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.productsBindingSource2, "Description", true));
+            this.txtDescription.Location = new System.Drawing.Point(1172, 116);
+            this.txtDescription.MenuManager = this.barManager2;
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(257, 22);
+            this.txtDescription.StyleController = this.layoutControl1;
+            this.txtDescription.TabIndex = 8;
             // 
-            // textEdit6
+            // txtFeatures
             // 
-            this.textEdit6.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.productsBindingSource2, "Features", true));
-            this.textEdit6.Location = new System.Drawing.Point(1172, 142);
-            this.textEdit6.MenuManager = this.barManager2;
-            this.textEdit6.Name = "textEdit6";
-            this.textEdit6.Size = new System.Drawing.Size(257, 22);
-            this.textEdit6.StyleController = this.layoutControl1;
-            this.textEdit6.TabIndex = 9;
+            this.txtFeatures.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.productsBindingSource2, "Features", true));
+            this.txtFeatures.Location = new System.Drawing.Point(1172, 142);
+            this.txtFeatures.MenuManager = this.barManager2;
+            this.txtFeatures.Name = "txtFeatures";
+            this.txtFeatures.Size = new System.Drawing.Size(257, 22);
+            this.txtFeatures.StyleController = this.layoutControl1;
+            this.txtFeatures.TabIndex = 9;
             // 
-            // textEdit8
+            // txtBrandId
             // 
-            this.textEdit8.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.productsBindingSource2, "BrandID", true));
-            this.textEdit8.Location = new System.Drawing.Point(1172, 196);
-            this.textEdit8.MenuManager = this.barManager2;
-            this.textEdit8.Name = "textEdit8";
-            this.textEdit8.Size = new System.Drawing.Size(257, 22);
-            this.textEdit8.StyleController = this.layoutControl1;
-            this.textEdit8.TabIndex = 11;
+            this.txtBrandId.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.productsBindingSource2, "BrandID", true));
+            this.txtBrandId.Location = new System.Drawing.Point(1172, 196);
+            this.txtBrandId.MenuManager = this.barManager2;
+            this.txtBrandId.Name = "txtBrandId";
+            this.txtBrandId.Size = new System.Drawing.Size(257, 22);
+            this.txtBrandId.StyleController = this.layoutControl1;
+            this.txtBrandId.TabIndex = 11;
             // 
-            // textEdit9
+            // txtCategoryId
             // 
-            this.textEdit9.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.productsBindingSource2, "CategoryID", true));
-            this.textEdit9.Location = new System.Drawing.Point(1172, 222);
-            this.textEdit9.MenuManager = this.barManager2;
-            this.textEdit9.Name = "textEdit9";
-            this.textEdit9.Size = new System.Drawing.Size(257, 22);
-            this.textEdit9.StyleController = this.layoutControl1;
-            this.textEdit9.TabIndex = 12;
+            this.txtCategoryId.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.productsBindingSource2, "CategoryID", true));
+            this.txtCategoryId.Location = new System.Drawing.Point(1172, 222);
+            this.txtCategoryId.MenuManager = this.barManager2;
+            this.txtCategoryId.Name = "txtCategoryId";
+            this.txtCategoryId.Size = new System.Drawing.Size(257, 22);
+            this.txtCategoryId.StyleController = this.layoutControl1;
+            this.txtCategoryId.TabIndex = 12;
             // 
-            // textEdit10
+            // txtProductId
             // 
-            this.textEdit10.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.productsBindingSource2, "ProductDetailID", true));
-            this.textEdit10.Location = new System.Drawing.Point(1172, 248);
-            this.textEdit10.MenuManager = this.barManager2;
-            this.textEdit10.Name = "textEdit10";
-            this.textEdit10.Size = new System.Drawing.Size(257, 22);
-            this.textEdit10.StyleController = this.layoutControl1;
-            this.textEdit10.TabIndex = 13;
+            this.txtProductId.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.productsBindingSource2, "ProductDetailID", true));
+            this.txtProductId.Location = new System.Drawing.Point(1172, 248);
+            this.txtProductId.MenuManager = this.barManager2;
+            this.txtProductId.Name = "txtProductId";
+            this.txtProductId.Size = new System.Drawing.Size(257, 22);
+            this.txtProductId.StyleController = this.layoutControl1;
+            this.txtProductId.TabIndex = 13;
             // 
             // cbActive
             // 
@@ -558,7 +559,7 @@
             this.Description,
             this.Features,
             this.layoutControlItem6,
-            this.txtBrandID,
+            this.brand,
             this.CategoryID,
             this.ProductDetailID,
             this.layoutControlItem1});
@@ -568,7 +569,7 @@
             // 
             // ID
             // 
-            this.ID.Control = this.textEdit1;
+            this.ID.Control = this.txtId;
             this.ID.Location = new System.Drawing.Point(1070, 0);
             this.ID.Name = "ID";
             this.ID.Size = new System.Drawing.Size(351, 26);
@@ -576,7 +577,7 @@
             // 
             // Name
             // 
-            this.Name.Control = this.textEdit2;
+            this.Name.Control = this.txtName;
             this.Name.Location = new System.Drawing.Point(1070, 26);
             this.Name.Name = "Name";
             this.Name.Size = new System.Drawing.Size(351, 26);
@@ -584,7 +585,7 @@
             // 
             // Price
             // 
-            this.Price.Control = this.textEdit3;
+            this.Price.Control = this.txtPrice;
             this.Price.Location = new System.Drawing.Point(1070, 52);
             this.Price.Name = "Price";
             this.Price.Size = new System.Drawing.Size(351, 26);
@@ -592,7 +593,7 @@
             // 
             // Discount
             // 
-            this.Discount.Control = this.textEdit4;
+            this.Discount.Control = this.txtDiscount;
             this.Discount.Location = new System.Drawing.Point(1070, 78);
             this.Discount.Name = "Discount";
             this.Discount.Size = new System.Drawing.Size(351, 26);
@@ -600,7 +601,7 @@
             // 
             // Description
             // 
-            this.Description.Control = this.textEdit5;
+            this.Description.Control = this.txtDescription;
             this.Description.Location = new System.Drawing.Point(1070, 104);
             this.Description.Name = "Description";
             this.Description.Size = new System.Drawing.Size(351, 26);
@@ -608,7 +609,7 @@
             // 
             // Features
             // 
-            this.Features.Control = this.textEdit6;
+            this.Features.Control = this.txtFeatures;
             this.Features.Location = new System.Drawing.Point(1070, 130);
             this.Features.Name = "Features";
             this.Features.Size = new System.Drawing.Size(351, 26);
@@ -623,18 +624,18 @@
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
-            // txtBrandID
+            // brand
             // 
-            this.txtBrandID.Control = this.textEdit8;
-            this.txtBrandID.Location = new System.Drawing.Point(1070, 184);
-            this.txtBrandID.Name = "txtBrandID";
-            this.txtBrandID.Size = new System.Drawing.Size(351, 26);
-            this.txtBrandID.Text = "BrandID";
-            this.txtBrandID.TextSize = new System.Drawing.Size(87, 16);
+            this.brand.Control = this.txtBrandId;
+            this.brand.Location = new System.Drawing.Point(1070, 184);
+            this.brand.Name = "brand";
+            this.brand.Size = new System.Drawing.Size(351, 26);
+            this.brand.Text = "BrandID";
+            this.brand.TextSize = new System.Drawing.Size(87, 16);
             // 
             // CategoryID
             // 
-            this.CategoryID.Control = this.textEdit9;
+            this.CategoryID.Control = this.txtCategoryId;
             this.CategoryID.Location = new System.Drawing.Point(1070, 210);
             this.CategoryID.Name = "CategoryID";
             this.CategoryID.Size = new System.Drawing.Size(351, 26);
@@ -642,7 +643,7 @@
             // 
             // ProductDetailID
             // 
-            this.ProductDetailID.Control = this.textEdit10;
+            this.ProductDetailID.Control = this.txtProductId;
             this.ProductDetailID.Location = new System.Drawing.Point(1070, 236);
             this.ProductDetailID.Name = "ProductDetailID";
             this.ProductDetailID.Size = new System.Drawing.Size(351, 336);
@@ -688,6 +689,7 @@
             this.Controls.Add(this.barDockControl4);
             this.Controls.Add(this.barDockControl2);
             this.Controls.Add(this.barDockControl1);
+            this.Name = "ProductLoad";
             this.Size = new System.Drawing.Size(1441, 622);
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.saleLaptopSystemDataSet12)).EndInit();
@@ -700,15 +702,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.saleLaptopSystemDataSet26)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit8.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit9.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit10.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPrice.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDiscount.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDescription.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFeatures.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtBrandId.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCategoryId.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtProductId.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbActive.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ID)).EndInit();
@@ -718,7 +720,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Description)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Features)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtBrandID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.brand)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CategoryID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductDetailID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
@@ -734,7 +736,7 @@
         private SaleLaptopSystemDataSet12 saleLaptopSystemDataSet12;
         private DevExpress.XtraBars.Docking.DockManager dockManager1;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit txtId;
         private DevExpress.XtraBars.BarManager barManager1;
         private DevExpress.XtraBars.Bar bar1;
         private DevExpress.XtraBars.BarButtonItem btnAdd;
@@ -751,22 +753,22 @@
         private DevExpress.XtraBars.BarDockControl barDockControl1;
         private DevExpress.XtraBars.BarDockControl barDockControl2;
         private DevExpress.XtraBars.BarDockControl barDockControl4;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
+        private DevExpress.XtraEditors.TextEdit txtName;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
-        private DevExpress.XtraEditors.TextEdit textEdit3;
-        private DevExpress.XtraEditors.TextEdit textEdit4;
-        private DevExpress.XtraEditors.TextEdit textEdit5;
-        private DevExpress.XtraEditors.TextEdit textEdit6;
-        private DevExpress.XtraEditors.TextEdit textEdit8;
-        private DevExpress.XtraEditors.TextEdit textEdit9;
-        private DevExpress.XtraEditors.TextEdit textEdit10;
+        private DevExpress.XtraEditors.TextEdit txtPrice;
+        private DevExpress.XtraEditors.TextEdit txtDiscount;
+        private DevExpress.XtraEditors.TextEdit txtDescription;
+        private DevExpress.XtraEditors.TextEdit txtFeatures;
+        private DevExpress.XtraEditors.TextEdit txtBrandId;
+        private DevExpress.XtraEditors.TextEdit txtCategoryId;
+        private DevExpress.XtraEditors.TextEdit txtProductId;
         private DevExpress.XtraLayout.LayoutControlItem Name;
         private DevExpress.XtraLayout.LayoutControlItem Price;
         private DevExpress.XtraLayout.LayoutControlItem Discount;
         private DevExpress.XtraLayout.LayoutControlItem Description;
         private DevExpress.XtraLayout.LayoutControlItem Features;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
-        private DevExpress.XtraLayout.LayoutControlItem txtBrandID;
+        private DevExpress.XtraLayout.LayoutControlItem brand;
         private DevExpress.XtraLayout.LayoutControlItem CategoryID;
         private DevExpress.XtraLayout.LayoutControlItem ProductDetailID;
         private DevExpress.XtraEditors.CheckEdit cbActive;
