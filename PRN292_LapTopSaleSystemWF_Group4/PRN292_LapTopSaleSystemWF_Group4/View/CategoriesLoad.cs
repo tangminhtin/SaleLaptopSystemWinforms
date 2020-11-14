@@ -28,7 +28,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
         private void btnAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             categoriesBindingSource1.AddNew();
-            isAdd = true;categoriesBindingSource1.AddNew();
+            isAdd = true;
         }
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

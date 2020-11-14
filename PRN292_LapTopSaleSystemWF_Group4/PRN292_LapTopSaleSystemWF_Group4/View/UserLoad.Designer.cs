@@ -45,8 +45,8 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.usersBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.saleLaptopSystemDataSet25 = new PRN292_LapTopSaleSystemWF_Group4.SaleLaptopSystemDataSet25();
+            this.usersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.saleLaptopSystemDataSet21 = new PRN292_LapTopSaleSystemWF_Group4.SaleLaptopSystemDataSet21();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colFullname = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -58,12 +58,16 @@
             this.colRole = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colActive = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtId = new DevExpress.XtraEditors.TextEdit();
+            this.usersBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.saleLaptopSystemDataSet25 = new PRN292_LapTopSaleSystemWF_Group4.SaleLaptopSystemDataSet25();
             this.txtName = new DevExpress.XtraEditors.TextEdit();
             this.txtEmail = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
+            this.txtPhone = new DevExpress.XtraEditors.TextEdit();
             this.txtAddress = new DevExpress.XtraEditors.TextEdit();
             this.txtRole = new DevExpress.XtraEditors.TextEdit();
             this.cbCheck = new DevExpress.XtraEditors.CheckEdit();
+            this.txtPassword = new DevExpress.XtraEditors.TextEdit();
+            this.txtImage = new DevExpress.XtraEditors.TextEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.ID = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -73,8 +77,8 @@
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.usersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.saleLaptopSystemDataSet21 = new PRN292_LapTopSaleSystemWF_Group4.SaleLaptopSystemDataSet21();
+            this.Password = new DevExpress.XtraLayout.LayoutControlItem();
+            this.Image = new DevExpress.XtraLayout.LayoutControlItem();
             this.usersTableAdapter1 = new PRN292_LapTopSaleSystemWF_Group4.SaleLaptopSystemDataSet21TableAdapters.UsersTableAdapter();
             this.usersTableAdapter2 = new PRN292_LapTopSaleSystemWF_Group4.SaleLaptopSystemDataSet25TableAdapters.UsersTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.saleLaptopSystemDataSet16)).BeginInit();
@@ -83,16 +87,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.saleLaptopSystemDataSet25)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.saleLaptopSystemDataSet21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.saleLaptopSystemDataSet25)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPhone.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAddress.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRole.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbCheck.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtImage.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
@@ -102,8 +110,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.saleLaptopSystemDataSet21)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Password)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Image)).BeginInit();
             this.SuspendLayout();
             // 
             // saleLaptopSystemDataSet16
@@ -160,6 +168,7 @@
             this.btnAdd.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnAdd.ImageOptions.LargeImage")));
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnAdd.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAdd_ItemClick);
             // 
             // btnDelete
             // 
@@ -169,6 +178,7 @@
             this.btnDelete.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDelete.ImageOptions.LargeImage")));
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnDelete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDelete_ItemClick);
             // 
             // btnSave
             // 
@@ -178,6 +188,7 @@
             this.btnSave.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.LargeImage")));
             this.btnSave.Name = "btnSave";
             this.btnSave.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnSave.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSave_ItemClick);
             // 
             // bar3
             // 
@@ -197,15 +208,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(975, 30);
+            this.barDockControlTop.Size = new System.Drawing.Size(1163, 30);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 496);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 479);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(975, 20);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1163, 20);
             // 
             // barDockControlLeft
             // 
@@ -213,15 +224,15 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 30);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 466);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 449);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(975, 30);
+            this.barDockControlRight.Location = new System.Drawing.Point(1163, 30);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 466);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 449);
             // 
             // layoutControl1
             // 
@@ -229,39 +240,41 @@
             this.layoutControl1.Controls.Add(this.txtId);
             this.layoutControl1.Controls.Add(this.txtName);
             this.layoutControl1.Controls.Add(this.txtEmail);
-            this.layoutControl1.Controls.Add(this.textEdit4);
+            this.layoutControl1.Controls.Add(this.txtPhone);
             this.layoutControl1.Controls.Add(this.txtAddress);
             this.layoutControl1.Controls.Add(this.txtRole);
             this.layoutControl1.Controls.Add(this.cbCheck);
+            this.layoutControl1.Controls.Add(this.txtPassword);
+            this.layoutControl1.Controls.Add(this.txtImage);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 30);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(975, 466);
+            this.layoutControl1.Size = new System.Drawing.Size(1163, 449);
             this.layoutControl1.TabIndex = 4;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // gridControl1
             // 
-            this.gridControl1.DataSource = this.usersBindingSource2;
+            this.gridControl1.DataSource = this.usersBindingSource1;
             this.gridControl1.Location = new System.Drawing.Point(12, 12);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(740, 442);
+            this.gridControl1.Size = new System.Drawing.Size(888, 425);
             this.gridControl1.TabIndex = 11;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
-            // usersBindingSource2
+            // usersBindingSource1
             // 
-            this.usersBindingSource2.DataMember = "Users";
-            this.usersBindingSource2.DataSource = this.saleLaptopSystemDataSet25;
+            this.usersBindingSource1.DataMember = "Users";
+            this.usersBindingSource1.DataSource = this.saleLaptopSystemDataSet21;
             // 
-            // saleLaptopSystemDataSet25
+            // saleLaptopSystemDataSet21
             // 
-            this.saleLaptopSystemDataSet25.DataSetName = "SaleLaptopSystemDataSet25";
-            this.saleLaptopSystemDataSet25.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.saleLaptopSystemDataSet21.DataSetName = "SaleLaptopSystemDataSet21";
+            this.saleLaptopSystemDataSet21.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gridView1
             // 
@@ -361,76 +374,106 @@
             // 
             // txtId
             // 
-            this.txtId.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.usersBindingSource2, "ID", true));
-            this.txtId.Location = new System.Drawing.Point(816, 12);
+            this.txtId.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.usersBindingSource1, "ID", true));
+            this.txtId.Location = new System.Drawing.Point(964, 12);
             this.txtId.MenuManager = this.barManager1;
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(147, 22);
+            this.txtId.Size = new System.Drawing.Size(187, 22);
             this.txtId.StyleController = this.layoutControl1;
             this.txtId.TabIndex = 4;
             // 
+            // usersBindingSource2
+            // 
+            this.usersBindingSource2.DataMember = "Users";
+            this.usersBindingSource2.DataSource = this.saleLaptopSystemDataSet25;
+            // 
+            // saleLaptopSystemDataSet25
+            // 
+            this.saleLaptopSystemDataSet25.DataSetName = "SaleLaptopSystemDataSet25";
+            this.saleLaptopSystemDataSet25.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // txtName
             // 
-            this.txtName.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.usersBindingSource2, "Fullname", true));
-            this.txtName.Location = new System.Drawing.Point(816, 38);
+            this.txtName.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.usersBindingSource1, "Fullname", true));
+            this.txtName.Location = new System.Drawing.Point(964, 38);
             this.txtName.MenuManager = this.barManager1;
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(147, 22);
+            this.txtName.Size = new System.Drawing.Size(187, 22);
             this.txtName.StyleController = this.layoutControl1;
             this.txtName.TabIndex = 5;
             // 
             // txtEmail
             // 
-            this.txtEmail.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.usersBindingSource2, "Email", true));
-            this.txtEmail.Location = new System.Drawing.Point(816, 64);
+            this.txtEmail.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.usersBindingSource1, "Email", true));
+            this.txtEmail.Location = new System.Drawing.Point(964, 90);
             this.txtEmail.MenuManager = this.barManager1;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(147, 22);
+            this.txtEmail.Size = new System.Drawing.Size(187, 22);
             this.txtEmail.StyleController = this.layoutControl1;
             this.txtEmail.TabIndex = 6;
             // 
-            // textEdit4
+            // txtPhone
             // 
-            this.textEdit4.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.usersBindingSource2, "Phone", true));
-            this.textEdit4.Location = new System.Drawing.Point(816, 90);
-            this.textEdit4.MenuManager = this.barManager1;
-            this.textEdit4.Name = "textEdit4";
-            this.textEdit4.Size = new System.Drawing.Size(147, 22);
-            this.textEdit4.StyleController = this.layoutControl1;
-            this.textEdit4.TabIndex = 7;
+            this.txtPhone.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.usersBindingSource1, "Phone", true));
+            this.txtPhone.Location = new System.Drawing.Point(964, 116);
+            this.txtPhone.MenuManager = this.barManager1;
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(187, 22);
+            this.txtPhone.StyleController = this.layoutControl1;
+            this.txtPhone.TabIndex = 7;
             // 
             // txtAddress
             // 
-            this.txtAddress.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.usersBindingSource2, "Address", true));
-            this.txtAddress.Location = new System.Drawing.Point(816, 116);
+            this.txtAddress.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.usersBindingSource1, "Address", true));
+            this.txtAddress.Location = new System.Drawing.Point(964, 142);
             this.txtAddress.MenuManager = this.barManager1;
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(147, 22);
+            this.txtAddress.Size = new System.Drawing.Size(187, 22);
             this.txtAddress.StyleController = this.layoutControl1;
             this.txtAddress.TabIndex = 8;
             // 
             // txtRole
             // 
-            this.txtRole.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.usersBindingSource2, "Role", true));
-            this.txtRole.Location = new System.Drawing.Point(816, 142);
+            this.txtRole.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.usersBindingSource1, "Role", true));
+            this.txtRole.Location = new System.Drawing.Point(964, 194);
             this.txtRole.MenuManager = this.barManager1;
             this.txtRole.Name = "txtRole";
-            this.txtRole.Size = new System.Drawing.Size(147, 22);
+            this.txtRole.Size = new System.Drawing.Size(187, 22);
             this.txtRole.StyleController = this.layoutControl1;
             this.txtRole.TabIndex = 9;
             // 
             // cbCheck
             // 
-            this.cbCheck.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.usersBindingSource2, "Active", true));
+            this.cbCheck.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.usersBindingSource1, "Active", true));
             this.cbCheck.EditValue = null;
-            this.cbCheck.Location = new System.Drawing.Point(756, 168);
+            this.cbCheck.Location = new System.Drawing.Point(904, 220);
             this.cbCheck.MenuManager = this.barManager1;
             this.cbCheck.Name = "cbCheck";
             this.cbCheck.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
             this.cbCheck.Properties.Caption = "Active";
-            this.cbCheck.Size = new System.Drawing.Size(207, 24);
+            this.cbCheck.Size = new System.Drawing.Size(247, 24);
             this.cbCheck.StyleController = this.layoutControl1;
             this.cbCheck.TabIndex = 10;
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.usersBindingSource1, "Password", true));
+            this.txtPassword.Location = new System.Drawing.Point(964, 64);
+            this.txtPassword.MenuManager = this.barManager1;
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(187, 22);
+            this.txtPassword.StyleController = this.layoutControl1;
+            this.txtPassword.TabIndex = 12;
+            // 
+            // txtImage
+            // 
+            this.txtImage.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.usersBindingSource1, "Image", true));
+            this.txtImage.Location = new System.Drawing.Point(964, 168);
+            this.txtImage.MenuManager = this.barManager1;
+            this.txtImage.Name = "txtImage";
+            this.txtImage.Size = new System.Drawing.Size(187, 22);
+            this.txtImage.StyleController = this.layoutControl1;
+            this.txtImage.TabIndex = 13;
             // 
             // Root
             // 
@@ -444,69 +487,71 @@
             this.layoutControlItem1,
             this.layoutControlItem3,
             this.layoutControlItem5,
-            this.layoutControlItem6});
+            this.layoutControlItem6,
+            this.Password,
+            this.Image});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(975, 466);
+            this.Root.Size = new System.Drawing.Size(1163, 449);
             this.Root.TextVisible = false;
             // 
             // ID
             // 
             this.ID.Control = this.txtId;
-            this.ID.Location = new System.Drawing.Point(744, 0);
+            this.ID.Location = new System.Drawing.Point(892, 0);
             this.ID.Name = "ID";
-            this.ID.Size = new System.Drawing.Size(211, 26);
+            this.ID.Size = new System.Drawing.Size(251, 26);
             this.ID.TextSize = new System.Drawing.Size(57, 16);
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.txtName;
-            this.layoutControlItem2.Location = new System.Drawing.Point(744, 26);
+            this.layoutControlItem2.Location = new System.Drawing.Point(892, 26);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(211, 26);
+            this.layoutControlItem2.Size = new System.Drawing.Size(251, 26);
             this.layoutControlItem2.Text = "Full Name";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(57, 16);
             // 
             // Email
             // 
             this.Email.Control = this.txtEmail;
-            this.Email.Location = new System.Drawing.Point(744, 52);
+            this.Email.Location = new System.Drawing.Point(892, 78);
             this.Email.Name = "Email";
-            this.Email.Size = new System.Drawing.Size(211, 26);
+            this.Email.Size = new System.Drawing.Size(251, 26);
             this.Email.TextSize = new System.Drawing.Size(57, 16);
             // 
             // layoutControlItem4
             // 
-            this.layoutControlItem4.Control = this.textEdit4;
-            this.layoutControlItem4.Location = new System.Drawing.Point(744, 78);
+            this.layoutControlItem4.Control = this.txtPhone;
+            this.layoutControlItem4.Location = new System.Drawing.Point(892, 104);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(211, 26);
+            this.layoutControlItem4.Size = new System.Drawing.Size(251, 26);
             this.layoutControlItem4.Text = "Phone";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(57, 16);
             // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.txtAddress;
-            this.layoutControlItem1.Location = new System.Drawing.Point(744, 104);
+            this.layoutControlItem1.Location = new System.Drawing.Point(892, 130);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(211, 26);
+            this.layoutControlItem1.Size = new System.Drawing.Size(251, 26);
             this.layoutControlItem1.Text = "Address";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(57, 16);
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.txtRole;
-            this.layoutControlItem3.Location = new System.Drawing.Point(744, 130);
+            this.layoutControlItem3.Location = new System.Drawing.Point(892, 182);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(211, 26);
+            this.layoutControlItem3.Size = new System.Drawing.Size(251, 26);
             this.layoutControlItem3.Text = "Role";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(57, 16);
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.cbCheck;
-            this.layoutControlItem5.Location = new System.Drawing.Point(744, 156);
+            this.layoutControlItem5.Location = new System.Drawing.Point(892, 208);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(211, 290);
+            this.layoutControlItem5.Size = new System.Drawing.Size(251, 221);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
@@ -515,19 +560,25 @@
             this.layoutControlItem6.Control = this.gridControl1;
             this.layoutControlItem6.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(744, 446);
+            this.layoutControlItem6.Size = new System.Drawing.Size(892, 429);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
-            // usersBindingSource1
+            // Password
             // 
-            this.usersBindingSource1.DataMember = "Users";
-            this.usersBindingSource1.DataSource = this.saleLaptopSystemDataSet21;
+            this.Password.Control = this.txtPassword;
+            this.Password.Location = new System.Drawing.Point(892, 52);
+            this.Password.Name = "Password";
+            this.Password.Size = new System.Drawing.Size(251, 26);
+            this.Password.TextSize = new System.Drawing.Size(57, 16);
             // 
-            // saleLaptopSystemDataSet21
+            // Image
             // 
-            this.saleLaptopSystemDataSet21.DataSetName = "SaleLaptopSystemDataSet21";
-            this.saleLaptopSystemDataSet21.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.Image.Control = this.txtImage;
+            this.Image.Location = new System.Drawing.Point(892, 156);
+            this.Image.Name = "Image";
+            this.Image.Size = new System.Drawing.Size(251, 26);
+            this.Image.TextSize = new System.Drawing.Size(57, 16);
             // 
             // usersTableAdapter1
             // 
@@ -547,23 +598,27 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "UserLoad";
-            this.Size = new System.Drawing.Size(975, 516);
+            this.Size = new System.Drawing.Size(1163, 499);
             ((System.ComponentModel.ISupportInitialize)(this.saleLaptopSystemDataSet16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.saleLaptopSystemDataSet25)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.saleLaptopSystemDataSet21)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.saleLaptopSystemDataSet25)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPhone.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAddress.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRole.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbCheck.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtImage.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
@@ -573,8 +628,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.saleLaptopSystemDataSet21)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Password)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Image)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -598,7 +653,7 @@
         private DevExpress.XtraEditors.TextEdit txtId;
         private DevExpress.XtraEditors.TextEdit txtName;
         private DevExpress.XtraEditors.TextEdit txtEmail;
-        private DevExpress.XtraEditors.TextEdit textEdit4;
+        private DevExpress.XtraEditors.TextEdit txtPhone;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
         private DevExpress.XtraLayout.LayoutControlItem ID;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
@@ -628,5 +683,9 @@
         private System.Windows.Forms.BindingSource usersBindingSource2;
         private SaleLaptopSystemDataSet25 saleLaptopSystemDataSet25;
         private SaleLaptopSystemDataSet25TableAdapters.UsersTableAdapter usersTableAdapter2;
+        private DevExpress.XtraEditors.TextEdit txtPassword;
+        private DevExpress.XtraLayout.LayoutControlItem Password;
+        private DevExpress.XtraEditors.TextEdit txtImage;
+        private DevExpress.XtraLayout.LayoutControlItem Image;
     }
 }

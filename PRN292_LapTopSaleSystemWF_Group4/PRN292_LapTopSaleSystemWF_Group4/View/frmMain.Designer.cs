@@ -124,7 +124,7 @@
             this.btnBrand.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBrand.ImageOptions.Image")));
             this.btnBrand.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnBrand.ImageOptions.LargeImage")));
             this.btnBrand.Name = "btnBrand";
-            this.btnBrand.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBrand_ItemClick);
+      
             // 
             // btnCate
             // 
@@ -133,7 +133,7 @@
             this.btnCate.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCate.ImageOptions.Image")));
             this.btnCate.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnCate.ImageOptions.LargeImage")));
             this.btnCate.Name = "btnCate";
-            this.btnCate.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCate_ItemClick);
+   
             // 
             // barButtonItem5
             // 

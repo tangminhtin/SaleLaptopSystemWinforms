@@ -18,28 +18,22 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             InitializeComponent();
         }
 
-        private void btnUser_Click(object sender, EventArgs e)
-        {
-            UserLoad user = new UserLoad();
-            panel1.Controls.Add(user);
-            user.BringToFront();
-            user.Size = new Size(992, 558);
-        }
+       
 
         private void btnProduct_Click(object sender, EventArgs e)
         {
             ProductLoad product = new ProductLoad();
             panel1.Controls.Add(product);
             product.Size = new Size(992, 558);
-            product.BringToFront(); 
+            product.BringToFront();
         }
 
         private void btnProductDetail_Click(object sender, EventArgs e)
         {
-            ProductDetailsLoad productdetail = new ProductDetailsLoad();
-            panel1.Controls.Add(productdetail);
-            productdetail.Size = new Size(992, 558);
-            productdetail.BringToFront();
+            ProductDetailLoad productDetail = new ProductDetailLoad();
+            panel1.Controls.Add(productDetail);
+            productDetail.Size = new Size(992, 558);
+            productDetail.BringToFront();
         }
 
         private void btnBrands_Click(object sender, EventArgs e)
@@ -56,6 +50,14 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             panel1.Controls.Add(categories);
             categories.BringToFront();
             categories.Size = new Size(992, 558);
+        }
+
+        private void btnUser_Click(object sender, EventArgs e)
+        {
+            UserLoad user = new UserLoad();
+            panel1.Controls.Add(user);
+            user.BringToFront();
+            //user.Size = new Size(292, 558);
         }
     }
 }

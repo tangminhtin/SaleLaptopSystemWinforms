@@ -30,10 +30,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             brandsBindingSource1.AddNew();
             isAdd = true;
         }
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-            brandsBindingSource1.DataSource = db.Brands.ToList();
-        }
+    
 
         private void btnDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {

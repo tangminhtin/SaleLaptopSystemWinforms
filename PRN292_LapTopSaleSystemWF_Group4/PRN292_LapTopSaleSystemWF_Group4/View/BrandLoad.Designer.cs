@@ -64,6 +64,7 @@
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.diagramPanAndZoomControl1 = new DevExpress.XtraDiagram.DiagramPanAndZoomControl();
             this.brandsTableAdapter1 = new PRN292_LapTopSaleSystemWF_Group4.SaleLaptopSystemDataSet28TableAdapters.BrandsTableAdapter();
+            this.entityCommand1 = new System.Data.Entity.Core.EntityClient.EntityCommand();
             ((System.ComponentModel.ISupportInitialize)(this.saleLaptopSystemDataSet17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.brandsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
@@ -406,6 +407,14 @@
             // 
             this.brandsTableAdapter1.ClearBeforeFill = true;
             // 
+            // entityCommand1
+            // 
+            this.entityCommand1.CommandTimeout = 0;
+            this.entityCommand1.CommandTree = null;
+            this.entityCommand1.Connection = null;
+            this.entityCommand1.EnablePlanCaching = true;
+            this.entityCommand1.Transaction = null;
+            // 
             // BrandLoad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -477,5 +486,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraDiagram.DiagramPanAndZoomControl diagramPanAndZoomControl1;
         private SaleLaptopSystemDataSet28TableAdapters.BrandsTableAdapter brandsTableAdapter1;
+        private System.Data.Entity.Core.EntityClient.EntityCommand entityCommand1;
     }
 }

@@ -14,8 +14,9 @@ namespace PRN292_LapTopSaleSystemWF_Group4.Model
     
     public partial class Product
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Product()
+       
+        
+        public Product(string name)
         {
             this.Comments = new HashSet<Comment>();
             this.Images = new HashSet<Image>();
@@ -32,7 +33,25 @@ namespace PRN292_LapTopSaleSystemWF_Group4.Model
         public Nullable<int> BrandID { get; set; }
         public Nullable<int> CategoryID { get; set; }
         public Nullable<int> ProductDetailID { get; set; }
-    
+
+        public Product( string name, double price, double discount, string description, string features, bool active, int brandID, int  categoryID, int  productDetailID)
+        {
+            Name = name;
+            Price = price;
+            Discount = discount;
+            Description = description;
+            Features = features;
+            Active = active;
+            BrandID = brandID;
+            CategoryID = categoryID;
+            ProductDetailID = productDetailID;
+        }
+
+        public Product()
+        {
+
+        }
+
         public virtual Brand Brand { get; set; }
         public virtual Category Category { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -42,5 +61,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
         public virtual ProductDetail ProductDetail { get; set; }
+
+       
     }
 }

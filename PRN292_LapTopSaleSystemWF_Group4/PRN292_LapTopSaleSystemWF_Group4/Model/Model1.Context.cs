@@ -35,5 +35,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4.Model
         public virtual DbSet<ProductDetail> ProductDetails { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<User> Users { get; set; }
+
+      
     }
 }
