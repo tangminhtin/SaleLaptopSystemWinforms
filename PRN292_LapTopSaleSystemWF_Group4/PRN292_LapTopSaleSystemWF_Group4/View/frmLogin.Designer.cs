@@ -54,10 +54,11 @@
             this.layoutControl1.Controls.Add(this.imageSlider1);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(270, 170, 812, 500);
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(209, 467);
+            this.layoutControl1.Size = new System.Drawing.Size(179, 379);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -68,7 +69,7 @@
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(209, 467);
+            this.Root.Size = new System.Drawing.Size(179, 379);
             this.Root.TextVisible = false;
             // 
             // lblEmail
@@ -77,9 +78,9 @@
             this.lblEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.lblEmail.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.lblEmail.Location = new System.Drawing.Point(215, 168);
+            this.lblEmail.Location = new System.Drawing.Point(184, 136);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(92, 34);
+            this.lblEmail.Size = new System.Drawing.Size(74, 27);
             this.lblEmail.TabIndex = 1;
             this.lblEmail.Text = "Email";
             // 
@@ -89,18 +90,19 @@
             this.lblPass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.lblPass.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.lblPass.Location = new System.Drawing.Point(215, 223);
+            this.lblPass.Location = new System.Drawing.Point(184, 181);
             this.lblPass.Name = "lblPass";
-            this.lblPass.Size = new System.Drawing.Size(150, 34);
+            this.lblPass.Size = new System.Drawing.Size(119, 27);
             this.lblPass.TabIndex = 2;
             this.lblPass.Text = "Password";
             // 
             // cbPass
             // 
             this.cbPass.AutoSize = true;
-            this.cbPass.Location = new System.Drawing.Point(456, 272);
+            this.cbPass.Location = new System.Drawing.Point(391, 221);
+            this.cbPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbPass.Name = "cbPass";
-            this.cbPass.Size = new System.Drawing.Size(126, 21);
+            this.cbPass.Size = new System.Drawing.Size(101, 17);
             this.cbPass.TabIndex = 5;
             this.cbPass.Text = "Show Password";
             this.cbPass.UseVisualStyleBackColor = true;
@@ -109,19 +111,19 @@
             // lblRegister
             // 
             this.lblRegister.AutoSize = true;
-            this.lblRegister.Location = new System.Drawing.Point(228, 404);
+            this.lblRegister.Location = new System.Drawing.Point(195, 328);
             this.lblRegister.Name = "lblRegister";
-            this.lblRegister.Size = new System.Drawing.Size(217, 17);
+            this.lblRegister.Size = new System.Drawing.Size(172, 13);
             this.lblRegister.TabIndex = 6;
             this.lblRegister.Text = "If you don\'t have account. Please ";
             // 
             // linkRegis
             // 
             this.linkRegis.AutoSize = true;
-            this.linkRegis.LinkColor = System.Drawing.Color.Fuchsia;
-            this.linkRegis.Location = new System.Drawing.Point(438, 404);
+            this.linkRegis.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.linkRegis.Location = new System.Drawing.Point(375, 328);
             this.linkRegis.Name = "linkRegis";
-            this.linkRegis.Size = new System.Drawing.Size(80, 17);
+            this.linkRegis.Size = new System.Drawing.Size(65, 13);
             this.linkRegis.TabIndex = 7;
             this.linkRegis.TabStop = true;
             this.linkRegis.Text = "Registration";
@@ -132,9 +134,10 @@
             this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnLogin.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnLogin.Location = new System.Drawing.Point(325, 313);
+            this.btnLogin.Location = new System.Drawing.Point(279, 254);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(120, 45);
+            this.btnLogin.Size = new System.Drawing.Size(103, 37);
             this.btnLogin.TabIndex = 8;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -145,24 +148,26 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.label1.Location = new System.Drawing.Point(317, 68);
+            this.label1.Location = new System.Drawing.Point(272, 55);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(154, 48);
+            this.label1.Size = new System.Drawing.Size(124, 39);
             this.label1.TabIndex = 9;
             this.label1.Text = "LOGIN";
             // 
             // txtPass
             // 
-            this.txtPass.Location = new System.Drawing.Point(372, 234);
+            this.txtPass.Location = new System.Drawing.Point(319, 190);
+            this.txtPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(210, 23);
+            this.txtPass.Size = new System.Drawing.Size(181, 21);
             this.txtPass.TabIndex = 10;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(372, 179);
+            this.txtEmail.Location = new System.Drawing.Point(319, 145);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(210, 23);
+            this.txtEmail.Size = new System.Drawing.Size(181, 21);
             this.txtEmail.TabIndex = 11;
             // 
             // imageSlider1
@@ -170,8 +175,9 @@
             this.imageSlider1.CurrentImageIndex = 0;
             this.imageSlider1.Images.Add(((System.Drawing.Image)(resources.GetObject("imageSlider1.Images"))));
             this.imageSlider1.Location = new System.Drawing.Point(12, 12);
+            this.imageSlider1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.imageSlider1.Name = "imageSlider1";
-            this.imageSlider1.Size = new System.Drawing.Size(185, 443);
+            this.imageSlider1.Size = new System.Drawing.Size(155, 355);
             this.imageSlider1.StyleController = this.layoutControl1;
             this.imageSlider1.TabIndex = 4;
             this.imageSlider1.Text = "imageSlider1";
@@ -181,7 +187,7 @@
             this.layoutControlItem1.Control = this.imageSlider1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(189, 447);
+            this.layoutControlItem1.Size = new System.Drawing.Size(159, 359);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -189,9 +195,9 @@
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.Appearance.Options.UseBackColor = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(607, 467);
+            this.ClientSize = new System.Drawing.Size(520, 379);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtPass);
             this.Controls.Add(this.label1);
@@ -202,6 +208,7 @@
             this.Controls.Add(this.lblPass);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.layoutControl1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmLogin";
             this.Text = "frmLogin";
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();

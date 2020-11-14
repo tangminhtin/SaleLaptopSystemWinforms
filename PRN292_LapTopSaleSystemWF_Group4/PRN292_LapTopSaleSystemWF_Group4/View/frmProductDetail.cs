@@ -27,7 +27,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
         private void frmProductDetail_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'saleLaptopSystemDataSet9.ProductDetails' table. You can move, or remove it, as needed.
-            this.productDetailsTableAdapter.Fill(this.saleLaptopSystemDataSet9.ProductDetails);
+            this.productDetailsTableAdapter.Fill(db.ProductDetails);
             productDetailsBindingSource.DataSource = db.ProductDetails.ToList();
         }
 

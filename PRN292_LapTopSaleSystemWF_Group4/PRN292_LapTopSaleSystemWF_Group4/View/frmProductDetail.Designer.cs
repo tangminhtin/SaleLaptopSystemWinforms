@@ -42,7 +42,6 @@
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.txtBettery = new DevExpress.XtraEditors.TextEdit();
             this.productDetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.saleLaptopSystemDataSet9 = new PRN292_LapTopSaleSystemWF_Group4.SaleLaptopSystemDataSet9();
             this.txtKeyboard = new DevExpress.XtraEditors.TextEdit();
             this.txtConnection = new DevExpress.XtraEditors.TextEdit();
             this.txtVideo = new DevExpress.XtraEditors.TextEdit();
@@ -81,7 +80,6 @@
             this.connectionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.keyboardDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.batteryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productDetailsTableAdapter = new PRN292_LapTopSaleSystemWF_Group4.SaleLaptopSystemDataSet9TableAdapters.ProductDetailsTableAdapter();
             this.numericChartRangeControlClient1 = new DevExpress.XtraEditors.NumericChartRangeControlClient();
             this.numericChartRangeControlClient2 = new DevExpress.XtraEditors.NumericChartRangeControlClient();
             this.btnBack = new DevExpress.XtraEditors.SimpleButton();
@@ -91,7 +89,6 @@
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtBettery.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productDetailsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.saleLaptopSystemDataSet9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtKeyboard.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtConnection.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtVideo.Properties)).BeginInit();
@@ -251,12 +248,9 @@
             // productDetailsBindingSource
             // 
             this.productDetailsBindingSource.DataMember = "ProductDetails";
-            this.productDetailsBindingSource.DataSource = this.saleLaptopSystemDataSet9;
             // 
             // saleLaptopSystemDataSet9
             // 
-            this.saleLaptopSystemDataSet9.DataSetName = "SaleLaptopSystemDataSet9";
-            this.saleLaptopSystemDataSet9.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // txtKeyboard
             // 
@@ -648,7 +642,6 @@
             // 
             // productDetailsTableAdapter
             // 
-            this.productDetailsTableAdapter.ClearBeforeFill = true;
             // 
             // btnBack
             // 
@@ -689,7 +682,6 @@
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtBettery.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productDetailsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.saleLaptopSystemDataSet9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtKeyboard.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtConnection.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtVideo.Properties)).EndInit();
@@ -735,9 +727,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
-        private SaleLaptopSystemDataSet9 saleLaptopSystemDataSet9;
         private System.Windows.Forms.BindingSource productDetailsBindingSource;
-        private SaleLaptopSystemDataSet9TableAdapters.ProductDetailsTableAdapter productDetailsTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn processorDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn rAMDataGridViewTextBoxColumn;

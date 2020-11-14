@@ -35,17 +35,5 @@ namespace PRN292_LapTopSaleSystemWF_Group4.Model
         public virtual ICollection<Comment> Comments { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order> Orders { get; set; }
-
-        public User( string fullname, string password, string email, string phone, string address, string image, string role, bool active)
-        {
-            Fullname = fullname;
-            Password = password;
-            Email = email;
-            Phone = phone;
-            Address = address;
-            Image = image;
-            Role = role;
-            Active = active;
-        }
     }
 }

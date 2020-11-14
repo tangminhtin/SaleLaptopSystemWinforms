@@ -25,7 +25,6 @@ namespace PRN292_LapTopSaleSystemWF_Group4.Model
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
         public virtual DbSet<Brand> Brands { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Comment> Comments { get; set; }
@@ -35,7 +34,5 @@ namespace PRN292_LapTopSaleSystemWF_Group4.Model
         public virtual DbSet<ProductDetail> ProductDetails { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<User> Users { get; set; }
-
-      
     }
 }

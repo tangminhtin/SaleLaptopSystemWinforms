@@ -1,6 +1,4 @@
-﻿using DevExpress.LookAndFeel;
-using PRN292_LapTopSaleSystemWF_Group4.Model;
-using PRN292_LapTopSaleSystemWF_Group4.View;
+﻿using DevExpress.XtraBars;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,45 +7,28 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using PRN292_LapTopSaleSystemWF_Group4.Model;
 
-namespace PRN292_LapTopSaleSystemWF_Group4
+namespace PRN292_LapTopSaleSystemWF_Group4.View
 {
-    public partial class frmMain : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class frmMain : DevExpress.XtraBars.FluentDesignSystem.FluentDesignForm
     {
         User user;
+        SaleLaptopSystemEntities db = new SaleLaptopSystemEntities();
         public frmMain(User user)
         {
             InitializeComponent();
-            UserLookAndFeel.Default.SetSkinStyle("Valentine");
             this.CenterToScreen();
             this.user = user;
-            setUserInfo();
+            LoginName.Text = user.Fullname;
         }
 
-        public void setUserInfo()
+        private void ControlBrand_Click(object sender, EventArgs e)
         {
-            btnInfo.Caption = user.Fullname.Trim();
-        }
-
-        private void btnLogout_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            frmLogin frmLogin = new frmLogin(null);
-            frmLogin.Show();
-            this.Visible = false;
-        }
-
-        private void btnProduct_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-      
-        }
-
-
-
- 
-
-        private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-
+            BrandLoad viewBrand = new BrandLoad();
+            pnlView.Controls.Add(viewBrand);
+            viewBrand.BringToFront();
+            viewBrand.Size = new Size(915, 443);
         }
     }
 }
