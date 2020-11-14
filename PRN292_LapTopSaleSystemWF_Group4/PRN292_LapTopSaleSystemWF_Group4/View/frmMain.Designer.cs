@@ -60,7 +60,6 @@
             // 
             this.LoginName.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.btnLogout});
-            this.LoginName.Expanded = true;
             this.LoginName.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("LoginName.ImageOptions.Image")));
             this.LoginName.Name = "LoginName";
             this.LoginName.Text = "Element1";
@@ -71,12 +70,12 @@
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btnLogout.Text = "Logout";
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // accordionControlElement1
             // 
             this.accordionControlElement1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.ControlBrand});
-            this.accordionControlElement1.Expanded = true;
             this.accordionControlElement1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement1.ImageOptions.Image")));
             this.accordionControlElement1.Name = "accordionControlElement1";
             this.accordionControlElement1.Text = "Product";

@@ -30,5 +30,12 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             viewBrand.BringToFront();
             viewBrand.Size = new Size(915, 443);
         }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            frmLogin frmLogin = new frmLogin(null);
+            frmLogin.Show();
+            this.Visible = false;
+        }
     }
 }

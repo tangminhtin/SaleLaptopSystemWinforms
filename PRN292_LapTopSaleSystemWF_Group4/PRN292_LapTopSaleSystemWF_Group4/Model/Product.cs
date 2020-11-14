@@ -14,6 +14,8 @@ namespace PRN292_LapTopSaleSystemWF_Group4.Model
     
     public partial class Product
     {
+        private int productId;
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Product()
         {
@@ -42,5 +44,18 @@ namespace PRN292_LapTopSaleSystemWF_Group4.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
         public virtual ProductDetail ProductDetail { get; set; }
+
+        public Product(string name, double price, double discount, string description, string features, bool active, int brandId, int categoryId, int productId)
+        {
+            Name = name;
+            Price = price;
+            Discount = discount;
+            Description = description;
+            Features = features;
+            Active = active;
+            BrandID = brandId;
+            CategoryID = categoryId;
+            this.productId = productId;
+        }
     }
 }

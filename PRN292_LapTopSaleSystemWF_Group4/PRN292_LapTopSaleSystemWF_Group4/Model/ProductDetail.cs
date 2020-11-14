@@ -19,7 +19,22 @@ namespace PRN292_LapTopSaleSystemWF_Group4.Model
         {
             this.Products = new HashSet<Product>();
         }
-    
+
+        public ProductDetail(string processor, string rAM, string screen, string storage, string graphic, string size, string os, string video, string connection, string keyboard, string battery)
+        {
+            Processor = processor;
+            RAM = rAM;
+            Screen = screen;
+            Storage = storage;
+            Graphic = graphic;
+            Size = size;
+            OS = os;
+            Video = video;
+            Connection = connection;
+            Keyboard = keyboard;
+            Battery = battery;
+        }
+
         public int ID { get; set; }
         public string Processor { get; set; }
         public string RAM { get; set; }
