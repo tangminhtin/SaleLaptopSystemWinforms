@@ -50,5 +50,12 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             pnlView.Controls.Add(viewProduct);
             viewProduct.BringToFront();
         }
+
+        private void ControlUser_Click(object sender, EventArgs e)
+        {
+            UserLoad userLoad = new UserLoad();
+            pnlView.Controls.Add(userLoad);
+            userLoad.BringToFront();
+        }
     }
 }

@@ -212,6 +212,12 @@
     <Compile Include="View\ProductView.Designer.cs">
       <DependentUpon>ProductView.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\UserLoad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserLoad.Designer.cs">
+      <DependentUpon>UserLoad.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="View\BrandInsAndUp.resx">
       <DependentUpon>BrandInsAndUp.cs</DependentUpon>
     </EmbeddedResource>
@@ -255,6 +261,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\ProductView.resx">
       <DependentUpon>ProductView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserLoad.resx">
+      <DependentUpon>UserLoad.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <EntityDeploy Include="Model\Model1.edmx">

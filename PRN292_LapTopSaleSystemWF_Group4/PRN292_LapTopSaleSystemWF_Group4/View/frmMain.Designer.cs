@@ -37,6 +37,7 @@
             this.ControlBrand = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ControlCate = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ControlProductDetail = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.ControlUser = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.fluentFormDefaultManager1 = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
             this.pnlView = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer();
@@ -50,7 +51,8 @@
             this.accordionControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.accordionControl1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.LoginName,
-            this.accordionControlElement1});
+            this.accordionControlElement1,
+            this.ControlUser});
             this.accordionControl1.Location = new System.Drawing.Point(0, 39);
             this.accordionControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.accordionControl1.Name = "accordionControl1";
@@ -109,6 +111,14 @@
             this.ControlProductDetail.Text = "Product";
             this.ControlProductDetail.Click += new System.EventHandler(this.ControlProductDetail_Click);
             // 
+            // ControlUser
+            // 
+            this.ControlUser.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ControlUser.ImageOptions.Image")));
+            this.ControlUser.Name = "ControlUser";
+            this.ControlUser.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.ControlUser.Text = "User management";
+            this.ControlUser.Click += new System.EventHandler(this.ControlUser_Click);
+            // 
             // fluentDesignFormControl1
             // 
             this.fluentDesignFormControl1.FluentDesignForm = this;
@@ -166,5 +176,6 @@
         private DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer pnlView;
         private DevExpress.XtraBars.Navigation.AccordionControlElement ControlCate;
         private DevExpress.XtraBars.Navigation.AccordionControlElement ControlProductDetail;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement ControlUser;
     }
 }

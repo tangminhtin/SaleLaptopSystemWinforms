@@ -52,7 +52,8 @@
             this.lblConf = new DevExpress.XtraEditors.LabelControl();
             this.lblEmailCheck = new DevExpress.XtraEditors.LabelControl();
             this.lblPhonecheck = new DevExpress.XtraEditors.LabelControl();
-            this.txtPhone = new System.Windows.Forms.MaskedTextBox();
+            this.txtPhone = new System.Windows.Forms.TextBox();
+            this.btnUpload = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblName
@@ -181,9 +182,10 @@
             // 
             // txtImage
             // 
+            this.txtImage.Enabled = false;
             this.txtImage.Location = new System.Drawing.Point(213, 325);
             this.txtImage.Name = "txtImage";
-            this.txtImage.Size = new System.Drawing.Size(206, 23);
+            this.txtImage.Size = new System.Drawing.Size(119, 23);
             this.txtImage.TabIndex = 13;
             // 
             // txtAddress
@@ -297,11 +299,20 @@
             // txtPhone
             // 
             this.txtPhone.Location = new System.Drawing.Point(213, 284);
-            this.txtPhone.Mask = "(99) 0000-00000";
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(206, 23);
             this.txtPhone.TabIndex = 27;
-            this.txtPhone.Text = "84";
+            // 
+            // btnUpload
+            // 
+            this.btnUpload.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpload.Location = new System.Drawing.Point(338, 320);
+            this.btnUpload.Name = "btnUpload";
+            this.btnUpload.Size = new System.Drawing.Size(81, 29);
+            this.btnUpload.TabIndex = 28;
+            this.btnUpload.Text = "Upload";
+            this.btnUpload.UseVisualStyleBackColor = true;
+            this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
             // 
             // frmRegis
             // 
@@ -312,6 +323,7 @@
             this.BackgroundImageLayoutStore = System.Windows.Forms.ImageLayout.Stretch;
             this.BackgroundImageStore = global::PRN292_LapTopSaleSystemWF_Group4.Properties.Resources._1;
             this.ClientSize = new System.Drawing.Size(518, 451);
+            this.Controls.Add(this.btnUpload);
             this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.lblPhonecheck);
             this.Controls.Add(this.lblEmailCheck);
@@ -368,6 +380,7 @@
         private DevExpress.XtraEditors.LabelControl lblConf;
         private DevExpress.XtraEditors.LabelControl lblEmailCheck;
         private DevExpress.XtraEditors.LabelControl lblPhonecheck;
-        private System.Windows.Forms.MaskedTextBox txtPhone;
+        private System.Windows.Forms.TextBox txtPhone;
+        private System.Windows.Forms.Button btnUpload;
     }
 }

@@ -24,8 +24,6 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
 
         public void load()
         {
-/*            if (radioaz.Checked)
-            {*/
                 var list = from brand in db.Brands
                            orderby brand.Name ascending
                            select new
@@ -35,8 +33,6 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
                                Image = brand.Image,
                                Active = brand.Active
                            };
-            //}
-            
             dtTableBrand.DataSource = list.ToList();
             dtTableBrand.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtTableBrand.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
@@ -103,16 +99,6 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
         private void btnSearch_Click(object sender, EventArgs e)
         {
             load();
-        }
-
-        private void radioaz_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioza_CheckedChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void cbbActive_CheckedChanged(object sender, EventArgs e)

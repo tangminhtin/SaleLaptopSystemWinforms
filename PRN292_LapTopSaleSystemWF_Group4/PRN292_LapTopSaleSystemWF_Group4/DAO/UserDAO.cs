@@ -15,7 +15,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4.DAO
         public User login(String email, String input)
         {
             String password = MD5Hash(input);
-            var users = db.Users.Where(u => u.Email == email && u.Password == password && u.Role == "1");
+            var users = db.Users.Where(u => u.Email == email && u.Password == password && u.Role == "Admin");
             foreach (User u in users)
             {
                 return u;
@@ -25,7 +25,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4.DAO
 
         
 
-        public Boolean registration(String fullname, String password, String email, String phone, String address, String img, int role)
+        public Boolean registration(String fullname, String password, String email, String phone, String address, String img, String role)
         {
             try
             {
@@ -37,7 +37,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4.DAO
                     Phone = phone,
                     Address = address,
                     Image = img,
-                    Role = role.ToString(),
+                    Role = role,
                     Active = true
                 };
 

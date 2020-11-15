@@ -17,6 +17,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
 {
     public partial class frmRegis : DevExpress.XtraEditors.XtraForm
     {
+        SaleLaptopSystemEntities db = new SaleLaptopSystemEntities();
         public frmRegis()
         {
             InitializeComponent();
@@ -27,6 +28,8 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             this.lblPhonecheck.Visible = false;
             this.MinimizeBox = false;
             this.MaximizeBox = false;
+
+            cbbRole.Text = "admin";
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -98,7 +101,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
 
                 
 
-                if (!uDAO.registration(fullname,password,email,phone,address,img,role+1))
+                if (!uDAO.registration(fullname,password,email,phone,address, "..\\SaleLaptopSystem\\SaleLaptopSystem\\SaleLaptopSystem\\img\\Brands_img\\" + img,cbbRole.SelectedValue.ToString()))
                 {
                     MessageBox.Show("Registration error", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -110,8 +113,6 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
                     this.Visible = false;
                 }
             }
-
-
         }
 
         private void txtPass_TextChanged(object sender, EventArgs e)
@@ -182,6 +183,15 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
         private void txtEmail_Validating(object sender, CancelEventArgs e)
         {
             TextBox txt = sender as TextBox;
+        }
+
+        private void btnUpload_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.ShowDialog();
+            openFileDialog.CheckFileExists = true;
+            openFileDialog.AddExtension = true;
+            txtImage.Text = openFileDialog.SafeFileName;
         }
     }
 }
