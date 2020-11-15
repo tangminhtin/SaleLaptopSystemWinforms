@@ -35,9 +35,11 @@
             this.btnLogout = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ControlBrand = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.ControlCate = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.fluentFormDefaultManager1 = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
             this.pnlView = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer();
+            this.ControlProductDetail = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).BeginInit();
@@ -49,10 +51,11 @@
             this.accordionControl1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.LoginName,
             this.accordionControlElement1});
-            this.accordionControl1.Location = new System.Drawing.Point(0, 31);
+            this.accordionControl1.Location = new System.Drawing.Point(0, 39);
+            this.accordionControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.accordionControl1.Name = "accordionControl1";
             this.accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Hidden;
-            this.accordionControl1.Size = new System.Drawing.Size(260, 443);
+            this.accordionControl1.Size = new System.Drawing.Size(303, 550);
             this.accordionControl1.TabIndex = 1;
             this.accordionControl1.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
             // 
@@ -75,7 +78,10 @@
             // accordionControlElement1
             // 
             this.accordionControlElement1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.ControlBrand});
+            this.ControlBrand,
+            this.ControlCate,
+            this.ControlProductDetail});
+            this.accordionControlElement1.Expanded = true;
             this.accordionControlElement1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement1.ImageOptions.Image")));
             this.accordionControlElement1.Name = "accordionControlElement1";
             this.accordionControlElement1.Text = "Product";
@@ -88,13 +94,22 @@
             this.ControlBrand.Text = "Brand";
             this.ControlBrand.Click += new System.EventHandler(this.ControlBrand_Click);
             // 
+            // ControlCate
+            // 
+            this.ControlCate.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ControlCate.ImageOptions.Image")));
+            this.ControlCate.Name = "ControlCate";
+            this.ControlCate.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.ControlCate.Text = "Category";
+            this.ControlCate.Click += new System.EventHandler(this.btnCate_Click);
+            // 
             // fluentDesignFormControl1
             // 
             this.fluentDesignFormControl1.FluentDesignForm = this;
             this.fluentDesignFormControl1.Location = new System.Drawing.Point(0, 0);
             this.fluentDesignFormControl1.Manager = this.fluentFormDefaultManager1;
+            this.fluentDesignFormControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.fluentDesignFormControl1.Name = "fluentDesignFormControl1";
-            this.fluentDesignFormControl1.Size = new System.Drawing.Size(1175, 31);
+            this.fluentDesignFormControl1.Size = new System.Drawing.Size(1371, 39);
             this.fluentDesignFormControl1.TabIndex = 2;
             this.fluentDesignFormControl1.TabStop = false;
             // 
@@ -106,21 +121,31 @@
             // pnlView
             // 
             this.pnlView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlView.Location = new System.Drawing.Point(260, 31);
+            this.pnlView.Location = new System.Drawing.Point(303, 39);
+            this.pnlView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnlView.Name = "pnlView";
-            this.pnlView.Size = new System.Drawing.Size(915, 443);
+            this.pnlView.Size = new System.Drawing.Size(1068, 550);
             this.pnlView.TabIndex = 0;
+            // 
+            // ControlProductDetail
+            // 
+            this.ControlProductDetail.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ControlProductDetail.ImageOptions.Image")));
+            this.ControlProductDetail.Name = "ControlProductDetail";
+            this.ControlProductDetail.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.ControlProductDetail.Text = "Product detail";
+            this.ControlProductDetail.Click += new System.EventHandler(this.ControlProductDetail_Click);
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1175, 474);
+            this.ClientSize = new System.Drawing.Size(1371, 589);
             this.ControlContainer = this.pnlView;
             this.Controls.Add(this.pnlView);
             this.Controls.Add(this.accordionControl1);
             this.Controls.Add(this.fluentDesignFormControl1);
             this.FluentDesignFormControl = this.fluentDesignFormControl1;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmMain";
             this.NavigationControl = this.accordionControl1;
             this.Text = "frmMain";
@@ -140,5 +165,7 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement ControlBrand;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement1;
         private DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer pnlView;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement ControlCate;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement ControlProductDetail;
     }
 }

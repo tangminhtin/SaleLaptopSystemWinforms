@@ -25,6 +25,8 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             this.lblConf.Visible = false;
             this.lblEmailCheck.Visible = false;
             this.lblPhonecheck.Visible = false;
+            this.MinimizeBox = false;
+            this.MaximizeBox = false;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

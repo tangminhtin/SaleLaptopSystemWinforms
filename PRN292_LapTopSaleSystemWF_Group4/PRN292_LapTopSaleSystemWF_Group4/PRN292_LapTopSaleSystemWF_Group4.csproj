@@ -99,10 +99,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAO\BrandDAO.cs" />
-    <Compile Include="DAO\CategoryDAO.cs" />
-    <Compile Include="DAO\productDAO.cs" />
-    <Compile Include="DAO\ProductDetailDAO.cs" />
     <Compile Include="DAO\UserDAO.cs" />
     <Compile Include="Model\Brand.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -162,6 +158,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\CategoryLoad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\CategoryLoad.Designer.cs">
+      <DependentUpon>CategoryLoad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\CateInsAndUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\CateInsAndUp.Designer.cs">
+      <DependentUpon>CateInsAndUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,6 +205,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="View\CategoryLoad.resx">
+      <DependentUpon>CategoryLoad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\CateInsAndUp.resx">
+      <DependentUpon>CateInsAndUp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>

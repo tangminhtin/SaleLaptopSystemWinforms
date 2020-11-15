@@ -12,78 +12,75 @@ using PRN292_LapTopSaleSystemWF_Group4.Model;
 
 namespace PRN292_LapTopSaleSystemWF_Group4.View
 {
-    public partial class BrandInsAndUp : DevExpress.XtraEditors.XtraForm
+    public partial class CateInsAndUp : DevExpress.XtraEditors.XtraForm
     {
-        Brand brand;
+        Category category;
         bool isIsert;
-        BrandLoad form;
+        CategoryLoad form;
         SaleLaptopSystemEntities db = new SaleLaptopSystemEntities();
-        public BrandInsAndUp(bool isIsert, Brand brand, BrandLoad form)
+        public CateInsAndUp(bool isIsert, Category category, CategoryLoad form)
         {
             InitializeComponent();
             this.CenterToScreen();
             this.MinimizeBox = false;
             this.MaximizeBox = false;
 
-            this.brand = brand;
+            this.category = category;
             this.isIsert = true;
             this.form = form;
 
             if (isIsert)
             {
-                lbltitle.Text = "Insert brand";
+                lbltitle.Text = "Insert category";
                 clear();
             }
             else
             {
-                lbltitle.Text = "Update brand";
-                txtName.Text = brand.Name;
-                txtImage.Text = brand.Image;
-                cbbActive.Checked = brand.Active == true ? true : false;
+                lbltitle.Text = "Update category";
+                txtName.Text = category.Name;
+                cbbActive.Checked = category.Active == true ? true : false;
             }
         }
 
         public void clear()
         {
             txtName.Text = "";
-            txtImage.Text = "";
             cbbActive.Checked = false;
         }
 
-        public Brand getBrand()
+        public Category getCate()
         {
             String name = txtName.Text.Trim();
-            String image = txtImage.Text.Trim();
-            if (name == "" || image == "")
+            if (name == "")
                 MessageBox.Show("Please input textfield");
+                
             else
             {
-                return new Brand(name, "..\\SaleLaptopSystem\\SaleLaptopSystem\\SaleLaptopSystem\\img\\Brands_img\\" + image, cbbActive.Checked);
+                return new Category(name, cbbActive.Checked);
             }
             return null;
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            if (getBrand() != null)
+            if (getCate() != null)
             {
                 if (isIsert)
                 {
-                    db.Brands.Add(getBrand());
+                    db.Categories.Add(getCate());
                     db.SaveChanges();
                 }
                 else
                 {
-                    int id = Convert.ToInt32(this.brand.ID);
-                    Brand EBrand = db.Brands.FirstOrDefault(b => b.ID == id);
-                    EBrand.Name = getBrand().Name;
-                    EBrand.Image = getBrand().Image;
+                    int id = Convert.ToInt32(this.category.ID);
+                    Category ECate = db.Categories.FirstOrDefault(c => c.ID == id);
+                    ECate.Name = txtName.Text;//update them thang moi
                     db.SaveChanges();
                 }
                 form.Visible = true;
                 this.Visible = false;
                 form.load();
-            }              
+            }          
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -96,15 +93,6 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             form.Visible = true;
             this.Visible = false;
             form.load();
-        }
-
-        private void btnUpload_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.ShowDialog();
-            openFileDialog.CheckFileExists = true;
-            openFileDialog.AddExtension = true;
-            txtImage.Text = openFileDialog.SafeFileName;
         }
     }
 }

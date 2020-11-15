@@ -28,7 +28,6 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             BrandLoad viewBrand = new BrandLoad();
             pnlView.Controls.Add(viewBrand);
             viewBrand.BringToFront();
-            viewBrand.Size = new Size(915, 443);
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -36,6 +35,20 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             frmLogin frmLogin = new frmLogin(null);
             frmLogin.Show();
             this.Visible = false;
+        }
+
+        private void btnCate_Click(object sender, EventArgs e)
+        {
+            CategoryLoad viewCate = new CategoryLoad();
+            pnlView.Controls.Add(viewCate);
+            viewCate.BringToFront();
+        }
+
+        private void ControlProductDetail_Click(object sender, EventArgs e)
+        {
+            CategoryLoad viewCate = new CategoryLoad();
+            pnlView.Controls.Add(viewCate);
+            viewCate.BringToFront();
         }
     }
 }

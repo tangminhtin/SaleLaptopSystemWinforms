@@ -32,7 +32,18 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.radioza = new System.Windows.Forms.RadioButton();
+            this.radioaz = new System.Windows.Forms.RadioButton();
+            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
+            this.cbbActive = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtTableBrand)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dtTableBrand
@@ -40,20 +51,24 @@
             this.dtTableBrand.AllowUserToAddRows = false;
             this.dtTableBrand.AllowUserToDeleteRows = false;
             this.dtTableBrand.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtTableBrand.Location = new System.Drawing.Point(3, 3);
+            this.dtTableBrand.Location = new System.Drawing.Point(4, 4);
+            this.dtTableBrand.Margin = new System.Windows.Forms.Padding(4);
             this.dtTableBrand.Name = "dtTableBrand";
             this.dtTableBrand.ReadOnly = true;
-            this.dtTableBrand.Size = new System.Drawing.Size(630, 385);
+            this.dtTableBrand.RowHeadersWidth = 51;
+            this.dtTableBrand.Size = new System.Drawing.Size(840, 474);
             this.dtTableBrand.TabIndex = 0;
+            this.dtTableBrand.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtTableBrand_CellMouseClick);
             // 
             // btnAdd
             // 
             this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnAdd.Location = new System.Drawing.Point(4, 395);
+            this.btnAdd.Location = new System.Drawing.Point(5, 486);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(94, 39);
+            this.btnAdd.Size = new System.Drawing.Size(125, 48);
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -64,38 +79,133 @@
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnUpdate.Location = new System.Drawing.Point(265, 394);
+            this.btnUpdate.Location = new System.Drawing.Point(353, 485);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(97, 39);
+            this.btnUpdate.Size = new System.Drawing.Size(129, 48);
             this.btnUpdate.TabIndex = 2;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnDelete.Location = new System.Drawing.Point(536, 394);
+            this.btnDelete.Location = new System.Drawing.Point(715, 485);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(97, 39);
+            this.btnDelete.Size = new System.Drawing.Size(129, 48);
             this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnSearch);
+            this.groupBox1.Controls.Add(this.txtSearch);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(851, 4);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(345, 77);
+            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Search";
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(220, 30);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(119, 30);
+            this.btnSearch.TabIndex = 1;
+            this.btnSearch.Text = "Refresh";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(7, 30);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(207, 30);
+            this.txtSearch.TabIndex = 0;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.radioza);
+            this.groupBox2.Controls.Add(this.radioaz);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(851, 155);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(344, 100);
+            this.groupBox2.TabIndex = 5;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Sort";
+            // 
+            // radioza
+            // 
+            this.radioza.AutoSize = true;
+            this.radioza.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioza.ForeColor = System.Drawing.Color.DarkBlue;
+            this.radioza.Location = new System.Drawing.Point(219, 40);
+            this.radioza.Name = "radioza";
+            this.radioza.Size = new System.Drawing.Size(59, 24);
+            this.radioza.TabIndex = 1;
+            this.radioza.TabStop = true;
+            this.radioza.Text = "Z-A";
+            this.radioza.UseVisualStyleBackColor = true;
+            this.radioza.CheckedChanged += new System.EventHandler(this.radioza_CheckedChanged);
+            // 
+            // radioaz
+            // 
+            this.radioaz.AutoSize = true;
+            this.radioaz.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioaz.ForeColor = System.Drawing.Color.DarkBlue;
+            this.radioaz.Location = new System.Drawing.Point(56, 40);
+            this.radioaz.Name = "radioaz";
+            this.radioaz.Size = new System.Drawing.Size(59, 24);
+            this.radioaz.TabIndex = 0;
+            this.radioaz.TabStop = true;
+            this.radioaz.Text = "A-Z";
+            this.radioaz.UseVisualStyleBackColor = true;
+            this.radioaz.CheckedChanged += new System.EventHandler(this.radioaz_CheckedChanged);
+            // 
+            // cbbActive
+            // 
+            this.cbbActive.AutoSize = true;
+            this.cbbActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbActive.Location = new System.Drawing.Point(858, 302);
+            this.cbbActive.Name = "cbbActive";
+            this.cbbActive.Size = new System.Drawing.Size(105, 33);
+            this.cbbActive.TabIndex = 6;
+            this.cbbActive.Text = "Active";
+            this.cbbActive.UseVisualStyleBackColor = true;
+            this.cbbActive.CheckedChanged += new System.EventHandler(this.cbbActive_CheckedChanged);
             // 
             // BrandLoad
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.Controls.Add(this.cbbActive);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dtTableBrand);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "BrandLoad";
-            this.Size = new System.Drawing.Size(899, 443);
+            this.Size = new System.Drawing.Size(1199, 545);
             ((System.ComponentModel.ISupportInitialize)(this.dtTableBrand)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -105,5 +215,14 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.RadioButton radioza;
+        private System.Windows.Forms.RadioButton radioaz;
+        private System.ComponentModel.BackgroundWorker backgroundWorker2;
+        private System.Windows.Forms.CheckBox cbbActive;
     }
 }
