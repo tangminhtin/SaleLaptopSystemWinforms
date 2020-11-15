@@ -36,10 +36,10 @@
             this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ControlBrand = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ControlCate = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.ControlProductDetail = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.fluentFormDefaultManager1 = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
             this.pnlView = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer();
-            this.ControlProductDetail = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).BeginInit();
@@ -81,7 +81,6 @@
             this.ControlBrand,
             this.ControlCate,
             this.ControlProductDetail});
-            this.accordionControlElement1.Expanded = true;
             this.accordionControlElement1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement1.ImageOptions.Image")));
             this.accordionControlElement1.Name = "accordionControlElement1";
             this.accordionControlElement1.Text = "Product";
@@ -101,6 +100,14 @@
             this.ControlCate.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.ControlCate.Text = "Category";
             this.ControlCate.Click += new System.EventHandler(this.btnCate_Click);
+            // 
+            // ControlProductDetail
+            // 
+            this.ControlProductDetail.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ControlProductDetail.ImageOptions.Image")));
+            this.ControlProductDetail.Name = "ControlProductDetail";
+            this.ControlProductDetail.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.ControlProductDetail.Text = "Product";
+            this.ControlProductDetail.Click += new System.EventHandler(this.ControlProductDetail_Click);
             // 
             // fluentDesignFormControl1
             // 
@@ -126,14 +133,6 @@
             this.pnlView.Name = "pnlView";
             this.pnlView.Size = new System.Drawing.Size(1068, 550);
             this.pnlView.TabIndex = 0;
-            // 
-            // ControlProductDetail
-            // 
-            this.ControlProductDetail.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ControlProductDetail.ImageOptions.Image")));
-            this.ControlProductDetail.Name = "ControlProductDetail";
-            this.ControlProductDetail.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.ControlProductDetail.Text = "Product detail";
-            this.ControlProductDetail.Click += new System.EventHandler(this.ControlProductDetail_Click);
             // 
             // frmMain
             // 

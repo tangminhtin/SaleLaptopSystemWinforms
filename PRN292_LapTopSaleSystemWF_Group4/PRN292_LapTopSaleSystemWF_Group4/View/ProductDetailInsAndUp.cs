@@ -16,9 +16,9 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
     {
         ProductDetail detail;
         bool isIsert;
-        ProductDetailLoad form;
+        ProductInsAndUp form;
         SaleLaptopSystemEntities db = new SaleLaptopSystemEntities();
-        public ProductDetailInsAndUp(bool isIsert, ProductDetail detail, ProductDetailLoad form)
+        public ProductDetailInsAndUp(bool isIsert, ProductDetail detail, ProductInsAndUp form)
         {
             InitializeComponent();
             this.CenterToScreen();
@@ -26,7 +26,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             this.MaximizeBox = false;
 
             this.detail = detail;
-            this.isIsert = true;
+            this.isIsert = isIsert;
             this.form = form;
 
             if (isIsert)
@@ -36,7 +36,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             }
             else
             {
-                title.Text = "Update brand";
+                title.Text = "Update Product detail";
                 txtProcess.Text = detail.Processor;
                 txtRAM.Text = detail.RAM;
                 txtScreen.Text = detail.Screen;
@@ -66,7 +66,13 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             txtKeyboard.Text = "";
         }
 
-        public ProductDetail getProductDetail()
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            form.Visible = true;
+            this.Visible = false;
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
         {
             String processor = txtProcess.Text.Trim();
             String RAM = txtRAM.Text.Trim();
@@ -79,43 +85,26 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             String connection = txtConnection.Text.Trim();
             String battery = txtBattery.Text.Trim();
             String keyboard = txtKeyboard.Text.Trim();
-
-            if (processor == "" || RAM == "" || screen == "" || storage == "" || graphic == "" || size == "" || os == "" || video == "" || connection == "" || battery == "" || keyboard == "")
-                MessageBox.Show("Please input textfield");
+            if(processor == "" || RAM == "" || screen == "" || storage == "" || graphic == "" || size == "" || os == "" || video =="" || connection == "" || battery == "" || keyboard == "")
+                    MessageBox.Show("Please input textfield");
             else
-            {
-                return new ProductDetail(processor, RAM, screen, storage, graphic, size, os, video, connection, keyboard, battery);
-            }
-            return null;
-        }
-
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-            form.Visible = true;
-            this.Visible = false;
-            form.load();
-        }
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            if (getProductDetail() != null)
             {
                 if (isIsert)
                 {
-                    db.ProductDetails.Add(getProductDetail());
+                    db.ProductDetails.Add(new ProductDetail(processor, RAM, screen, storage, graphic, size, os, video, connection, keyboard, battery));
                     db.SaveChanges();
                 }
                 else
                 {
                     int id = Convert.ToInt32(this.detail.ID);
                     ProductDetail productDetail = db.ProductDetails.FirstOrDefault(b => b.ID == id);
-                    
-                    db.SaveChanges();//van con update loi
+                    db.SaveChanges();
                 }
                 form.Visible = true;
+                form.setisClick(true);
                 this.Visible = false;
-                form.load();
             }
+            
         }
 
         private void btnClear_Click(object sender, EventArgs e)

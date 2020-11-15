@@ -118,7 +118,7 @@
             this.lbltitle.AutoSize = true;
             this.lbltitle.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltitle.ForeColor = System.Drawing.Color.Navy;
-            this.lbltitle.Location = new System.Drawing.Point(63, 9);
+            this.lbltitle.Location = new System.Drawing.Point(111, 9);
             this.lbltitle.Name = "lbltitle";
             this.lbltitle.Size = new System.Drawing.Size(142, 48);
             this.lbltitle.TabIndex = 13;

@@ -16,9 +16,8 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
     {
         Brand brand;
         bool isIsert;
-        BrandLoad form;
         SaleLaptopSystemEntities db = new SaleLaptopSystemEntities();
-        public BrandInsAndUp(bool isIsert, Brand brand, BrandLoad form)
+        public BrandInsAndUp(bool isIsert, Brand brand)
         {
             InitializeComponent();
             this.CenterToScreen();
@@ -26,17 +25,17 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             this.MaximizeBox = false;
 
             this.brand = brand;
-            this.isIsert = true;
-            this.form = form;
+            this.isIsert = isIsert;
 
             if (isIsert)
             {
-                lbltitle.Text = "Insert brand";
+                lbltitle.Text = "Insert";
                 clear();
             }
             else
             {
-                lbltitle.Text = "Update brand";
+                clear();
+                lbltitle.Text = "Update";
                 txtName.Text = brand.Name;
                 txtImage.Text = brand.Image;
                 cbbActive.Checked = brand.Active == true ? true : false;
@@ -50,40 +49,35 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             cbbActive.Checked = false;
         }
 
-        public Brand getBrand()
+        private void btnSubmit_Click(object sender, EventArgs e)
         {
             String name = txtName.Text.Trim();
             String image = txtImage.Text.Trim();
+
             if (name == "" || image == "")
                 MessageBox.Show("Please input textfield");
             else
             {
-                return new Brand(name, "..\\SaleLaptopSystem\\SaleLaptopSystem\\SaleLaptopSystem\\img\\Brands_img\\" + image, cbbActive.Checked);
-            }
-            return null;
-        }
-
-        private void btnSubmit_Click(object sender, EventArgs e)
-        {
-            if (getBrand() != null)
-            {
                 if (isIsert)
                 {
-                    db.Brands.Add(getBrand());
+                    db.Brands.Add(new Brand(name, "..\\SaleLaptopSystem\\SaleLaptopSystem\\SaleLaptopSystem\\img\\Brands_img\\" + image, cbbActive.Checked==true?true:false));
                     db.SaveChanges();
                 }
                 else
                 {
                     int id = Convert.ToInt32(this.brand.ID);
                     Brand EBrand = db.Brands.FirstOrDefault(b => b.ID == id);
-                    EBrand.Name = getBrand().Name;
-                    EBrand.Image = getBrand().Image;
+                    EBrand.Name = name;
+                    EBrand.Image = "..\\SaleLaptopSystem\\SaleLaptopSystem\\SaleLaptopSystem\\img\\Brands_img\\" + image;
+                    EBrand.Active = cbbActive.Checked == true ? true : false;
                     db.SaveChanges();
                 }
-                form.Visible = true;
-                this.Visible = false;
+                BrandLoad form = new BrandLoad();
+                form.Show();
                 form.load();
-            }              
+                this.Hide();
+            }
+                        
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -93,9 +87,10 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            form.Visible = true;
-            this.Visible = false;
+            BrandLoad form = new BrandLoad();
+            form.Show();
             form.load();
+            this.Hide();           
         }
 
         private void btnUpload_Click(object sender, EventArgs e)

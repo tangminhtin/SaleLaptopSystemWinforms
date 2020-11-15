@@ -19,7 +19,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
         public ProductDetailLoad()
         {
             InitializeComponent();
-            
+            load();
         }
 
         public void load()

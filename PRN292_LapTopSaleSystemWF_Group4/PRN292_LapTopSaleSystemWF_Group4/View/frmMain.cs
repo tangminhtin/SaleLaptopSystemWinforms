@@ -46,9 +46,9 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
 
         private void ControlProductDetail_Click(object sender, EventArgs e)
         {
-            CategoryLoad viewCate = new CategoryLoad();
-            pnlView.Controls.Add(viewCate);
-            viewCate.BringToFront();
+            ProductView viewProduct = new ProductView();
+            pnlView.Controls.Add(viewProduct);
+            viewProduct.BringToFront();
         }
     }
 }

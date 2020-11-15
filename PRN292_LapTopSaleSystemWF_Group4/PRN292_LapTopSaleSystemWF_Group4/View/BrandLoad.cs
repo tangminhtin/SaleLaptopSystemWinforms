@@ -44,8 +44,9 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            new BrandInsAndUp(true, null, this).Visible = true;
-            this.Visible = false;
+            BrandInsAndUp form =  new BrandInsAndUp(true, null);
+            form.Show();
+            this.Hide();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -56,8 +57,9 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             }
             else
             {
-                new BrandInsAndUp(false, this.brand, this).Visible = true;
-                this.Visible = false;
+                BrandInsAndUp form = new BrandInsAndUp(false, this.brand);
+                form.Show();
+                this.Hide();
             }
         }
 
@@ -88,7 +90,13 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             {
                 load();
             }
-            var list = from brand in db.Brands where brand.Name.Contains(text) select brand;
+            var list = from brand in db.Brands where brand.Name.Contains(text) select new
+            {
+                ID = brand.ID,
+                Name = brand.Name,
+                Image = brand.Image,
+                Active = brand.Active
+            };
             dtTableBrand.DataSource = list.ToList();
         }
 
@@ -109,13 +117,23 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
 
         private void cbbActive_CheckedChanged(object sender, EventArgs e)
         {
+            var list = from brand in db.Brands
+                       orderby brand.Name ascending
+                       select new
+                       {
+                           ID = brand.ID,
+                           Name = brand.Name,
+                           Image = brand.Image,
+                           Active = brand.Active
+                       };
             if (cbbActive.Checked)
             {
-                dtTableBrand.DataSource = db.Brands.Where(x => x.Active == true).ToList();
+                
+                dtTableBrand.DataSource = list.Where(x => x.Active == true).ToList();
             }
             else
             {
-                dtTableBrand.DataSource = db.Brands.Where(x => x.Active == false).ToList();
+                dtTableBrand.DataSource = list.Where(x => x.Active == false).ToList();
             }
         }
     }

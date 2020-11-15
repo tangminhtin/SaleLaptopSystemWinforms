@@ -24,8 +24,6 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
 
         public void load()
         {
-            /*            if (radioaz.Checked)
-                        {*/
             var list = from category in db.Categories
                        orderby category.Name ascending
                        select new
@@ -34,8 +32,6 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
                            Name = category.Name,
                            Active = category.Active
                        };
-            //}
-
             dtTableCate.DataSource = list.ToList();
             dtTableCate.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtTableCate.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
@@ -43,7 +39,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            new CateInsAndUp(true, null, this).Visible = true;
+            new CateInsAndUp(true, null).Visible = true;
             this.Visible = false;
         }
 
@@ -55,7 +51,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             }
             else
             {
-                new CateInsAndUp(false, this.category, this).Visible = true;
+                new CateInsAndUp(false, this.category).Visible = true;
                 this.Visible = false;
             }
         }
@@ -81,18 +77,38 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             {
                 load();
             }
-            var list = from category in db.Categories where category.Name.Contains(text) select category;
+            var list = from category in db.Categories where category.Name.Contains(text) select new
+            {
+                ID = category.ID,
+                Name = category.Name,
+                Active = category.Active
+            };
             dtTableCate.DataSource = list.ToList();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-
+            load();
         }
 
         private void cbbActive_CheckedChanged(object sender, EventArgs e)
         {
-
+            var list = from category in db.Categories
+                       orderby category.Name ascending
+                       select new
+                       {
+                           ID = category.ID,
+                           Name = category.Name,
+                           Active = category.Active
+                       };
+            if (cbbActive.Checked)
+            {
+                dtTableCate.DataSource = list.Where(x => x.Active == true).ToList();
+            }
+            else
+            {
+                dtTableCate.DataSource = list.Where(x => x.Active == false).ToList();
+            }
         }
 
         private void dtTableCate_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)

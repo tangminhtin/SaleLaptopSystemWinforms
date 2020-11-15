@@ -16,9 +16,8 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
     {
         Category category;
         bool isIsert;
-        CategoryLoad form;
         SaleLaptopSystemEntities db = new SaleLaptopSystemEntities();
-        public CateInsAndUp(bool isIsert, Category category, CategoryLoad form)
+        public CateInsAndUp(bool isIsert, Category category)
         {
             InitializeComponent();
             this.CenterToScreen();
@@ -26,17 +25,16 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             this.MaximizeBox = false;
 
             this.category = category;
-            this.isIsert = true;
-            this.form = form;
+            this.isIsert = isIsert;
 
             if (isIsert)
             {
-                lbltitle.Text = "Insert category";
+                lbltitle.Text = "Insert";
                 clear();
             }
             else
             {
-                lbltitle.Text = "Update category";
+                lbltitle.Text = "Update";
                 txtName.Text = category.Name;
                 cbbActive.Checked = category.Active == true ? true : false;
             }
@@ -48,26 +46,18 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             cbbActive.Checked = false;
         }
 
-        public Category getCate()
-        {
-            String name = txtName.Text.Trim();
-            if (name == "")
-                MessageBox.Show("Please input textfield");
-                
-            else
-            {
-                return new Category(name, cbbActive.Checked);
-            }
-            return null;
-        }
-
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            if (getCate() != null)
+            String name = txtName.Text.Trim();
+
+            if (name == "")
+                MessageBox.Show("Please input textfield");
+
+            else
             {
                 if (isIsert)
                 {
-                    db.Categories.Add(getCate());
+                    db.Categories.Add(new Category(name, cbbActive.Checked == true ? true : false));
                     db.SaveChanges();
                 }
                 else
@@ -75,12 +65,15 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
                     int id = Convert.ToInt32(this.category.ID);
                     Category ECate = db.Categories.FirstOrDefault(c => c.ID == id);
                     ECate.Name = txtName.Text;//update them thang moi
+                    ECate.Active = cbbActive.Checked == true ? true : false;
                     db.SaveChanges();
                 }
+                BrandLoad form = new BrandLoad();
                 form.Visible = true;
-                this.Visible = false;
                 form.load();
-            }          
+                this.Visible = false;
+            }
+                         
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -90,9 +83,10 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
 
         private void btnBack_Click(object sender, EventArgs e)
         {
+            BrandLoad form = new BrandLoad();
             form.Visible = true;
-            this.Visible = false;
             form.load();
+            this.Visible = false;
         }
     }
 }
