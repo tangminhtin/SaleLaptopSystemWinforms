@@ -79,6 +79,8 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
                            Active = user.Active
                        };
             dtTableBrand.DataSource = list.ToList();
+            dtTableBrand.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dtTableBrand.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -106,6 +108,8 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
                            Active = user.Active
                        };
             dtTableBrand.DataSource = list.ToList();
+            dtTableBrand.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dtTableBrand.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         }
 
         private void cbbActive_CheckedChanged(object sender, EventArgs e)
@@ -125,10 +129,14 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             if (cbbActive.Checked)
             {
                 dtTableBrand.DataSource = list.Where(x => x.Active == true).ToList();
+                dtTableBrand.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dtTableBrand.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             }
             else
             {
                 dtTableBrand.DataSource = list.Where(x => x.Active == false).ToList();
+                dtTableBrand.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dtTableBrand.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             }
         }
         private void btnChange_Click(object sender, EventArgs e)

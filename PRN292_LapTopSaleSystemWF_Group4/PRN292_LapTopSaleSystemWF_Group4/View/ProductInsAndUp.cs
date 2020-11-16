@@ -17,14 +17,13 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
         Product product;
         bool isIsert;
         bool isClick = false;
-        int id2 = 0;
+        int idDetail = 0;
         SaleLaptopSystemEntities db = new SaleLaptopSystemEntities();
         
         public ProductInsAndUp(bool isInsert, Product product)
         {
             InitializeComponent();
             this.CenterToScreen();
-            btnView.Hide();
 
             this.product = product;
             this.isIsert = isInsert;
@@ -34,13 +33,16 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             {
                 title.Text = "Insert";
                 btnView.Hide();
+                btnDetail.Show();
                 clear();
             }
             else
             {
                 clear();
                 btnView.Show();
+                btnDetail.Hide();
                 title.Text = "Update";
+                isClick = true;
                 txtName.Text = product.Name;
                 txtDescription.Text = product.Description;
                 txtFeatures.Text = product.Features;
@@ -57,7 +59,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
 
         public void setIdDetail(int idDetail)
         {
-            this.id2 = idDetail;
+            this.idDetail = idDetail;
         }
             
 
@@ -115,7 +117,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
                     {
                         db.Products.Add(new Product(name,
                             Convert.ToDouble(price), Convert.ToDouble(discount), description, features, cbActive.Checked == true ?
-                            true : false, brandid, cateId, id2));
+                            true : false, brandid, cateId, idDetail));
                     db.SaveChanges();
                     }
                     else
@@ -130,7 +132,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
                         EProduct.Active = cbActive.Checked == true ? true : false;
                         EProduct.BrandID = Convert.ToInt32(cbbBrand.SelectedValue);
                         EProduct.CategoryID = Convert.ToInt32(cbbCategory.SelectedValue);
-                        EProduct.ProductDetailID = id2;
+                        EProduct.ProductDetailID = product.ProductDetailID;
                         db.SaveChanges();
                     }
                     ProductView form = new ProductView();
@@ -153,7 +155,8 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
 
         private void btnView_Click(object sender, EventArgs e)
         {
-
+            new DetailView((int)this.product.ProductDetailID, this).Show();
+            this.Hide();
         }
     }
 }

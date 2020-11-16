@@ -92,17 +92,31 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
                     detail = new ProductDetail(processor, RAM, screen, storage, graphic, size, os, video, connection, keyboard, battery);
                     db.ProductDetails.Add(detail);
                     db.SaveChanges();
+                    form.Show();
+                    form.setisClick(true);
+                    form.setIdDetail(detail.ID);
+                    this.Hide();
                 }
                 else
                 {
                     int id = Convert.ToInt32(this.detail.ID);
                     ProductDetail productDetail = db.ProductDetails.FirstOrDefault(b => b.ID == id);
+                    productDetail.Processor = processor;
+                    productDetail.RAM = RAM;
+                    productDetail.Screen = screen;
+                    productDetail.Storage = storage;
+                    productDetail.Graphic = graphic;
+                    productDetail.Size = size;
+                    productDetail.OS = os;
+                    productDetail.Video = video;
+                    productDetail.Connection = connection;
+                    productDetail.Keyboard = keyboard;
+                    productDetail.Battery = battery;
                     db.SaveChanges();
+                    form.Show();                   
+                    this.Hide();
                 }
-                form.Show();
-                form.setisClick(true);
-                form.setIdDetail(detail.ID);
-                this.Hide();
+                
             }
             
         }

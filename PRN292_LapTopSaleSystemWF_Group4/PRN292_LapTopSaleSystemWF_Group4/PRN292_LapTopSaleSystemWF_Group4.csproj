@@ -170,6 +170,12 @@
     <Compile Include="View\CateInsAndUp.Designer.cs">
       <DependentUpon>CateInsAndUp.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\DetailView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DetailView.Designer.cs">
+      <DependentUpon>DetailView.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -234,6 +240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\CateInsAndUp.resx">
       <DependentUpon>CateInsAndUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DetailView.resx">
+      <DependentUpon>DetailView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>

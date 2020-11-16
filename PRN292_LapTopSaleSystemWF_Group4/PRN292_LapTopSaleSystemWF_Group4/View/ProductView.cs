@@ -87,6 +87,8 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
 
                        };
             dtProduct.DataSource = list.ToList();
+            dtProduct.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dtProduct.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -152,6 +154,8 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
 
                        };
             dtProduct.DataSource = list.ToList();
+            dtProduct.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dtProduct.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         }
 
         private void dtProduct_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -185,6 +189,8 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
 
                        };
             dtProduct.DataSource = list.ToList();
+            dtProduct.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dtProduct.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         }
 
     }

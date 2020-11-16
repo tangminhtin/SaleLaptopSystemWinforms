@@ -30,8 +30,8 @@
         {
             this.cbbActive = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -65,6 +65,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search";
             // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(7, 30);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(332, 30);
+            this.txtSearch.TabIndex = 0;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
             // btnSearch
             // 
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -77,14 +85,6 @@
             this.btnSearch.Text = "Refresh";
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Location = new System.Drawing.Point(7, 30);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(332, 30);
-            this.txtSearch.TabIndex = 0;
-            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // btnDelete
             // 
@@ -133,12 +133,12 @@
             this.dtTableCate.AllowUserToAddRows = false;
             this.dtTableCate.AllowUserToDeleteRows = false;
             this.dtTableCate.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtTableCate.Location = new System.Drawing.Point(4, 4);
+            this.dtTableCate.Location = new System.Drawing.Point(0, 0);
             this.dtTableCate.Margin = new System.Windows.Forms.Padding(4);
             this.dtTableCate.Name = "dtTableCate";
             this.dtTableCate.ReadOnly = true;
             this.dtTableCate.RowHeadersWidth = 51;
-            this.dtTableCate.Size = new System.Drawing.Size(840, 534);
+            this.dtTableCate.Size = new System.Drawing.Size(844, 542);
             this.dtTableCate.TabIndex = 7;
             this.dtTableCate.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtTableCate_CellMouseClick);
             // 

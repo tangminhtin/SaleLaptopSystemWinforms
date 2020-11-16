@@ -114,12 +114,12 @@
             this.dtProduct.AllowUserToAddRows = false;
             this.dtProduct.AllowUserToDeleteRows = false;
             this.dtProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtProduct.Location = new System.Drawing.Point(4, 4);
+            this.dtProduct.Location = new System.Drawing.Point(0, 0);
             this.dtProduct.Margin = new System.Windows.Forms.Padding(4);
             this.dtProduct.Name = "dtProduct";
             this.dtProduct.ReadOnly = true;
             this.dtProduct.RowHeadersWidth = 51;
-            this.dtProduct.Size = new System.Drawing.Size(840, 533);
+            this.dtProduct.Size = new System.Drawing.Size(844, 541);
             this.dtProduct.TabIndex = 21;
             this.dtProduct.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtProduct_CellMouseClick);
             // 
