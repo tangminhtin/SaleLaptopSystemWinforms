@@ -73,7 +73,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
                 {
                     if (img == "")
                     {
-                        img = "../img/user.png";
+                        img = "user.png";
                     }
                     if (!uDAO.registration(fullname, password, email, phone, address, "..\\SaleLaptopSystem\\SaleLaptopSystem\\SaleLaptopSystem\\img\\Brands_img\\" + img, role))
                     {

@@ -57,5 +57,17 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             pnlView.Controls.Add(userLoad);
             userLoad.BringToFront();
         }
+
+        private void ControlHistory_Click(object sender, EventArgs e)
+        {
+            HistoryControl history = new HistoryControl();
+            pnlView.Controls.Add(history);
+            history.BringToFront();
+        }
+
+        private void ReportControl_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

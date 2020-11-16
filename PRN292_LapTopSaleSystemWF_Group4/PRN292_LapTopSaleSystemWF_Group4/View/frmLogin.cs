@@ -42,13 +42,6 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
                 String email = txtEmail.Text.Trim();
                 String password = txtPass.Text.Trim();
 
-                if(password.Length < 8)
-                {
-                    MessageBox.Show("Password lenght must greater equal 8 character", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-
                 this.user = uDAO.login(email, password);
                 if (this.user == null)
                 {
