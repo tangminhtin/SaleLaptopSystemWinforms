@@ -131,5 +131,10 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
                 dtTableBrand.DataSource = list.Where(x => x.Active == false).ToList();
             }
         }
+
+        private void cbbChange_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

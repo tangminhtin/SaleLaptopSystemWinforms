@@ -83,10 +83,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            BrandLoad form = new BrandLoad();
-            form.Visible = true;
-            form.load();
-            this.Visible = false;
+            this.Dispose();
         }
     }
 }

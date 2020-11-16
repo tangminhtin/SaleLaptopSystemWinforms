@@ -68,8 +68,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            form.Visible = true;
-            this.Visible = false;
+            this.Dispose();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

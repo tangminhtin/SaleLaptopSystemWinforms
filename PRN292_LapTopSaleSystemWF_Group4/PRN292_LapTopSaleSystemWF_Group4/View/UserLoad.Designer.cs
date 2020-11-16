@@ -37,8 +37,9 @@
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.cbbActive = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.cbbRole = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.cbbRole = new System.Windows.Forms.ComboBox();
+            this.cbbChange = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtTableBrand)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -69,7 +70,7 @@
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnUpdate.Location = new System.Drawing.Point(851, 208);
+            this.btnUpdate.Location = new System.Drawing.Point(851, 271);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(129, 48);
@@ -97,7 +98,7 @@
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnSearch.Location = new System.Drawing.Point(1054, 207);
+            this.btnSearch.Location = new System.Drawing.Point(1054, 270);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(129, 49);
             this.btnSearch.TabIndex = 9;
@@ -110,7 +111,7 @@
             this.cbbActive.AutoSize = true;
             this.cbbActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbActive.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.cbbActive.Location = new System.Drawing.Point(851, 168);
+            this.cbbActive.Location = new System.Drawing.Point(37, 68);
             this.cbbActive.Name = "cbbActive";
             this.cbbActive.Size = new System.Drawing.Size(105, 33);
             this.cbbActive.TabIndex = 13;
@@ -122,14 +123,24 @@
             // 
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.cbbRole);
+            this.groupBox2.Controls.Add(this.cbbActive);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.groupBox2.Location = new System.Drawing.Point(851, 87);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(345, 75);
+            this.groupBox2.Size = new System.Drawing.Size(345, 123);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Sort";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(32, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 25);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Role";
             // 
             // cbbRole
             // 
@@ -144,26 +155,30 @@
             this.cbbRole.Text = "Admin";
             this.cbbRole.SelectedIndexChanged += new System.EventHandler(this.cbbRole_SelectedIndexChanged);
             // 
-            // label1
+            // cbbChange
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 25);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Role";
+            this.cbbChange.FormattingEnabled = true;
+            this.cbbChange.Items.AddRange(new object[] {
+            "Admin",
+            "User"});
+            this.cbbChange.Location = new System.Drawing.Point(858, 230);
+            this.cbbChange.Name = "cbbChange";
+            this.cbbChange.Size = new System.Drawing.Size(219, 24);
+            this.cbbChange.TabIndex = 14;
+            this.cbbChange.Text = "Admin";
+            this.cbbChange.SelectedIndexChanged += new System.EventHandler(this.cbbChange_SelectedIndexChanged);
             // 
             // UserLoad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.Controls.Add(this.cbbChange);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.dtTableBrand);
             this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.cbbActive);
             this.Name = "UserLoad";
             this.Size = new System.Drawing.Size(1201, 547);
             this.groupBox1.ResumeLayout(false);
@@ -172,7 +187,6 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -189,5 +203,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbbRole;
+        private System.Windows.Forms.ComboBox cbbChange;
     }
 }

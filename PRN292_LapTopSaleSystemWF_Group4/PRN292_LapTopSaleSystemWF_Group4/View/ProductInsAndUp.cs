@@ -145,10 +145,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            ProductView form = new ProductView();
-            form.Visible = true;
-            form.load();
-            this.Visible = false;
+            this.Dispose();
         }
 
         private void btnClear_Click(object sender, EventArgs e)
