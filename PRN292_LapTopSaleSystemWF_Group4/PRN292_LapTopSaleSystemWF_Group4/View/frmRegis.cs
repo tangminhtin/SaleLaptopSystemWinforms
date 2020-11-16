@@ -13,31 +13,38 @@ using System.Security.Cryptography;
 using PRN292_LapTopSaleSystemWF_Group4.Model;
 using PRN292_LapTopSaleSystemWF_Group4.DAO;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace PRN292_LapTopSaleSystemWF_Group4.View
 {
     public partial class frmRegis : DevExpress.XtraEditors.XtraForm
     {
         SaleLaptopSystemEntities db = new SaleLaptopSystemEntities();
+        bool isName = false;
+        bool isEmail = false;
+        bool isPhone = false;
+        bool isPass = false;
+        bool isConfirm = false;
+        bool isAddress = false;
         public frmRegis()
         {
             InitializeComponent();
             this.CenterToScreen();
-            this.lblcheckPass.Visible = false;
-            this.lblConf.Visible = false;
-            this.lblEmailCheck.Visible = false;
-            this.lblPhonecheck.Visible = false;
-            this.MinimizeBox = false;
-            this.MaximizeBox = false;
+            this.lblcheckPass.Hide();
+            this.lblConf.Hide();
+            this.lblEmailCheck.Hide();
+            this.lblPhonecheck.Hide();
+            this.lblFullname.Hide();
+            this.lblCheckAddress.Hide();
 
-            cbbRole.Text = "admin";
+            cbbRole.Text = "Admin";
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             frmLogin frmLogin = new frmLogin(null);
             frmLogin.Show();
-            this.Visible = false;
+            this.Hide();
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
@@ -55,94 +62,69 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             String img = txtImage.Text.Trim();
             String role = cbbRole.SelectedItem.ToString();
 
-            if (fullname == "" || email == "" || password == "" || confirm == "" || phone == "" || address == "" || img == "")
+            if (fullname == "" || email == "" || password == "" || confirm == "" || phone == "" || address == "")
             {
                 MessageBox.Show("Input the fill", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             else
             {
-                if (!validate.checkEmail(email))
+                if(isAddress && isConfirm && isEmail && isName && isPass && isPhone)
                 {
-                    MessageBox.Show("Incorrect email format", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-/*                if (!validate.checkPassword(password))
-                {
-                    MessageBox.Show("Password must have 8-15 character and have 1 special and number", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }*/
-
-/*                if (!validate.checkPhone(phone))
-                {
-                    MessageBox.Show("Incorrect phone format", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }*/
-
-
-                if (password.Length <= 8)
-                {
-                    MessageBox.Show("Password length must be greater equal 8 character", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-
-                if (password != confirm)
-                {
-                    MessageBox.Show("Password not pair", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                if(validate.checkUserExist(txtEmail.Text.Trim())!=null)
-                {
-                    MessageBox.Show("Email existed", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                
-
-                if (!uDAO.registration(fullname,password,email,phone,address, "..\\SaleLaptopSystem\\SaleLaptopSystem\\SaleLaptopSystem\\img\\Brands_img\\" + img,role))
-                {
-                    MessageBox.Show("Registration error", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    if (img == "")
+                    {
+                        img = "../img/user.png";
+                    }
+                    if (!uDAO.registration(fullname, password, email, phone, address, "..\\SaleLaptopSystem\\SaleLaptopSystem\\SaleLaptopSystem\\img\\Brands_img\\" + img, role))
+                    {
+                        MessageBox.Show("Registration error", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    else
+                    {
+                        frmLogin frmLogin = new frmLogin(null);
+                        frmLogin.Show();
+                        this.Visible = false;
+                    }
                 }
                 else
                 {
-                    frmLogin frmLogin = new frmLogin(null);
-                    frmLogin.Show();
-                    this.Visible = false;
+                    MessageBox.Show("Invalid register", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
+                
             }
         }
 
         private void txtPass_TextChanged(object sender, EventArgs e)
         {
-            AuthenticationValidate validate = new AuthenticationValidate();
-            String password = txtPass.Text.Trim();
-            if (validate.checkPassword(password))
+            Regex rex = new Regex(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})");
+            if (rex.IsMatch(txtPass.Text.Trim()))
             {
-                lblcheckPass.Visible = true;
+                lblcheckPass.Show();
+                isPass = true;
             }
             else
             {
-                lblcheckPass.Visible = false;
+                lblcheckPass.Hide();
+                isPass = false;
             }
             
         }
 
         private void txtConfirm_TextChanged(object sender, EventArgs e)
         {
-            AuthenticationValidate validate = new AuthenticationValidate();
             String password = txtPass.Text.Trim();
             String confirm = txtConfirm.Text.Trim();
             if (password != confirm)
             {
-                this.lblConf.Visible = false;
+                this.lblConf.Hide();
+                isConfirm = false;
             }
             else
             {
-                this.lblConf.Visible = true;
+                this.lblConf.Show();
+                isConfirm = true;
             }
         }
 
@@ -150,40 +132,25 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
         {
             AuthenticationValidate validate = new AuthenticationValidate();
             String email = txtEmail.Text.Trim();
-            if (!validate.checkEmail(email))
+            Regex rex = new Regex(@"[a-zA-Z0-9]+([.-_][a-zA-Z0-9]+)*@[a-zA-Z0-9]+([.-_][a-zA-Z0-9]+)*([.-_][a-zA-Z0-9]{2,})+");
+            if (!rex.IsMatch(email))
             {
                 this.lblEmailCheck.Visible = false;
+                isEmail = false;
             }
             else
             {
                 if(validate.checkUserExist(email) == null)
                 {
-                    this.lblEmailCheck.Visible = true;
+                    this.lblEmailCheck.Show();
+                    isEmail = true;
                 }
                 else
                 {
-                    this.lblEmailCheck.Visible = false;
+                    this.lblEmailCheck.Hide();
+                    isEmail = false;
                 }
             }
-        }
-
-        private void txtPhone_TextChanged(object sender, EventArgs e)
-        {
-            AuthenticationValidate validate = new AuthenticationValidate();
-            String phone = txtPhone.Text.Trim();
-            if (!validate.checkPhone(phone))
-            {
-                this.lblPhonecheck.Visible = false;
-            }
-            else
-            {
-                this.lblPhonecheck.Visible = true;
-            }
-        }
-
-        private void txtEmail_Validating(object sender, CancelEventArgs e)
-        {
-            TextBox txt = sender as TextBox;
         }
 
         private void btnUpload_Click(object sender, EventArgs e)
@@ -196,6 +163,53 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
                 ///File.Copy(openFileDialog.SafeFileName, @"Desktop" + openFileDialog.SafeFileName, true);
             }
             
+        }
+
+        private void txtFullname_TextChanged(object sender, EventArgs e)
+        {            
+            String fullname = txtFullname.Text.Trim();
+            Regex rex = new Regex(@"^[A-Za-z]+(( )?[A-Za-z]*)+(( )?[A-Za-z]*)");
+            if (!rex.IsMatch(fullname))
+            {
+                this.lblFullname.Hide();
+                isName = false;
+            }
+            else
+            {
+                this.lblFullname.Show();
+                isName = true;
+            }
+        }
+
+        private void txtAddress_TextChanged(object sender, EventArgs e)
+        {
+            String address = txtAddress.Text.Trim();
+            if(address == "")
+            {
+                this.lblCheckAddress.Hide();
+                isAddress = false;
+            }
+            else
+            {
+                this.lblCheckAddress.Show();
+                isAddress = true;
+            }
+        }
+
+        private void txtPhone_TextChanged(object sender, EventArgs e)
+        {
+            String phone = txtPhone.Text.Trim();
+            Regex rex = new Regex(@"(09|01[2|6|8|9])+([0-9]{8})\b");
+            if (!rex.IsMatch(phone))
+            {
+                this.lblPhonecheck.Hide();
+                isPhone = false;
+            }
+            else
+            {
+                this.lblPhonecheck.Show();
+                isPhone = true;
+            }
         }
     }
 }
