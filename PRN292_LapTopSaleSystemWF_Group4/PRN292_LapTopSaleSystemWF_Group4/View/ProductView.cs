@@ -91,8 +91,8 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            new ProductInsAndUp(true, null).Visible = true;
-            this.Visible = false;
+            new ProductInsAndUp(true, null).Show();
+            this.Hide();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -103,8 +103,8 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             }
             else
             {
-                new ProductInsAndUp(false, this.product).Visible = true;
-                this.Visible = false;
+                new ProductInsAndUp(false, this.product).Show();
+                this.Hide();
             }
         }
 

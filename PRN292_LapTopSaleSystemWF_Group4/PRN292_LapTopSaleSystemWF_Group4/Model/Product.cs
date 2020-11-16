@@ -45,7 +45,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4.Model
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
         public virtual ProductDetail ProductDetail { get; set; }
 
-        public Product(string name, double price, double discount, string description, string features, bool active, int brandId, int categoryId, int productId)
+        public Product(string name, double price, double discount, string description, string features, bool active, int brandId, int categoryId, int detailtId)
         {
             Name = name;
             Price = price;
@@ -55,7 +55,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4.Model
             Active = active;
             BrandID = brandId;
             CategoryID = categoryId;
-            this.productId = productId;
+            ProductDetailID = detailtId;
         }
     }
 }

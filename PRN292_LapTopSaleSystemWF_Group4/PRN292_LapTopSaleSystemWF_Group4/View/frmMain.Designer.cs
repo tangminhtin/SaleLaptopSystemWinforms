@@ -67,7 +67,6 @@
             // 
             this.LoginName.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.btnLogout});
-            this.LoginName.Expanded = true;
             this.LoginName.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("LoginName.ImageOptions.Image")));
             this.LoginName.Name = "LoginName";
             this.LoginName.Text = "Element1";
@@ -86,7 +85,6 @@
             this.ControlBrand,
             this.ControlCate,
             this.ControlProductDetail});
-            this.accordionControlElement1.Expanded = true;
             this.accordionControlElement1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement1.ImageOptions.Image")));
             this.accordionControlElement1.Name = "accordionControlElement1";
             this.accordionControlElement1.Text = "Product";
@@ -129,7 +127,6 @@
             this.accordionControlElement2.Name = "accordionControlElement2";
             this.accordionControlElement2.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement2.Text = "Export PDF";
-            this.accordionControlElement2.Click += new System.EventHandler(this.accordionControlElement2_Click);
             // 
             // fluentDesignFormControl1
             // 

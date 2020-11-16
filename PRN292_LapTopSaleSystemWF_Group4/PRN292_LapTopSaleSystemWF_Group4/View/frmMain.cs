@@ -57,10 +57,5 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             pnlView.Controls.Add(userLoad);
             userLoad.BringToFront();
         }
-
-        private void accordionControlElement2_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

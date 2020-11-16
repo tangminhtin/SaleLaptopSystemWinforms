@@ -194,12 +194,6 @@
     <Compile Include="View\ProductDetailInsAndUp.Designer.cs">
       <DependentUpon>ProductDetailInsAndUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ProductDetailLoad.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="View\ProductDetailLoad.Designer.cs">
-      <DependentUpon>ProductDetailLoad.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\ProductInsAndUp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -252,9 +246,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\ProductDetailInsAndUp.resx">
       <DependentUpon>ProductDetailInsAndUp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\ProductDetailLoad.resx">
-      <DependentUpon>ProductDetailLoad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ProductInsAndUp.resx">
       <DependentUpon>ProductInsAndUp.cs</DependentUpon>

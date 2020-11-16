@@ -131,10 +131,20 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
                 dtTableBrand.DataSource = list.Where(x => x.Active == false).ToList();
             }
         }
-
-        private void cbbChange_SelectedIndexChanged(object sender, EventArgs e)
+        private void btnChange_Click(object sender, EventArgs e)
         {
-
+            User uChange = db.Users.FirstOrDefault(x => x.ID == this.id);
+            if (uChange.Role == "Admin")
+            {
+                uChange.Role = "User";
+                db.SaveChanges();
+            }
+            else
+            {
+                uChange.Role = "Admin";
+                db.SaveChanges();
+            }
+            load();
         }
     }
 }

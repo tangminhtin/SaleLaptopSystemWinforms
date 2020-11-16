@@ -22,8 +22,6 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
         {
             InitializeComponent();
             this.CenterToScreen();
-            this.MinimizeBox = false;
-            this.MaximizeBox = false;
 
             this.detail = detail;
             this.isIsert = isIsert;
@@ -101,10 +99,10 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
                     ProductDetail productDetail = db.ProductDetails.FirstOrDefault(b => b.ID == id);
                     db.SaveChanges();
                 }
-                form.Visible = true;
+                form.Show();
                 form.setisClick(true);
                 form.setIdDetail(detail.ID);
-                this.Visible = false;
+                this.Hide();
             }
             
         }

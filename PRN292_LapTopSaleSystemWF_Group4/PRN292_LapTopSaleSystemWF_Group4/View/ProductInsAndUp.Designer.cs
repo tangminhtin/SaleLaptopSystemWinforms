@@ -279,6 +279,7 @@
             this.btnView.TabIndex = 64;
             this.btnView.Text = "View detail";
             this.btnView.UseVisualStyleBackColor = false;
+            this.btnView.Click += new System.EventHandler(this.btnView_Click);
             // 
             // ProductInsAndUp
             // 

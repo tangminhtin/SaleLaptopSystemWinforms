@@ -17,16 +17,14 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
         Product product;
         bool isIsert;
         bool isClick = false;
-        int idDetail = 0;
+        int id2 = 0;
         SaleLaptopSystemEntities db = new SaleLaptopSystemEntities();
         
         public ProductInsAndUp(bool isInsert, Product product)
         {
             InitializeComponent();
             this.CenterToScreen();
-            this.MinimizeBox = false;
-            this.MaximizeBox = false;
-            btnView.Visible = false;
+            btnView.Hide();
 
             this.product = product;
             this.isIsert = isInsert;
@@ -35,13 +33,13 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             if (isIsert)
             {
                 title.Text = "Insert";
-                btnView.Visible = false;
+                btnView.Hide();
                 clear();
             }
             else
             {
                 clear();
-                btnView.Visible = true;
+                btnView.Show();
                 title.Text = "Update";
                 txtName.Text = product.Name;
                 txtDescription.Text = product.Description;
@@ -59,8 +57,9 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
 
         public void setIdDetail(int idDetail)
         {
-            this.idDetail = idDetail;
+            this.id2 = idDetail;
         }
+            
 
         public void getValue()
         {
@@ -85,7 +84,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
 
         private void btnDetail_Click(object sender, EventArgs e)
         {
-            this.Visible = false;
+            this.Hide();
             new ProductDetailInsAndUp(true, null, this).Visible = true;
         }
 
@@ -112,12 +111,11 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
                 }
                 else
                 {
-                    //int result = this.idDetail;
                     if (isIsert)
                     {
                         db.Products.Add(new Product(name,
                             Convert.ToDouble(price), Convert.ToDouble(discount), description, features, cbActive.Checked == true ?
-                            true : false, brandid, cateId, this.idDetail));
+                            true : false, brandid, cateId, id2));
                     db.SaveChanges();
                     }
                     else
@@ -132,13 +130,13 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
                         EProduct.Active = cbActive.Checked == true ? true : false;
                         EProduct.BrandID = Convert.ToInt32(cbbBrand.SelectedValue);
                         EProduct.CategoryID = Convert.ToInt32(cbbCategory.SelectedValue);
-                        EProduct.ProductDetailID = this.idDetail;
+                        EProduct.ProductDetailID = id2;
                         db.SaveChanges();
                     }
                     ProductView form = new ProductView();
-                    form.Visible = true;
+                    form.Show();
                     form.load();
-                    this.Visible = false;
+                    this.Hide();
                 }              
             }
         }
@@ -151,6 +149,11 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
         private void btnClear_Click(object sender, EventArgs e)
         {
             clear();
+        }
+
+        private void btnView_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
