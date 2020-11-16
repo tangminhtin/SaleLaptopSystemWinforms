@@ -46,5 +46,90 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             this.id = Convert.ToInt32(dtTableBrand.Rows[dtTableBrand.CurrentCell.RowIndex].Cells[0].Value);
             this.user = db.Users.FirstOrDefault(b => b.ID == this.id);
         }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if(this.id < 0)
+            {
+                MessageBox.Show("Please select user to update");
+            }
+            else
+            {
+                User userU = db.Users.FirstOrDefault(x => x.ID == this.id);
+                userU.Active = user.Active == true ? false : true;
+                db.SaveChanges();
+                load();
+            }          
+        }
+
+        private void cbbRole_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            String value = cbbRole.SelectedItem.ToString();
+            var list = from user in db.Users
+                       orderby user.Fullname ascending
+                       where user.Role == value 
+                       select new
+                       {
+                           ID = user.ID,
+                           Fullname = user.Fullname,
+                           Email = user.Email,
+                           Phone = user.Phone,
+                           Address = user.Address,
+                           Role = user.Role,
+                           Active = user.Active
+                       };
+            dtTableBrand.DataSource = list.ToList();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            load();
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            String text = txtSearch.Text.Trim();
+            if (text == "")
+            {
+                load();
+            }
+            var list = from user in db.Users
+                       where user.Fullname.Contains(text)
+                       select new
+                       {
+                           ID = user.ID,
+                           Fullname = user.Fullname,
+                           Email = user.Email,
+                           Phone = user.Phone,
+                           Address = user.Address,
+                           Role = user.Role,
+                           Active = user.Active
+                       };
+            dtTableBrand.DataSource = list.ToList();
+        }
+
+        private void cbbActive_CheckedChanged(object sender, EventArgs e)
+        {
+            var list = from user in db.Users
+                       orderby user.Fullname ascending
+                       select new
+                       {
+                           ID = user.ID,
+                           Fullname = user.Fullname,
+                           Email = user.Email,
+                           Phone = user.Phone,
+                           Address = user.Address,
+                           Role = user.Role,
+                           Active = user.Active
+                       };
+            if (cbbActive.Checked)
+            {
+                dtTableBrand.DataSource = list.Where(x => x.Active == true).ToList();
+            }
+            else
+            {
+                dtTableBrand.DataSource = list.Where(x => x.Active == false).ToList();
+            }
+        }
     }
 }

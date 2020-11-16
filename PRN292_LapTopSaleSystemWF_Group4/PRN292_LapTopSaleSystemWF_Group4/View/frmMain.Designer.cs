@@ -38,6 +38,7 @@
             this.ControlCate = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ControlProductDetail = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ControlUser = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.fluentFormDefaultManager1 = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
             this.pnlView = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer();
@@ -52,7 +53,8 @@
             this.accordionControl1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.LoginName,
             this.accordionControlElement1,
-            this.ControlUser});
+            this.ControlUser,
+            this.accordionControlElement2});
             this.accordionControl1.Location = new System.Drawing.Point(0, 39);
             this.accordionControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.accordionControl1.Name = "accordionControl1";
@@ -65,6 +67,7 @@
             // 
             this.LoginName.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.btnLogout});
+            this.LoginName.Expanded = true;
             this.LoginName.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("LoginName.ImageOptions.Image")));
             this.LoginName.Name = "LoginName";
             this.LoginName.Text = "Element1";
@@ -83,6 +86,7 @@
             this.ControlBrand,
             this.ControlCate,
             this.ControlProductDetail});
+            this.accordionControlElement1.Expanded = true;
             this.accordionControlElement1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement1.ImageOptions.Image")));
             this.accordionControlElement1.Name = "accordionControlElement1";
             this.accordionControlElement1.Text = "Product";
@@ -118,6 +122,14 @@
             this.ControlUser.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.ControlUser.Text = "User management";
             this.ControlUser.Click += new System.EventHandler(this.ControlUser_Click);
+            // 
+            // accordionControlElement2
+            // 
+            this.accordionControlElement2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement2.ImageOptions.Image")));
+            this.accordionControlElement2.Name = "accordionControlElement2";
+            this.accordionControlElement2.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement2.Text = "Export PDF";
+            this.accordionControlElement2.Click += new System.EventHandler(this.accordionControlElement2_Click);
             // 
             // fluentDesignFormControl1
             // 
@@ -177,5 +189,6 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement ControlCate;
         private DevExpress.XtraBars.Navigation.AccordionControlElement ControlProductDetail;
         private DevExpress.XtraBars.Navigation.AccordionControlElement ControlUser;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement2;
     }
 }

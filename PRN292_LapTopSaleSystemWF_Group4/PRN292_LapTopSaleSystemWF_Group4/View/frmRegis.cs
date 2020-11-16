@@ -12,6 +12,7 @@ using PRN292_LapTopSaleSystemWF_Group4.Validate;
 using System.Security.Cryptography;
 using PRN292_LapTopSaleSystemWF_Group4.Model;
 using PRN292_LapTopSaleSystemWF_Group4.DAO;
+using System.IO;
 
 namespace PRN292_LapTopSaleSystemWF_Group4.View
 {
@@ -52,7 +53,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             String phone = txtPhone.Text.Trim();
             String address = txtAddress.Text.Trim();
             String img = txtImage.Text.Trim();
-            int role = cbbRole.SelectedIndex;
+            String role = cbbRole.SelectedItem.ToString();
 
             if (fullname == "" || email == "" || password == "" || confirm == "" || phone == "" || address == "" || img == "")
             {
@@ -101,7 +102,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
 
                 
 
-                if (!uDAO.registration(fullname,password,email,phone,address, "..\\SaleLaptopSystem\\SaleLaptopSystem\\SaleLaptopSystem\\img\\Brands_img\\" + img,cbbRole.SelectedValue.ToString()))
+                if (!uDAO.registration(fullname,password,email,phone,address, "..\\SaleLaptopSystem\\SaleLaptopSystem\\SaleLaptopSystem\\img\\Brands_img\\" + img,role))
                 {
                     MessageBox.Show("Registration error", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -188,10 +189,13 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
         private void btnUpload_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.ShowDialog();
-            openFileDialog.CheckFileExists = true;
-            openFileDialog.AddExtension = true;
-            txtImage.Text = openFileDialog.SafeFileName;
+            DialogResult result = openFileDialog.ShowDialog();
+            if(result == DialogResult.OK)
+            {
+                txtImage.Text = openFileDialog.SafeFileName;
+                ///File.Copy(openFileDialog.SafeFileName, @"Desktop" + openFileDialog.SafeFileName, true);
+            }
+            
         }
     }
 }

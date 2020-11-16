@@ -222,7 +222,6 @@
             this.cbbBrand.Name = "cbbBrand";
             this.cbbBrand.Size = new System.Drawing.Size(189, 24);
             this.cbbBrand.TabIndex = 56;
-            this.cbbBrand.SelectedIndexChanged += new System.EventHandler(this.cbbBrand_SelectedIndexChanged);
             // 
             // cbbCategory
             // 

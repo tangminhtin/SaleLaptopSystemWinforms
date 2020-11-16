@@ -21,6 +21,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
         {
             InitializeComponent();
             load();
+            getValue();
         }
 
         public void load()
@@ -47,6 +48,13 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             dtProduct.DataSource = list.ToList();
             dtProduct.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtProduct.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+        }
+
+        public void getValue()
+        {
+            cbbBrand.DataSource = db.Brands.ToList();
+            cbbBrand.DisplayMember = "Name";
+            cbbBrand.ValueMember = "ID";
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -119,7 +127,28 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
 
         private void cbbBrand_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
+            var list = from product in db.Products
+                       join brand in db.Brands on
+                       product.BrandID equals brand.ID
+                       join category in db.Categories on
+                       product.CategoryID equals category.ID
+                       where product.BrandID == value
+                       select new
+                       {
+                           ID = product.ID,
+                           Name = product.Name,
+                           Price = product.Price,
+                           Discount = product.Discount,
+                           Discription = product.Description,
+                           Features = product.Features,
+                           Active = product.Active,
+                           Brand = brand.Name,
+                           Category = category.Name,
+                           ProductDetail = product.ProductDetailID
 
+                       };
+            dtProduct.DataSource = list.ToList();
         }
 
         private void dtProduct_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)

@@ -17,6 +17,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
         Product product;
         bool isIsert;
         bool isClick = false;
+        int idDetail = 0;
         SaleLaptopSystemEntities db = new SaleLaptopSystemEntities();
         
         public ProductInsAndUp(bool isInsert, Product product)
@@ -54,6 +55,11 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
         public void setisClick(bool isClick)
         {
             this.isClick = isClick;
+        }
+
+        public void setIdDetail(int idDetail)
+        {
+            this.idDetail = idDetail;
         }
 
         public void getValue()
@@ -106,12 +112,12 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
                 }
                 else
                 {
-                    int result = db.ProductDetails.First().ID;
+                    //int result = this.idDetail;
                     if (isIsert)
                     {
                         db.Products.Add(new Product(name,
                             Convert.ToDouble(price), Convert.ToDouble(discount), description, features, cbActive.Checked == true ?
-                            true : false, brandid, cateId, result));
+                            true : false, brandid, cateId, this.idDetail));
                     db.SaveChanges();
                     }
                     else
@@ -126,7 +132,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
                         EProduct.Active = cbActive.Checked == true ? true : false;
                         EProduct.BrandID = Convert.ToInt32(cbbBrand.SelectedValue);
                         EProduct.CategoryID = Convert.ToInt32(cbbCategory.SelectedValue);
-                        EProduct.ProductDetailID = result;
+                        EProduct.ProductDetailID = this.idDetail;
                         db.SaveChanges();
                     }
                     ProductView form = new ProductView();
@@ -139,17 +145,15 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-
+            ProductView form = new ProductView();
+            form.Visible = true;
+            form.load();
+            this.Visible = false;
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void cbbBrand_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            clear();
         }
     }
 }

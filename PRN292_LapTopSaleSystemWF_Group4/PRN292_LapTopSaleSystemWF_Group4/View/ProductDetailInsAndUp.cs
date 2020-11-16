@@ -89,9 +89,11 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
                     MessageBox.Show("Please input textfield");
             else
             {
+                ProductDetail detail = null;
                 if (isIsert)
                 {
-                    db.ProductDetails.Add(new ProductDetail(processor, RAM, screen, storage, graphic, size, os, video, connection, keyboard, battery));
+                    detail = new ProductDetail(processor, RAM, screen, storage, graphic, size, os, video, connection, keyboard, battery);
+                    db.ProductDetails.Add(detail);
                     db.SaveChanges();
                 }
                 else
@@ -102,6 +104,7 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
                 }
                 form.Visible = true;
                 form.setisClick(true);
+                form.setIdDetail(detail.ID);
                 this.Visible = false;
             }
             

@@ -54,6 +54,7 @@
             this.lblPhonecheck = new DevExpress.XtraEditors.LabelControl();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.btnUpload = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.SuspendLayout();
             // 
             // lblName
@@ -314,6 +315,9 @@
             this.btnUpload.UseVisualStyleBackColor = true;
             this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
             // 
+            // saveFileDialog1
+            // 
+            // 
             // frmRegis
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -382,5 +386,6 @@
         private DevExpress.XtraEditors.LabelControl lblPhonecheck;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.Button btnUpload;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
