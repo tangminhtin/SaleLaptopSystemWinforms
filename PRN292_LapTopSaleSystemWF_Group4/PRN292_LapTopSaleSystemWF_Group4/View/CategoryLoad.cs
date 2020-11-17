@@ -118,5 +118,28 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             this.id = Convert.ToInt32(dtTableCate.Rows[dtTableCate.CurrentCell.RowIndex].Cells[0].Value);
             this.category = db.Categories.FirstOrDefault(c => c.ID == this.id);
         }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            if (dtTableCate.Rows.Count > 0)
+            {
+                Microsoft.Office.Interop.Excel.Application excelApp = new Microsoft.Office.Interop.Excel.Application();
+                excelApp.Application.Workbooks.Add(Type.Missing);
+                for (int i = 1; i < dtTableCate.Columns.Count + 1; i++)
+                {
+                    excelApp.Cells[1, i] = dtTableCate.Columns[i - 1].HeaderText;
+                }
+
+                for (int i = 0; i < dtTableCate.Rows.Count; i++)
+                {
+                    for (int j = 0; j < dtTableCate.Columns.Count; j++)
+                    {
+                        excelApp.Cells[i + 2, j + 1] = dtTableCate.Rows[i].Cells[j].Value.ToString();
+                    }
+                }
+                excelApp.Columns.AutoFit();
+                excelApp.Visible = true;
+            }
+        }
     }
 }

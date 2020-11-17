@@ -40,6 +40,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cbbRole = new System.Windows.Forms.ComboBox();
             this.btnChange = new System.Windows.Forms.Button();
+            this.btnExport = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtTableBrand)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -160,19 +161,33 @@
             this.btnChange.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChange.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnChange.Location = new System.Drawing.Point(947, 272);
+            this.btnChange.Location = new System.Drawing.Point(851, 296);
             this.btnChange.Name = "btnChange";
-            this.btnChange.Size = new System.Drawing.Size(139, 54);
+            this.btnChange.Size = new System.Drawing.Size(129, 48);
             this.btnChange.TabIndex = 14;
             this.btnChange.Text = "Change";
             this.btnChange.UseVisualStyleBackColor = false;
             this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
+            // 
+            // btnExport
+            // 
+            this.btnExport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnExport.Location = new System.Drawing.Point(1054, 296);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(129, 48);
+            this.btnExport.TabIndex = 15;
+            this.btnExport.Text = "Export Excel";
+            this.btnExport.UseVisualStyleBackColor = false;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // UserLoad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.Controls.Add(this.btnExport);
             this.Controls.Add(this.btnChange);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -204,5 +219,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbbRole;
         private System.Windows.Forms.Button btnChange;
+        private System.Windows.Forms.Button btnExport;
     }
 }
