@@ -55,6 +55,8 @@
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.btnUpload = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.lblFullname = new DevExpress.XtraEditors.LabelControl();
+            this.lblCheckAddress = new DevExpress.XtraEditors.LabelControl();
             this.SuspendLayout();
             // 
             // lblName
@@ -171,6 +173,7 @@
             this.txtFullname.Name = "txtFullname";
             this.txtFullname.Size = new System.Drawing.Size(206, 23);
             this.txtFullname.TabIndex = 11;
+            this.txtFullname.TextChanged += new System.EventHandler(this.txtFullname_TextChanged);
             // 
             // txtConfirm
             // 
@@ -195,6 +198,7 @@
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(206, 23);
             this.txtAddress.TabIndex = 15;
+            this.txtAddress.TextChanged += new System.EventHandler(this.txtAddress_TextChanged);
             // 
             // txtPass
             // 
@@ -212,7 +216,6 @@
             this.txtEmail.Size = new System.Drawing.Size(206, 23);
             this.txtEmail.TabIndex = 17;
             this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
-            this.txtEmail.Validating += new System.ComponentModel.CancelEventHandler(this.txtEmail_Validating);
             // 
             // btnCancel
             // 
@@ -303,6 +306,7 @@
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(206, 23);
             this.txtPhone.TabIndex = 27;
+            this.txtPhone.TextChanged += new System.EventHandler(this.txtPhone_TextChanged);
             // 
             // btnUpload
             // 
@@ -315,8 +319,23 @@
             this.btnUpload.UseVisualStyleBackColor = true;
             this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
             // 
-            // saveFileDialog1
+            // lblFullname
             // 
+            this.lblFullname.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("lblFullname.ImageOptions.Image")));
+            this.lblFullname.LineLocation = DevExpress.XtraEditors.LineLocation.Bottom;
+            this.lblFullname.Location = new System.Drawing.Point(425, 66);
+            this.lblFullname.Name = "lblFullname";
+            this.lblFullname.Size = new System.Drawing.Size(32, 32);
+            this.lblFullname.TabIndex = 29;
+            // 
+            // lblCheckAddress
+            // 
+            this.lblCheckAddress.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("lblCheckAddress.ImageOptions.Image")));
+            this.lblCheckAddress.LineLocation = DevExpress.XtraEditors.LineLocation.Bottom;
+            this.lblCheckAddress.Location = new System.Drawing.Point(425, 235);
+            this.lblCheckAddress.Name = "lblCheckAddress";
+            this.lblCheckAddress.Size = new System.Drawing.Size(32, 32);
+            this.lblCheckAddress.TabIndex = 30;
             // 
             // frmRegis
             // 
@@ -327,6 +346,8 @@
             this.BackgroundImageLayoutStore = System.Windows.Forms.ImageLayout.Stretch;
             this.BackgroundImageStore = global::PRN292_LapTopSaleSystemWF_Group4.Properties.Resources._1;
             this.ClientSize = new System.Drawing.Size(518, 451);
+            this.Controls.Add(this.lblCheckAddress);
+            this.Controls.Add(this.lblFullname);
             this.Controls.Add(this.btnUpload);
             this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.lblPhonecheck);
@@ -387,5 +408,7 @@
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.Button btnUpload;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private DevExpress.XtraEditors.LabelControl lblFullname;
+        private DevExpress.XtraEditors.LabelControl lblCheckAddress;
     }
 }

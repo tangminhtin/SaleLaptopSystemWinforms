@@ -21,8 +21,6 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
         {
             InitializeComponent();
             this.CenterToScreen();
-            this.MinimizeBox = false;
-            this.MaximizeBox = false;
 
             this.brand = brand;
             this.isIsert = isIsert;

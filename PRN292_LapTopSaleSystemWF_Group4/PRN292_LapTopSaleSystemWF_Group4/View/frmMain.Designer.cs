@@ -37,8 +37,10 @@
             this.ControlBrand = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ControlCate = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ControlProductDetail = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.ControlUser = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.ReportControl = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.ControlUser = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.ControlHistory = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.fluentFormDefaultManager1 = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
             this.pnlView = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer();
@@ -53,8 +55,9 @@
             this.accordionControl1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.LoginName,
             this.accordionControlElement1,
+            this.accordionControlElement2,
             this.ControlUser,
-            this.accordionControlElement2});
+            this.ControlHistory});
             this.accordionControl1.Location = new System.Drawing.Point(0, 39);
             this.accordionControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.accordionControl1.Name = "accordionControl1";
@@ -113,6 +116,22 @@
             this.ControlProductDetail.Text = "Product";
             this.ControlProductDetail.Click += new System.EventHandler(this.ControlProductDetail_Click);
             // 
+            // accordionControlElement2
+            // 
+            this.accordionControlElement2.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.ReportControl});
+            this.accordionControlElement2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement2.ImageOptions.Image")));
+            this.accordionControlElement2.Name = "accordionControlElement2";
+            this.accordionControlElement2.Text = "Export";
+            // 
+            // ReportControl
+            // 
+            this.ReportControl.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement3.ImageOptions.Image")));
+            this.ReportControl.Name = "ReportControl";
+            this.ReportControl.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.ReportControl.Text = "Report Export";
+            this.ReportControl.Click += new System.EventHandler(this.ReportControl_Click);
+            // 
             // ControlUser
             // 
             this.ControlUser.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ControlUser.ImageOptions.Image")));
@@ -121,12 +140,13 @@
             this.ControlUser.Text = "User management";
             this.ControlUser.Click += new System.EventHandler(this.ControlUser_Click);
             // 
-            // accordionControlElement2
+            // ControlHistory
             // 
-            this.accordionControlElement2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement2.ImageOptions.Image")));
-            this.accordionControlElement2.Name = "accordionControlElement2";
-            this.accordionControlElement2.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement2.Text = "Export PDF";
+            this.ControlHistory.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ControlHistory.ImageOptions.Image")));
+            this.ControlHistory.Name = "ControlHistory";
+            this.ControlHistory.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.ControlHistory.Text = "History";
+            this.ControlHistory.Click += new System.EventHandler(this.ControlHistory_Click);
             // 
             // fluentDesignFormControl1
             // 
@@ -186,6 +206,8 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement ControlCate;
         private DevExpress.XtraBars.Navigation.AccordionControlElement ControlProductDetail;
         private DevExpress.XtraBars.Navigation.AccordionControlElement ControlUser;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement ControlHistory;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement2;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement ReportControl;
     }
 }

@@ -35,9 +35,12 @@
             // 
             // dtDetail
             // 
+            this.dtDetail.AllowUserToAddRows = false;
+            this.dtDetail.AllowUserToDeleteRows = false;
             this.dtDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtDetail.Location = new System.Drawing.Point(-1, 0);
             this.dtDetail.Name = "dtDetail";
+            this.dtDetail.ReadOnly = true;
             this.dtDetail.RowHeadersWidth = 51;
             this.dtDetail.RowTemplate.Height = 24;
             this.dtDetail.Size = new System.Drawing.Size(888, 114);
