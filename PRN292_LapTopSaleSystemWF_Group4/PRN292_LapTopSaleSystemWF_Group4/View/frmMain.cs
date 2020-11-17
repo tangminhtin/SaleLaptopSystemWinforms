@@ -69,5 +69,11 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
         {
 
         }
+        private void ImageControl_Click_1(object sender, EventArgs e)
+        {
+            ImagesLoad img = new ImagesLoad();
+            pnlView.Controls.Add(img);
+            img.BringToFront();
+        }
     }
 }

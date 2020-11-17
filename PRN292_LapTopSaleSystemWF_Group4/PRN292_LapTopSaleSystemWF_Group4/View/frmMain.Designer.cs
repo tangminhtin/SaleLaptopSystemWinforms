@@ -44,6 +44,7 @@
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.fluentFormDefaultManager1 = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
             this.pnlView = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer();
+            this.ImageControl = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).BeginInit();
@@ -59,10 +60,10 @@
             this.ControlUser,
             this.ControlHistory});
             this.accordionControl1.Location = new System.Drawing.Point(0, 39);
-            this.accordionControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.accordionControl1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.accordionControl1.Name = "accordionControl1";
             this.accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Hidden;
-            this.accordionControl1.Size = new System.Drawing.Size(303, 550);
+            this.accordionControl1.Size = new System.Drawing.Size(306, 550);
             this.accordionControl1.TabIndex = 1;
             this.accordionControl1.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
             // 
@@ -87,7 +88,8 @@
             this.accordionControlElement1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.ControlBrand,
             this.ControlCate,
-            this.ControlProductDetail});
+            this.ControlProductDetail,
+            this.ImageControl});
             this.accordionControlElement1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement1.ImageOptions.Image")));
             this.accordionControlElement1.Name = "accordionControlElement1";
             this.accordionControlElement1.Text = "Product";
@@ -126,7 +128,7 @@
             // 
             // ReportControl
             // 
-            this.ReportControl.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement3.ImageOptions.Image")));
+            this.ReportControl.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ReportControl.ImageOptions.Image")));
             this.ReportControl.Name = "ReportControl";
             this.ReportControl.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.ReportControl.Text = "Report Export";
@@ -167,11 +169,19 @@
             // pnlView
             // 
             this.pnlView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlView.Location = new System.Drawing.Point(303, 39);
-            this.pnlView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pnlView.Location = new System.Drawing.Point(306, 39);
+            this.pnlView.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.pnlView.Name = "pnlView";
-            this.pnlView.Size = new System.Drawing.Size(1068, 550);
+            this.pnlView.Size = new System.Drawing.Size(1065, 550);
             this.pnlView.TabIndex = 0;
+            // 
+            // ImageControl
+            // 
+            this.ImageControl.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ImageControl.ImageOptions.Image")));
+            this.ImageControl.Name = "ImageControl";
+            this.ImageControl.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.ImageControl.Text = "Images";
+            this.ImageControl.Click += new System.EventHandler(this.ImageControl_Click_1);
             // 
             // frmMain
             // 
@@ -209,5 +219,6 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement ControlHistory;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement2;
         private DevExpress.XtraBars.Navigation.AccordionControlElement ReportControl;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement ImageControl;
     }
 }

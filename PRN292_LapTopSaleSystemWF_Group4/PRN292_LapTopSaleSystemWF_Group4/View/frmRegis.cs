@@ -162,6 +162,8 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
                 txtImage.Text = openFileDialog.SafeFileName;
                 ///File.Copy(openFileDialog.SafeFileName, @"Desktop" + openFileDialog.SafeFileName, true);
             }
+
+
             
         }
 
