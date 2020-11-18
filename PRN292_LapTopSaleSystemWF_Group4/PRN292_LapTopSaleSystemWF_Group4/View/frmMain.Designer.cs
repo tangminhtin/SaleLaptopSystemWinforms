@@ -37,12 +37,14 @@
             this.ControlBrand = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ControlCate = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ControlProductDetail = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.ImageControl = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.ReportControl = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ControlUser = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ControlHistory = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.fluentFormDefaultManager1 = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
             this.pnlView = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer();
+            this.ImageControl = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).BeginInit();
@@ -54,6 +56,7 @@
             this.accordionControl1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.LoginName,
             this.accordionControlElement1,
+            this.accordionControlElement2,
             this.ControlUser,
             this.ControlHistory});
             this.accordionControl1.Location = new System.Drawing.Point(0, 39);
@@ -114,8 +117,9 @@
             this.ControlProductDetail.Text = "Product";
             this.ControlProductDetail.Click += new System.EventHandler(this.ControlProductDetail_Click);
             // 
-            // ImageControl
+            // accordionControlElement2
             // 
+<<<<<<< HEAD
 <<<<<<< HEAD
             this.ImageControl.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ImageControl.ImageOptions.Image")));
             this.ImageControl.Name = "ImageControl";
@@ -124,11 +128,25 @@
             this.ImageControl.Click += new System.EventHandler(this.ImageControl_Click_1);
 =======
             this.ReportControl.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement3.ImageOptions.Image")));
+=======
+            this.accordionControlElement2.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.ReportControl});
+            this.accordionControlElement2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement2.ImageOptions.Image")));
+            this.accordionControlElement2.Name = "accordionControlElement2";
+            this.accordionControlElement2.Text = "Export";
+            // 
+            // ReportControl
+            // 
+            this.ReportControl.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ReportControl.ImageOptions.Image")));
+>>>>>>> parent of e54869d... chinh image
             this.ReportControl.Name = "ReportControl";
             this.ReportControl.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.ReportControl.Text = "Report Export";
             this.ReportControl.Click += new System.EventHandler(this.ReportControl_Click);
+<<<<<<< HEAD
 >>>>>>> parent of 027d401... thêm form images chưa update refesh
+=======
+>>>>>>> parent of e54869d... chinh image
             // 
             // ControlUser
             // 
@@ -171,6 +189,14 @@
             this.pnlView.Size = new System.Drawing.Size(1068, 550);
             this.pnlView.TabIndex = 0;
             // 
+            // ImageControl
+            // 
+            this.ImageControl.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ImageControl.ImageOptions.Image")));
+            this.ImageControl.Name = "ImageControl";
+            this.ImageControl.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.ImageControl.Text = "Images";
+            this.ImageControl.Click += new System.EventHandler(this.ImageControl_Click_1);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -206,6 +232,11 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement ControlUser;
         private DevExpress.XtraBars.Navigation.AccordionControlElement ControlHistory;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement2;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement ReportControl;
+>>>>>>> parent of e54869d... chinh image
         private DevExpress.XtraBars.Navigation.AccordionControlElement ImageControl;
 =======
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement2;

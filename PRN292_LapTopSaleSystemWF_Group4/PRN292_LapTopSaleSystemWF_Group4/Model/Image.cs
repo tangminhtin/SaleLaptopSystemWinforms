@@ -19,11 +19,5 @@ namespace PRN292_LapTopSaleSystemWF_Group4.Model
         public Nullable<int> ProductID { get; set; }
     
         public virtual Product Product { get; set; }
-
-        public Image(string image1, int? productID)
-        {
-            this.image1 = image1;
-            ProductID = productID;
-        }
     }
 }

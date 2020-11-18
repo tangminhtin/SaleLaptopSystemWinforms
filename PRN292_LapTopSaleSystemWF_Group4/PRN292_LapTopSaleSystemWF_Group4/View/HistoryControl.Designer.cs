@@ -38,13 +38,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cbbYear = new System.Windows.Forms.ComboBox();
-            this.cbbMonth = new System.Windows.Forms.ComboBox();
             this.cbbDay = new System.Windows.Forms.ComboBox();
             this.backgroundWorker3 = new System.ComponentModel.BackgroundWorker();
+            this.cbbMonth = new System.Windows.Forms.ComboBox();
+            this.cbbYear = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtHistory)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -57,7 +57,7 @@
             this.btnSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnSearch.Location = new System.Drawing.Point(851, 283);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(99, 40);
+            this.btnSearch.Size = new System.Drawing.Size(83, 33);
             this.btnSearch.TabIndex = 9;
             this.btnSearch.Text = "Refresh";
             this.btnSearch.UseVisualStyleBackColor = false;
@@ -148,27 +148,32 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Date";
             // 
-            // label5
+            // cbbDay
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label5.Location = new System.Drawing.Point(15, 112);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 20);
-            this.label5.TabIndex = 22;
-            this.label5.Text = "Year";
+            this.cbbDay.FormattingEnabled = true;
+            this.cbbDay.Location = new System.Drawing.Point(132, 26);
+            this.cbbDay.Name = "cbbDay";
+            this.cbbDay.Size = new System.Drawing.Size(210, 28);
+            this.cbbDay.TabIndex = 0;
+            this.cbbDay.SelectedIndexChanged += new System.EventHandler(this.cbbDay_SelectedIndexChanged);
             // 
-            // label4
+            // cbbMonth
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label4.Location = new System.Drawing.Point(15, 73);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 20);
-            this.label4.TabIndex = 21;
-            this.label4.Text = "Month";
+            this.cbbMonth.FormattingEnabled = true;
+            this.cbbMonth.Location = new System.Drawing.Point(132, 65);
+            this.cbbMonth.Name = "cbbMonth";
+            this.cbbMonth.Size = new System.Drawing.Size(210, 28);
+            this.cbbMonth.TabIndex = 1;
+            this.cbbMonth.SelectedIndexChanged += new System.EventHandler(this.cbbMonth_SelectedIndexChanged);
+            // 
+            // cbbYear
+            // 
+            this.cbbYear.FormattingEnabled = true;
+            this.cbbYear.Location = new System.Drawing.Point(132, 104);
+            this.cbbYear.Name = "cbbYear";
+            this.cbbYear.Size = new System.Drawing.Size(210, 28);
+            this.cbbYear.TabIndex = 2;
+            this.cbbYear.SelectedIndexChanged += new System.EventHandler(this.cbbYear_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -181,32 +186,27 @@
             this.label2.TabIndex = 20;
             this.label2.Text = "Day";
             // 
-            // cbbYear
+            // label4
             // 
-            this.cbbYear.FormattingEnabled = true;
-            this.cbbYear.Location = new System.Drawing.Point(132, 104);
-            this.cbbYear.Name = "cbbYear";
-            this.cbbYear.Size = new System.Drawing.Size(210, 28);
-            this.cbbYear.TabIndex = 2;
-            this.cbbYear.SelectedIndexChanged += new System.EventHandler(this.cbbYear_SelectedIndexChanged);
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label4.Location = new System.Drawing.Point(15, 73);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(60, 20);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "Month";
             // 
-            // cbbMonth
+            // label5
             // 
-            this.cbbMonth.FormattingEnabled = true;
-            this.cbbMonth.Location = new System.Drawing.Point(132, 65);
-            this.cbbMonth.Name = "cbbMonth";
-            this.cbbMonth.Size = new System.Drawing.Size(210, 28);
-            this.cbbMonth.TabIndex = 1;
-            this.cbbMonth.SelectedIndexChanged += new System.EventHandler(this.cbbMonth_SelectedIndexChanged);
-            // 
-            // cbbDay
-            // 
-            this.cbbDay.FormattingEnabled = true;
-            this.cbbDay.Location = new System.Drawing.Point(132, 26);
-            this.cbbDay.Name = "cbbDay";
-            this.cbbDay.Size = new System.Drawing.Size(210, 28);
-            this.cbbDay.TabIndex = 0;
-            this.cbbDay.SelectedIndexChanged += new System.EventHandler(this.cbbDay_SelectedIndexChanged);
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label5.Location = new System.Drawing.Point(15, 112);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(47, 20);
+            this.label5.TabIndex = 22;
+            this.label5.Text = "Year";
             // 
             // HistoryControl
             // 

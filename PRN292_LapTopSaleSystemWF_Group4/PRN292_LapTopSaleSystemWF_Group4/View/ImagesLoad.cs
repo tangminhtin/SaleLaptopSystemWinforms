@@ -16,7 +16,6 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
     {
         SaleLaptopSystemEntities db = new SaleLaptopSystemEntities();
         int id = -1;
-        Image img;
         public ImagesLoad()
         {
             InitializeComponent();
@@ -28,6 +27,9 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
         {
             cbbProduct.DataSource = db.Products.ToList();
             cbbProduct.DisplayMember = "Name";
+
+            cbbProductEdit.DataSource = db.Products.ToList();
+            cbbProductEdit.DisplayMember = "Name";
         }
 
         public void load()
@@ -47,6 +49,21 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             dtTableImage.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         }
 
+        private void dtTableImage_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            this.id = Convert.ToInt32(dtTableImage.Rows[dtTableImage.CurrentCell.RowIndex].Cells[0].Value);
+            Image image = db.Images.FirstOrDefault(b => b.ID == this.id);
+            Product product = db.Products.FirstOrDefault(x => x.ID == image.ProductID);
+
+            cbbProductEdit.Text = product.Name;
+            txtUpload.Text = image.image1;
+        }
+
+        private void btnUpload_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void cbbProduct_SelectedIndexChanged(object sender, EventArgs e)
         {
             Product product = (Product)cbbProduct.SelectedValue;
@@ -64,11 +81,6 @@ namespace PRN292_LapTopSaleSystemWF_Group4.View
             dtTableImage.DataSource = list.ToList();
             dtTableImage.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtTableImage.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-        }
-
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            load();
         }
     }
 }
