@@ -218,12 +218,6 @@
     <Compile Include="View\HistoryControl.Designer.cs">
       <DependentUpon>HistoryControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ImagesLoad.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="View\ImagesLoad.Designer.cs">
-      <DependentUpon>ImagesLoad.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\ProductDetailInsAndUp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -285,9 +279,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\HistoryControl.resx">
       <DependentUpon>HistoryControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\ImagesLoad.resx">
-      <DependentUpon>ImagesLoad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ProductDetailInsAndUp.resx">
       <DependentUpon>ProductDetailInsAndUp.cs</DependentUpon>
